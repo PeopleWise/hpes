@@ -173,34 +173,47 @@ namespace HPES
                             break;
                     }
                 }
-                frm.lblSysMessage.Text="即将执行查询: "+ sName;
-                Console.WriteLine("即将执行查询: {0}\n查询语句: {1}", sName, sSQL);
+
+                frm.lblSysMessage.Text="正在执行查询: "+ sName;
+                frm.StatusBar1.Refresh();
+                Console.WriteLine("正在执行查询: {0}\n查询语句: {1}", sName, sSQL);
                 try
                 {
                     command = new OleDbCommand(sSQL, oleconnhis);
                     reader = command.ExecuteReader();
                     if (reader.HasRows)
                     {
+                        sSQL = @"DELETE FROM hpes_query_data WHERE HID = " + hid.ToString() + " AND YID = " + yid.ToString() + " AND QID = " + sQID + "";
+                        UpdateCommand.CommandText = sSQL;
+                        UpdateCommand.ExecuteNonQuery();
+
                         frm.lblSysMessage.Text = "找到数据，准备插入数据库...";
                         Console.WriteLine("找到数据，准备插入数据库。");
+                        string sTemp = "";
+                        string sFieldString="", sValueString="";
                         while (reader.Read())
                         {
-                            string sTemp = "";
+                            sFieldString = ""; sValueString = ""; sTemp = "";
                             for (int i = 0; i < aFields.Length; i++)
                             {
                                 sTemp += aFields[i] + ": " + reader[i].ToString();
+                                sFieldString += aFields[i] + ", ";
+                                if (aFields[i].IndexOf("NUM")>0)
+                                    sValueString += String.Format(reader[i].ToString(), "{N4}") + ", ";
+                                else
+                                    sValueString += "'"+reader[i].ToString() + "', ";
                             }
+                            sFieldString = sFieldString.Substring(0, sFieldString.Length - 2);
+                            sValueString = sValueString.Substring(0, sValueString.Length - 2);
                             frm.lblSysMessage.Text = sTemp;
-                            sSQL = @"INSERT INTO hpes_query_data (HID, YID, QID, " + sFields + ") VALUES (" + hid.ToString() + ", " + yid.ToString() + ", " + sQID + ", ";
-                            for (int i = 0; i < reader.FieldCount; i++)
-                            {
-                                sSQL += reader[i].ToString() + ", ";
-                            }
+                            frm.StatusBar1.Refresh();
+                            sSQL = @"INSERT INTO hpes_query_data (HID, YID, QID, " + sFieldString+ ") VALUES (" + hid.ToString() + ", " + yid.ToString() + ", " + sQID + ", "+sValueString;
                             sSQL += ")";
-                            Console.WriteLine(reader[0].ToString());
+                            Console.WriteLine(sSQL);
                             UpdateCommand.CommandText = sSQL;
                             UpdateCommand.ExecuteNonQuery();
 
+                            row.Expanded = true;
                         }
                     }
                     else
@@ -210,16 +223,24 @@ namespace HPES
                     reader.Close();
                     if (row.Position <= gridEX1.RecordCount)
                     {
-                        frm.uiProgressBar1.Value = (row.Position) * 100 / gridEX1.RecordCount;
+                        frm.uiProgressBar1.Value = row.Position * 100 / gridEX1.RecordCount;
                     }
                     else
                         frm.uiProgressBar1.Value = frm.uiProgressBar1.Maximum;
+                    frm.uiProgressBar1.Refresh();
                 }
                 catch (Exception exec) {
-                    MessageBox.Show("执行查询时出现错误，请检查数据库连接或查询语句。\n错误代码：" + exec.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    //frm.lblSysMessage.Text = "系统已就绪。";
+                    //MessageBox.Show("执行查询时出现错误，请检查数据库连接或查询语句。\n错误代码：" + exec.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    frm.lblSysMessage.Text = "执行查询时出现错误" + exec.Message;
                 }
             }
+
+            oleconnfis.Close();
+            oleconnhis.Close();
+            oleconnhis.Dispose();
+            oleconnfis.Dispose();
+
+            gridEX1.Refetch();
             frm.lblSysMessage.Text = "系统已就绪，请继续使用。";
         }
 
