@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDrug));
+            Janus.Windows.GridEX.GridEXLayout gridEX1_DesignTimeLayout = new Janus.Windows.GridEX.GridEXLayout();
             this.dsDrug1 = new HPES.dsDrug();
             this.hpes_drugBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hpes_drugTableAdapter = new HPES.dsDrugTableAdapters.hpes_drugTableAdapter();
@@ -48,21 +49,13 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.hpes_drugBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.hpes_drugDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.gridEX1 = new Janus.Windows.GridEX.GridEX();
             ((System.ComponentModel.ISupportInitialize)(this.dsDrug1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hpes_drugBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hpes_drugBindingNavigator)).BeginInit();
             this.hpes_drugBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.hpes_drugDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEX1)).BeginInit();
             this.SuspendLayout();
             // 
             // dsDrug1
@@ -220,86 +213,28 @@
             this.toolStripButton1.Text = "数据导入";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // hpes_drugDataGridView
-            // 
-            this.hpes_drugDataGridView.AutoGenerateColumns = false;
-            this.hpes_drugDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.hpes_drugDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewCheckBoxColumn1});
-            this.hpes_drugDataGridView.DataSource = this.hpes_drugBindingSource;
-            this.hpes_drugDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.hpes_drugDataGridView.Location = new System.Drawing.Point(0, 25);
-            this.hpes_drugDataGridView.Name = "hpes_drugDataGridView";
-            this.hpes_drugDataGridView.RowTemplate.Height = 23;
-            this.hpes_drugDataGridView.Size = new System.Drawing.Size(912, 399);
-            this.hpes_drugDataGridView.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "序号";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "DCODE";
-            this.dataGridViewTextBoxColumn2.HeaderText = "药品编码";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "HID";
-            this.dataGridViewTextBoxColumn3.HeaderText = "医院编码";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "YID";
-            this.dataGridViewTextBoxColumn4.HeaderText = "年度";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "NAME";
-            this.dataGridViewTextBoxColumn5.HeaderText = "名称";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "SPECIFICATION";
-            this.dataGridViewTextBoxColumn6.HeaderText = "药品规格";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "FACTORY";
-            this.dataGridViewTextBoxColumn8.HeaderText = "药品厂家";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "BID";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "是否中标";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // gridEX1
+            // 
+            this.gridEX1.DataSource = this.hpes_drugBindingSource;
+            gridEX1_DesignTimeLayout.LayoutString = resources.GetString("gridEX1_DesignTimeLayout.LayoutString");
+            this.gridEX1.DesignTimeLayout = gridEX1_DesignTimeLayout;
+            this.gridEX1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridEX1.GroupByBoxVisible = false;
+            this.gridEX1.Location = new System.Drawing.Point(0, 25);
+            this.gridEX1.Name = "gridEX1";
+            this.gridEX1.Size = new System.Drawing.Size(912, 399);
+            this.gridEX1.TabIndex = 1;
             // 
             // frmDrug
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(912, 424);
-            this.Controls.Add(this.hpes_drugDataGridView);
+            this.Controls.Add(this.gridEX1);
             this.Controls.Add(this.hpes_drugBindingNavigator);
             this.Name = "frmDrug";
             this.Text = "抗菌药物目录";
@@ -309,7 +244,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.hpes_drugBindingNavigator)).EndInit();
             this.hpes_drugBindingNavigator.ResumeLayout(false);
             this.hpes_drugBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.hpes_drugDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEX1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -334,16 +269,8 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton hpes_drugBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView hpes_drugDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private Janus.Windows.GridEX.GridEX gridEX1;
     }
 }
