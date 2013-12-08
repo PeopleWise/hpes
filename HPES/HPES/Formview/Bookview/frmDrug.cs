@@ -61,5 +61,10 @@ namespace HPES.Formview.Bookview
 
 
         }
+
+        private void gridEX1_RegionChanged(object sender, EventArgs e)
+        {
+            //gridEX1.CurrentRow.Cells[2].Text = frmMain.hid.ToString();
+        }
     }
 }
