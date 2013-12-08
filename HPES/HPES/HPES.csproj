@@ -40,6 +40,10 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -106,11 +110,21 @@
     </Compile>
     <Compile Include="dsDrug.cs">
       <DependentUpon>dsDrug.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="dsDrug.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsDrug.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsDrugInuse.cs">
+      <DependentUpon>dsDrugInuse.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dsDrugInuse.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDrugInuse.xsd</DependentUpon>
     </Compile>
     <Compile Include="dsEvalSummary.cs">
       <DependentUpon>dsEvalSummary.xsd</DependentUpon>
@@ -172,6 +186,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsSubmitData.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dsSubmitDictionary.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsSubmitDictionary.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dsUser.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -221,18 +240,6 @@
     </Compile>
     <Compile Include="Formview\Bookview\frmSubmitDataModel.Designer.cs">
       <DependentUpon>frmSubmitDataModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formview\Main\DA.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formview\Main\DA.Designer.cs">
-      <DependentUpon>DA.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formview\Main\OpenDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formview\Main\OpenDialog.Designer.cs">
-      <DependentUpon>OpenDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Formview\Scoreview\frmPreview.cs">
       <SubType>Form</SubType>
@@ -353,14 +360,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formview\Bookview\frmSubmitDataModel.resx">
       <DependentUpon>frmSubmitDataModel.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formview\Main\DA.resx">
-      <DependentUpon>DA.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formview\Main\OpenDialog.resx">
-      <DependentUpon>OpenDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Formview\Scoreview\frmPreview.resx">
@@ -526,7 +525,17 @@
     <Content Include="images\icons\trash_can.png" />
     <Content Include="images\logo.jpg" />
     <Content Include="Resources\background.jpg" />
-
+    <None Include="dsDrugInuse.xsc">
+      <DependentUpon>dsDrugInuse.xsd</DependentUpon>
+    </None>
+    <None Include="dsDrugInuse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDrugInuse.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsDrugInuse.xss">
+      <DependentUpon>dsDrugInuse.xsd</DependentUpon>
+    </None>
     <None Include="dsEvalSummaryOne.xsc">
       <DependentUpon>dsEvalSummaryOne.xsd</DependentUpon>
     </None>
@@ -548,6 +557,17 @@
     </None>
     <None Include="dsQuery.xss">
       <DependentUpon>dsQuery.xsd</DependentUpon>
+    </None>
+    <None Include="dsSubmitDictionary.xsc">
+      <DependentUpon>dsSubmitDictionary.xsd</DependentUpon>
+    </None>
+    <None Include="dsSubmitDictionary.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsSubmitDictionary.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsSubmitDictionary.xss">
+      <DependentUpon>dsSubmitDictionary.xsd</DependentUpon>
     </None>
     <None Include="HPES_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />

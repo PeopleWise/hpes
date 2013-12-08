@@ -183,9 +183,24 @@ namespace HPES.DBClass
             SqlDataAdapter sda = new SqlDataAdapter(sql, conn);//创建数据适配器对象
 
             SqlCommand cmd = new SqlCommand(sql, conn);//创建命令对象
-            int i = (int)cmd.ExecuteScalar();//执行SQL命令
+
+            int i;
+
+            try
+            {
+                i= (int)cmd.ExecuteScalar();//执行SQL命令
+            }
+            catch (Exception e)
+            {
+
+                return 0;
+
+               
+
+            }
             conn.Close();//关闭数据库连接
             return i;//返回数值
+           
 
         }
 

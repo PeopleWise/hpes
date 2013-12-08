@@ -29,8 +29,8 @@ namespace HPES.Formview.Main
             InitializeComponent();
         }
 
-        public int hid;
-        public int yid;
+        public static int hid;
+        public static int yid;
 
         private void frmMain_Load(object sender, EventArgs e)
         {
@@ -573,9 +573,9 @@ namespace HPES.Formview.Main
 
                
 
-                int hid = operate.GetIdByName("select id from hpes_hospital where name='" + names[0] + "'");
+                hid = operate.GetIdByName("select id from hpes_hospital where name='" + names[0] + "'");
 
-                int yid = operate.GetIdByName("select yid from hpes_time where year='" + names[1].Substring(0, names[1].IndexOf(".")) + "'");
+                yid = operate.GetIdByName("select yid from hpes_time where year='" + names[1].Substring(0, names[1].IndexOf(".")) + "'");
 
                 if (hid == 0 || yid == 0)
                 {
