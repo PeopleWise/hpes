@@ -52,40 +52,40 @@ ORDER BY y.Year, h.HCODE, e.OID</CommandText>
         <xs:element name="dsEvalSummaryOne" msprop:Generator_UserTableName="dsEvalSummaryOne" msprop:Generator_RowDeletedName="dsEvalSummaryOneRowDeleted" msprop:Generator_RowChangedName="dsEvalSummaryOneRowChanged" msprop:Generator_RowClassName="dsEvalSummaryOneRow" msprop:Generator_RowChangingName="dsEvalSummaryOneRowChanging" msprop:Generator_RowEvArgName="dsEvalSummaryOneRowChangeEvent" msprop:Generator_RowEvHandlerName="dsEvalSummaryOneRowChangeEventHandler" msprop:Generator_TableClassName="dsEvalSummaryOneDataTable" msprop:Generator_TableVarName="tabledsEvalSummaryOne" msprop:Generator_RowDeletingName="dsEvalSummaryOneRowDeleting" msprop:Generator_TablePropName="_dsEvalSummaryOne">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="HCODE" msprop:Generator_UserColumnName="HCODE" msprop:Generator_ColumnPropNameInRow="HCODE" msprop:Generator_ColumnVarNameInTable="columnHCODE" msprop:Generator_ColumnPropNameInTable="HCODEColumn" minOccurs="0">
+              <xs:element name="HCODE" msprop:Generator_UserColumnName="HCODE" msprop:Generator_ColumnVarNameInTable="columnHCODE" msprop:Generator_ColumnPropNameInRow="HCODE" msprop:Generator_ColumnPropNameInTable="HCODEColumn" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="NAME" msprop:Generator_UserColumnName="NAME" msprop:Generator_ColumnPropNameInRow="NAME" msprop:Generator_ColumnVarNameInTable="columnNAME" msprop:Generator_ColumnPropNameInTable="NAMEColumn" minOccurs="0">
+              <xs:element name="NAME" msprop:Generator_UserColumnName="NAME" msprop:Generator_ColumnVarNameInTable="columnNAME" msprop:Generator_ColumnPropNameInRow="NAME" msprop:Generator_ColumnPropNameInTable="NAMEColumn" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="200" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Year" msprop:Generator_UserColumnName="Year" msprop:Generator_ColumnPropNameInRow="Year" msprop:Generator_ColumnVarNameInTable="columnYear" msprop:Generator_ColumnPropNameInTable="YearColumn" minOccurs="0">
+              <xs:element name="Year" msprop:Generator_UserColumnName="Year" msprop:Generator_ColumnVarNameInTable="columnYear" msprop:Generator_ColumnPropNameInRow="Year" msprop:Generator_ColumnPropNameInTable="YearColumn" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Count_ID" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Count_ID" msprop:Generator_ColumnPropNameInRow="Count_ID" msprop:Generator_ColumnVarNameInTable="columnCount_ID" msprop:Generator_ColumnPropNameInTable="Count_IDColumn" type="xs:int" minOccurs="0" />
-              <xs:element name="HID" msprop:Generator_UserColumnName="HID" msprop:Generator_ColumnPropNameInRow="HID" msprop:Generator_ColumnVarNameInTable="columnHID" msprop:Generator_ColumnPropNameInTable="HIDColumn" type="xs:int" />
-              <xs:element name="YID" msprop:Generator_UserColumnName="YID" msprop:Generator_ColumnPropNameInRow="YID" msprop:Generator_ColumnVarNameInTable="columnYID" msprop:Generator_ColumnPropNameInTable="YIDColumn" type="xs:int" minOccurs="0" />
-              <xs:element name="OID" msprop:Generator_UserColumnName="OID" msprop:Generator_ColumnPropNameInRow="OID" msprop:Generator_ColumnVarNameInTable="columnOID" msprop:Generator_ColumnPropNameInTable="OIDColumn" type="xs:int" minOccurs="0" />
-              <xs:element name="Standard_One" msprop:Generator_UserColumnName="Standard_One" msprop:Generator_ColumnPropNameInRow="Standard_One" msprop:Generator_ColumnVarNameInTable="columnStandard_One" msprop:Generator_ColumnPropNameInTable="Standard_OneColumn" minOccurs="0">
+              <xs:element name="Count_ID" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Count_ID" msprop:Generator_ColumnVarNameInTable="columnCount_ID" msprop:Generator_ColumnPropNameInRow="Count_ID" msprop:Generator_ColumnPropNameInTable="Count_IDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="HID" msprop:Generator_UserColumnName="HID" msprop:Generator_ColumnVarNameInTable="columnHID" msprop:Generator_ColumnPropNameInRow="HID" msprop:Generator_ColumnPropNameInTable="HIDColumn" type="xs:int" />
+              <xs:element name="YID" msprop:Generator_UserColumnName="YID" msprop:Generator_ColumnVarNameInTable="columnYID" msprop:Generator_ColumnPropNameInRow="YID" msprop:Generator_ColumnPropNameInTable="YIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="OID" msprop:Generator_UserColumnName="OID" msprop:Generator_ColumnVarNameInTable="columnOID" msprop:Generator_ColumnPropNameInRow="OID" msprop:Generator_ColumnPropNameInTable="OIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Standard_One" msprop:Generator_UserColumnName="Standard_One" msprop:Generator_ColumnVarNameInTable="columnStandard_One" msprop:Generator_ColumnPropNameInRow="Standard_One" msprop:Generator_ColumnPropNameInTable="Standard_OneColumn" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="500" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Goal_Score" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Goal_Score" msprop:Generator_ColumnPropNameInRow="Goal_Score" msprop:Generator_ColumnVarNameInTable="columnGoal_Score" msprop:Generator_ColumnPropNameInTable="Goal_ScoreColumn" type="xs:int" minOccurs="0" />
-              <xs:element name="Real_Score" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Real_Score" msprop:Generator_ColumnPropNameInRow="Real_Score" msprop:Generator_ColumnVarNameInTable="columnReal_Score" msprop:Generator_ColumnPropNameInTable="Real_ScoreColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Goal_Score" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Goal_Score" msprop:Generator_ColumnVarNameInTable="columnGoal_Score" msprop:Generator_ColumnPropNameInRow="Goal_Score" msprop:Generator_ColumnPropNameInTable="Goal_ScoreColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Real_Score" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Real_Score" msprop:Generator_ColumnVarNameInTable="columnReal_Score" msprop:Generator_ColumnPropNameInRow="Real_Score" msprop:Generator_ColumnPropNameInTable="Real_ScoreColumn" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
