@@ -38,8 +38,7 @@ namespace HPES.Model
                 for (int col = 0; col < dt.Columns.Count; col++)
                 {
                     newSheet.Cells[1, col + 1] = dt.Columns[col].ColumnName;
-                    //((Range)newSheet.Columns[1, Missing.Value]).Cells.Validation.Add(XlDVType.xlValidateList, XlDVAlertStyle.xlValidAlertInformation, XlFormatConditionOperator.xlBetween, "1,100", Type.Missing);
-                    //((Range)newSheet.Columns[1, Missing.Value]).Cells.Validation.Modify(Microsoft.Office.Interop.Excel.XlDVType.xlValidateList, Microsoft.Office.Interop.Excel.XlDVAlertStyle.xlValidAlertStop, Microsoft.Office.Interop.Excel.XlFormatConditionOperator.xlBetween, 99, Missing.Value); 
+                    ((Range)newSheet.Rows[1, Missing.Value]).Font.Size = 14;
                 }
                 for (int row = 0; row < dt.Rows.Count; row++)
                 {
@@ -102,7 +101,7 @@ namespace HPES.Model
             }
             catch (Exception e)
             {
-                return "模板导出失败！文件正在编辑，请关闭文件后重试";
+                return "模板导出失败！文件已被打开或者正在编辑，请关闭文件后重试";
 
             }
             
