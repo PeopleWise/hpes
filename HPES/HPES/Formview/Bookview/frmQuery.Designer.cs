@@ -202,9 +202,9 @@
             this.gridEX1.AllowDelete = Janus.Windows.GridEX.InheritableBoolean.True;
             this.gridEX1.CardColumnHeaderFormatStyle.FontBold = Janus.Windows.GridEX.TriState.True;
             this.gridEX1.CardColumnHeaderFormatStyle.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.gridEX1.CardSpacing = 16;
-            this.gridEX1.CardViewGridlines = Janus.Windows.GridEX.CardViewGridlines.Both;
-            this.gridEX1.CardWidth = 400;
+            this.gridEX1.CardInnerSpacing = 6;
+            this.gridEX1.CardViewGridlines = Janus.Windows.GridEX.CardViewGridlines.FieldsOnly;
+            this.gridEX1.CardWidth = 480;
             this.gridEX1.ColumnAutoResize = true;
             this.gridEX1.DataSource = this.hpes_queryBindingSource;
             gridEX1_DesignTimeLayout.LayoutString = resources.GetString("gridEX1_DesignTimeLayout.LayoutString");
@@ -212,11 +212,15 @@
             this.gridEX1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridEX1.GroupByBoxVisible = false;
             this.gridEX1.GroupRowVisualStyle = Janus.Windows.GridEX.GroupRowVisualStyle.Outlook2003;
+            this.gridEX1.HasEditorsControlStyle = true;
+            this.gridEX1.HeaderFormatStyle.BackColorGradient = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.gridEX1.Location = new System.Drawing.Point(0, 25);
+            this.gridEX1.Margin = new System.Windows.Forms.Padding(5);
             this.gridEX1.Name = "gridEX1";
             this.gridEX1.OfficeColorScheme = Janus.Windows.GridEX.OfficeColorScheme.Blue;
             this.gridEX1.Size = new System.Drawing.Size(852, 537);
             this.gridEX1.TabIndex = 2;
+            this.gridEX1.TableSpacing = 8;
             this.gridEX1.View = Janus.Windows.GridEX.View.CardView;
             this.gridEX1.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2010;
             // 
@@ -239,7 +243,7 @@
             this.Controls.Add(this.gridEX1);
             this.Controls.Add(this.hpes_queryBindingNavigator);
             this.Name = "frmQuery";
-            this.Text = "查询定义";
+            this.Text = "外部查询定义";
             this.Load += new System.EventHandler(this.frmQuery_Load);
             ((System.ComponentModel.ISupportInitialize)(this.hpes_queryBindingNavigator)).EndInit();
             this.hpes_queryBindingNavigator.ResumeLayout(false);
