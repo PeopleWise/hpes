@@ -24,6 +24,27 @@ namespace HPES.Formview.Bookview
 
         }
 
+    
+
+        private void hpes_materialBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.hpes_materialBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.dsMaterial);
+
+        }
+
+       
+        private void hpes_materialBindingNavigatorSaveItem_Click_2(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.hpes_materialBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.dsMaterial);
+
+        }
+
+    
+
        
     }
 }

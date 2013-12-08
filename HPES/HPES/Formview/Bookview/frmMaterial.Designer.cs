@@ -29,61 +29,38 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Janus.Windows.GridEX.GridEXLayout gridEX1_DesignTimeLayout = new Janus.Windows.GridEX.GridEXLayout();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMaterial));
-            this.dsMaterial = new HPES.dsMaterial();
-            this.hpes_materialBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.hpes_materialTableAdapter = new HPES.dsMaterialTableAdapters.hpes_materialTableAdapter();
-            this.tableAdapterManager = new HPES.dsMaterialTableAdapters.TableAdapterManager();
+            this.officeFormAdorner1 = new Janus.Windows.Ribbon.OfficeFormAdorner(this.components);
             this.hpes_materialBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.hpes_materialBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.hpes_materialDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dsMaterial)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hpes_materialBindingSource)).BeginInit();
+            this.hpes_materialBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsMaterial = new HPES.dsMaterial();
+            this.hpes_materialTableAdapter = new HPES.dsMaterialTableAdapters.hpes_materialTableAdapter();
+            this.tableAdapterManager = new HPES.dsMaterialTableAdapters.TableAdapterManager();
+            this.gridEX1 = new Janus.Windows.GridEX.GridEX();
+            ((System.ComponentModel.ISupportInitialize)(this.officeFormAdorner1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hpes_materialBindingNavigator)).BeginInit();
             this.hpes_materialBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.hpes_materialDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hpes_materialBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsMaterial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEX1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dsMaterial
+            // officeFormAdorner1
             // 
-            this.dsMaterial.DataSetName = "dsMaterial";
-            this.dsMaterial.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // hpes_materialBindingSource
-            // 
-            this.hpes_materialBindingSource.DataMember = "hpes_material";
-            this.hpes_materialBindingSource.DataSource = this.dsMaterial;
-            // 
-            // hpes_materialTableAdapter
-            // 
-            this.hpes_materialTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.hpes_materialTableAdapter = this.hpes_materialTableAdapter;
-            this.tableAdapterManager.UpdateOrder = HPES.dsMaterialTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.officeFormAdorner1.Form = this;
             // 
             // hpes_materialBindingNavigator
             // 
@@ -111,34 +88,9 @@
             this.hpes_materialBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.hpes_materialBindingNavigator.Name = "hpes_materialBindingNavigator";
             this.hpes_materialBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.hpes_materialBindingNavigator.Size = new System.Drawing.Size(756, 25);
+            this.hpes_materialBindingNavigator.Size = new System.Drawing.Size(875, 25);
             this.hpes_materialBindingNavigator.TabIndex = 0;
             this.hpes_materialBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "新添";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(32, 22);
-            this.bindingNavigatorCountItem.Text = "/ {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "总项数";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "删除";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -172,9 +124,16 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "当前位置";
             // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(32, 22);
+            this.bindingNavigatorCountItem.Text = "/ {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "总项数";
+            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -197,8 +156,26 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "新添";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "删除";
             // 
             // hpes_materialBindingNavigatorSaveItem
             // 
@@ -207,106 +184,56 @@
             this.hpes_materialBindingNavigatorSaveItem.Name = "hpes_materialBindingNavigatorSaveItem";
             this.hpes_materialBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.hpes_materialBindingNavigatorSaveItem.Text = "保存数据";
-            this.hpes_materialBindingNavigatorSaveItem.Click += new System.EventHandler(this.hpes_materialBindingNavigatorSaveItem_Click);
+            this.hpes_materialBindingNavigatorSaveItem.Click += new System.EventHandler(this.hpes_materialBindingNavigatorSaveItem_Click_2);
             // 
-            // hpes_materialDataGridView
+            // hpes_materialBindingSource
             // 
-            this.hpes_materialDataGridView.AutoGenerateColumns = false;
-            this.hpes_materialDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.hpes_materialDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewCheckBoxColumn1,
-            this.dataGridViewCheckBoxColumn2,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
-            this.hpes_materialDataGridView.DataSource = this.hpes_materialBindingSource;
-            this.hpes_materialDataGridView.Location = new System.Drawing.Point(0, 28);
-            this.hpes_materialDataGridView.Name = "hpes_materialDataGridView";
-            this.hpes_materialDataGridView.RowTemplate.Height = 23;
-            this.hpes_materialDataGridView.Size = new System.Drawing.Size(756, 271);
-            this.hpes_materialDataGridView.TabIndex = 2;
+            this.hpes_materialBindingSource.DataMember = "hpes_material";
+            this.hpes_materialBindingSource.DataSource = this.dsMaterial;
             // 
-            // dataGridViewTextBoxColumn1
+            // dsMaterial
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dsMaterial.DataSetName = "dsMaterial";
+            this.dsMaterial.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // dataGridViewTextBoxColumn2
+            // hpes_materialTableAdapter
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "HID";
-            this.dataGridViewTextBoxColumn2.HeaderText = "HID";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.hpes_materialTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridViewTextBoxColumn3
+            // tableAdapterManager
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "YID";
-            this.dataGridViewTextBoxColumn3.HeaderText = "YID";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.hpes_materialTableAdapter = this.hpes_materialTableAdapter;
+            this.tableAdapterManager.UpdateOrder = HPES.dsMaterialTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // dataGridViewTextBoxColumn4
+            // gridEX1
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "NAME";
-            this.dataGridViewTextBoxColumn4.HeaderText = "NAME";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "UNIT";
-            this.dataGridViewTextBoxColumn5.HeaderText = "UNIT";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "FACTORY";
-            this.dataGridViewTextBoxColumn6.HeaderText = "FACTORY";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "BID";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "BID";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            // 
-            // dataGridViewCheckBoxColumn2
-            // 
-            this.dataGridViewCheckBoxColumn2.DataPropertyName = "STATISTICS";
-            this.dataGridViewCheckBoxColumn2.HeaderText = "STATISTICS";
-            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "MCODE";
-            this.dataGridViewTextBoxColumn7.HeaderText = "MCODE";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "SPECIFICATION";
-            this.dataGridViewTextBoxColumn8.HeaderText = "SPECIFICATION";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.gridEX1.DataSource = this.hpes_materialBindingSource;
+            gridEX1_DesignTimeLayout.LayoutString = resources.GetString("gridEX1_DesignTimeLayout.LayoutString");
+            this.gridEX1.DesignTimeLayout = gridEX1_DesignTimeLayout;
+            this.gridEX1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridEX1.GroupByBoxVisible = false;
+            this.gridEX1.Location = new System.Drawing.Point(0, 25);
+            this.gridEX1.Name = "gridEX1";
+            this.gridEX1.Size = new System.Drawing.Size(875, 312);
+            this.gridEX1.TabIndex = 1;
             // 
             // frmMaterial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(756, 311);
-            this.Controls.Add(this.hpes_materialDataGridView);
+            this.ClientSize = new System.Drawing.Size(875, 337);
+            this.Controls.Add(this.gridEX1);
             this.Controls.Add(this.hpes_materialBindingNavigator);
             this.Name = "frmMaterial";
             this.Text = "医用耗材";
-            ((System.ComponentModel.ISupportInitialize)(this.dsMaterial)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hpes_materialBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.officeFormAdorner1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hpes_materialBindingNavigator)).EndInit();
             this.hpes_materialBindingNavigator.ResumeLayout(false);
             this.hpes_materialBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.hpes_materialDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hpes_materialBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsMaterial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEX1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -314,12 +241,11 @@
 
         #endregion
 
-        private dsMaterial dsMaterial;
-        private System.Windows.Forms.BindingSource hpes_materialBindingSource;
-        private HPES.dsMaterialTableAdapters.hpes_materialTableAdapter hpes_materialTableAdapter;
-        private HPES.dsMaterialTableAdapters.TableAdapterManager tableAdapterManager;
+        private Janus.Windows.Ribbon.OfficeFormAdorner officeFormAdorner1;
         private System.Windows.Forms.BindingNavigator hpes_materialBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.BindingSource hpes_materialBindingSource;
+        private dsMaterial dsMaterial;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
@@ -331,16 +257,9 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton hpes_materialBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView hpes_materialDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private HPES.dsMaterialTableAdapters.hpes_materialTableAdapter hpes_materialTableAdapter;
+        private HPES.dsMaterialTableAdapters.TableAdapterManager tableAdapterManager;
+        private Janus.Windows.GridEX.GridEX gridEX1;
+
     }
 }
