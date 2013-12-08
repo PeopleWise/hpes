@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using HPES.Formview.Main;
+using HPES.Formview.Scoreview;
 using System.Data.OleDb;
 using Janus.Windows.GridEX;
+using Janus.Windows.Common;
 
 namespace HPES
 {
@@ -268,7 +270,51 @@ namespace HPES
             }
         }
 
+        private void uiButton1_Click(object sender, EventArgs e)
+        {
+            GridEXRow[] rows;
+            rows = gridEX1.GetRows();
+            foreach (GridEXRow row in rows)
+            {
+                GridEXRow[] crows=row.GetChildRows();
+                string sTitles = row.Cells[9].Value.ToString();
+                string[] aTitles = sTitles.Split(';');
+                string sFields = row.Cells[8].Value.ToString();
+                string[] aFields = sFields.Split(';');
+                string sAllFields = "DSTR1;DSTR2;DSTR3;DNUM1;DNUM2;DNUM3";
+                string[] aAllFields = sAllFields.Split(';');
+                foreach (GridEXRow crow in crows)
+                {
+                    for (int i = 0; i < aFields.Length; i++)
+                    {
+                        for (int j = 0; j < aAllFields.Length; j++)
+                        {
+                            if (aAllFields[j] == aFields[i])
+                            {
+                                try
+                                {
+                                    crow.Cells[j + 4].ToolTipText = aTitles[i]+": "+crow.Cells[j + 4].Value.ToString();
+                                    SuperTipSettings tipset=new SuperTipSettings();
+                                    tipset.HeaderText=aTitles[i];
+                                    tipset.Text=crow.Cells[j + 4].Value.ToString();
+                                    tipset.FooterText = "说明此数据项的含义";
+                                    this.janusSuperTip.SetSuperTip(this.gridEX1, tipset);
+                                    //this.janusSuperTip.Show(tipset);
+                                }
+                                catch (Exception exec)
+                                {
 
+                                }
+                            }
+                            else {
+                                crow.Cells[j + 4].Enabled = false;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
 
 
 

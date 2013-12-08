@@ -31,8 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSubjectEval));
             Janus.Windows.GridEX.GridEXLayout gridEX1_DesignTimeLayout = new Janus.Windows.GridEX.GridEXLayout();
+            Janus.Windows.Common.SuperTipSettings superTipSettings1 = new Janus.Windows.Common.SuperTipSettings();
             this.officeFormAdorner1 = new Janus.Windows.Ribbon.OfficeFormAdorner(this.components);
             this.boxServerInfo = new Janus.Windows.EditControls.UIGroupBox();
+            this.uiButton1 = new Janus.Windows.EditControls.UIButton();
             this.edtFISDBName = new Janus.Windows.GridEX.EditControls.EditBox();
             this.edtFISPassword = new Janus.Windows.GridEX.EditControls.EditBox();
             this.edtFISUserName = new Janus.Windows.GridEX.EditControls.EditBox();
@@ -65,6 +67,7 @@
             this.dsPoint = new HPES.dsPoint();
             this.hpes_queryTableAdapter = new HPES.dsQueryTableAdapters.hpes_queryTableAdapter();
             this.hpes_query_dataTableAdapter = new HPES.dsQueryTableAdapters.hpes_query_dataTableAdapter();
+            this.janusSuperTip = new Janus.Windows.Common.JanusSuperTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.officeFormAdorner1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boxServerInfo)).BeginInit();
             this.boxServerInfo.SuspendLayout();
@@ -83,6 +86,7 @@
             // boxServerInfo
             // 
             this.boxServerInfo.BackgroundStyle = Janus.Windows.EditControls.BackgroundStyle.Panel;
+            this.boxServerInfo.Controls.Add(this.uiButton1);
             this.boxServerInfo.Controls.Add(this.edtFISDBName);
             this.boxServerInfo.Controls.Add(this.edtFISPassword);
             this.boxServerInfo.Controls.Add(this.edtFISUserName);
@@ -109,6 +113,15 @@
             this.boxServerInfo.Size = new System.Drawing.Size(903, 100);
             this.boxServerInfo.TabIndex = 0;
             this.boxServerInfo.VisualStyle = Janus.Windows.UI.Dock.PanelVisualStyle.Office2010;
+            // 
+            // uiButton1
+            // 
+            this.uiButton1.Location = new System.Drawing.Point(726, 8);
+            this.uiButton1.Name = "uiButton1";
+            this.uiButton1.Size = new System.Drawing.Size(75, 23);
+            this.uiButton1.TabIndex = 20;
+            this.uiButton1.Text = "uiButton1";
+            this.uiButton1.Click += new System.EventHandler(this.uiButton1_Click);
             // 
             // edtFISDBName
             // 
@@ -322,7 +335,6 @@
             this.gridEX1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridEX1.EmptyGridInfoAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.gridEX1.Font = new System.Drawing.Font("宋体", 9F);
-            this.gridEX1.GroupByBoxVisible = false;
             this.gridEX1.GroupIndent = 12;
             this.gridEX1.GroupRowFormatStyle.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold);
             this.gridEX1.GroupRowFormatStyle.Key = "SubjectEval";
@@ -338,7 +350,10 @@
             this.gridEX1.Name = "gridEX1";
             this.gridEX1.OfficeColorScheme = Janus.Windows.GridEX.OfficeColorScheme.Blue;
             this.gridEX1.RepeatHeaders = Janus.Windows.GridEX.InheritableBoolean.False;
+            this.gridEX1.ShowEmptyFields = false;
             this.gridEX1.Size = new System.Drawing.Size(903, 442);
+            superTipSettings1.ImageListProvider = null;
+            this.janusSuperTip.SetSuperTip(this.gridEX1, superTipSettings1);
             this.gridEX1.TabIndex = 1;
             this.gridEX1.TabKeyBehavior = Janus.Windows.GridEX.TabKeyBehavior.ControlNavigation;
             this.gridEX1.TotalRowPosition = Janus.Windows.GridEX.TotalRowPosition.BottomFixed;
@@ -403,6 +418,12 @@
             // 
             this.hpes_query_dataTableAdapter.ClearBeforeFill = true;
             // 
+            // janusSuperTip
+            // 
+            this.janusSuperTip.AutoPopDelay = 2000;
+            this.janusSuperTip.ImageList = null;
+            this.janusSuperTip.OfficeColorScheme = Janus.Windows.Common.OfficeColorScheme.Blue;
+            // 
             // frmSubjectEval
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -464,5 +485,7 @@
         private HPES.dsPointTableAdapters.hpes_standard_pointTableAdapter hpes_standard_pointTableAdapter;
         private dsPoint dsPoint;
         private HPES.dsQueryTableAdapters.hpes_query_dataTableAdapter hpes_query_dataTableAdapter;
+        private Janus.Windows.EditControls.UIButton uiButton1;
+        private Janus.Windows.Common.JanusSuperTip janusSuperTip;
     }
 }
