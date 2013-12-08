@@ -101,7 +101,7 @@ namespace HPES.Model
             }
             catch (Exception e)
             {
-                return "模板导出失败！文件已被打开或者正在编辑，请关闭文件后重试";
+                return "操作无法完成！因为文件已在Microsoft Excel中打开";
 
             }
             
