@@ -33,8 +33,6 @@
             Janus.Windows.GridEX.GridEXLayout gridEX1_DesignTimeLayout = new Janus.Windows.GridEX.GridEXLayout();
             this.hpes_submit_dataBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.hpes_submit_dataBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsSubmitData = new HPES.dsSubmitData();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -46,14 +44,16 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.hpes_submit_dataBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.gridEX1 = new Janus.Windows.GridEX.GridEX();
+            this.hpes_submit_dataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsSubmitData = new HPES.dsSubmitData();
             this.hpes_submit_dataTableAdapter = new HPES.dsSubmitDataTableAdapters.hpes_submit_dataTableAdapter();
             this.tableAdapterManager = new HPES.dsSubmitDataTableAdapters.TableAdapterManager();
-            this.gridEX1 = new Janus.Windows.GridEX.GridEX();
             ((System.ComponentModel.ISupportInitialize)(this.hpes_submit_dataBindingNavigator)).BeginInit();
             this.hpes_submit_dataBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEX1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hpes_submit_dataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSubmitData)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridEX1)).BeginInit();
             this.SuspendLayout();
             // 
             // hpes_submit_dataBindingNavigator
@@ -94,16 +94,6 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "新添";
-            // 
-            // hpes_submit_dataBindingSource
-            // 
-            this.hpes_submit_dataBindingSource.DataMember = "hpes_submit_data";
-            this.hpes_submit_dataBindingSource.DataSource = this.dsSubmitData;
-            // 
-            // dsSubmitData
-            // 
-            this.dsSubmitData.DataSetName = "dsSubmitData";
-            this.dsSubmitData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
@@ -190,16 +180,6 @@
             this.hpes_submit_dataBindingNavigatorSaveItem.Text = "保存数据";
             this.hpes_submit_dataBindingNavigatorSaveItem.Click += new System.EventHandler(this.hpes_submit_dataBindingNavigatorSaveItem_Click_1);
             // 
-            // hpes_submit_dataTableAdapter
-            // 
-            this.hpes_submit_dataTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.hpes_submit_dataTableAdapter = this.hpes_submit_dataTableAdapter;
-            this.tableAdapterManager.UpdateOrder = HPES.dsSubmitDataTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
             // gridEX1
             // 
             this.gridEX1.DataSource = this.hpes_submit_dataBindingSource;
@@ -211,6 +191,26 @@
             this.gridEX1.Name = "gridEX1";
             this.gridEX1.Size = new System.Drawing.Size(443, 269);
             this.gridEX1.TabIndex = 1;
+            // 
+            // hpes_submit_dataBindingSource
+            // 
+            this.hpes_submit_dataBindingSource.DataMember = "hpes_submit_data";
+            this.hpes_submit_dataBindingSource.DataSource = this.dsSubmitData;
+            // 
+            // dsSubmitData
+            // 
+            this.dsSubmitData.DataSetName = "dsSubmitData";
+            this.dsSubmitData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // hpes_submit_dataTableAdapter
+            // 
+            this.hpes_submit_dataTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.hpes_submit_dataTableAdapter = this.hpes_submit_dataTableAdapter;
+            this.tableAdapterManager.UpdateOrder = HPES.dsSubmitDataTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // frmSubmitData
             // 
@@ -225,9 +225,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.hpes_submit_dataBindingNavigator)).EndInit();
             this.hpes_submit_dataBindingNavigator.ResumeLayout(false);
             this.hpes_submit_dataBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEX1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hpes_submit_dataBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSubmitData)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridEX1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
