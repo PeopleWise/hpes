@@ -67,6 +67,7 @@ namespace HPES
                 row.Cells[6].Value = sBEGINDATE;
                 row.Cells[7].Value = sENDDATE;
                 row.EndEdit();
+
             }
 
 
