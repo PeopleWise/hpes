@@ -47,8 +47,8 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.hpes_submit_dictionaryBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.gridEX1 = new Janus.Windows.GridEX.GridEX();
+            this.hpes_submit_dictionaryBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dsSubmitDictionary)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hpes_submit_dictionaryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hpes_submit_dictionaryBindingNavigator)).BeginInit();
@@ -102,7 +102,7 @@
             this.hpes_submit_dictionaryBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.hpes_submit_dictionaryBindingNavigator.Name = "hpes_submit_dictionaryBindingNavigator";
             this.hpes_submit_dictionaryBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.hpes_submit_dictionaryBindingNavigator.Size = new System.Drawing.Size(560, 25);
+            this.hpes_submit_dictionaryBindingNavigator.Size = new System.Drawing.Size(565, 25);
             this.hpes_submit_dictionaryBindingNavigator.TabIndex = 0;
             this.hpes_submit_dictionaryBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -191,15 +191,6 @@
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "删除";
             // 
-            // hpes_submit_dictionaryBindingNavigatorSaveItem
-            // 
-            this.hpes_submit_dictionaryBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.hpes_submit_dictionaryBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("hpes_submit_dictionaryBindingNavigatorSaveItem.Image")));
-            this.hpes_submit_dictionaryBindingNavigatorSaveItem.Name = "hpes_submit_dictionaryBindingNavigatorSaveItem";
-            this.hpes_submit_dictionaryBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.hpes_submit_dictionaryBindingNavigatorSaveItem.Text = "保存数据";
-            this.hpes_submit_dictionaryBindingNavigatorSaveItem.Click += new System.EventHandler(this.hpes_submit_dictionaryBindingNavigatorSaveItem_Click);
-            // 
             // gridEX1
             // 
             this.gridEX1.DataSource = this.hpes_submit_dictionaryBindingSource;
@@ -209,14 +200,23 @@
             this.gridEX1.GroupByBoxVisible = false;
             this.gridEX1.Location = new System.Drawing.Point(0, 25);
             this.gridEX1.Name = "gridEX1";
-            this.gridEX1.Size = new System.Drawing.Size(560, 480);
+            this.gridEX1.Size = new System.Drawing.Size(565, 480);
             this.gridEX1.TabIndex = 1;
+            // 
+            // hpes_submit_dictionaryBindingNavigatorSaveItem
+            // 
+            this.hpes_submit_dictionaryBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.hpes_submit_dictionaryBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("hpes_submit_dictionaryBindingNavigatorSaveItem.Image")));
+            this.hpes_submit_dictionaryBindingNavigatorSaveItem.Name = "hpes_submit_dictionaryBindingNavigatorSaveItem";
+            this.hpes_submit_dictionaryBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.hpes_submit_dictionaryBindingNavigatorSaveItem.Text = "保存数据";
+            this.hpes_submit_dictionaryBindingNavigatorSaveItem.Click += new System.EventHandler(this.hpes_submit_dictionaryBindingNavigatorSaveItem_Click_3);
             // 
             // frmSubmitDataModel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 505);
+            this.ClientSize = new System.Drawing.Size(565, 505);
             this.Controls.Add(this.gridEX1);
             this.Controls.Add(this.hpes_submit_dictionaryBindingNavigator);
             this.Name = "frmSubmitDataModel";
@@ -251,8 +251,10 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton hpes_submit_dictionaryBindingNavigatorSaveItem;
         private Janus.Windows.GridEX.GridEX gridEX1;
+        private System.Windows.Forms.ToolStripButton hpes_submit_dictionaryBindingNavigatorSaveItem;
+
+
 
 
 
