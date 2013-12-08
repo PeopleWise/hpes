@@ -200,8 +200,10 @@
             // 
             this.gridEX1.AllowAddNew = Janus.Windows.GridEX.InheritableBoolean.True;
             this.gridEX1.AllowDelete = Janus.Windows.GridEX.InheritableBoolean.True;
+            this.gridEX1.CardColumnHeaderFormatStyle.FontBold = Janus.Windows.GridEX.TriState.True;
+            this.gridEX1.CardColumnHeaderFormatStyle.ForeColor = System.Drawing.SystemColors.Highlight;
             this.gridEX1.CardSpacing = 16;
-            this.gridEX1.CardViewGridlines = Janus.Windows.GridEX.CardViewGridlines.Vertical;
+            this.gridEX1.CardViewGridlines = Janus.Windows.GridEX.CardViewGridlines.Both;
             this.gridEX1.CardWidth = 400;
             this.gridEX1.ColumnAutoResize = true;
             this.gridEX1.DataSource = this.hpes_queryBindingSource;
@@ -225,6 +227,7 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.hpes_query_dataTableAdapter = null;
             this.tableAdapterManager.hpes_queryTableAdapter = this.hpes_queryTableAdapter;
             this.tableAdapterManager.UpdateOrder = HPES.dsQueryTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
