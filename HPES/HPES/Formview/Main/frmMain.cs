@@ -566,196 +566,221 @@ namespace HPES.Formview.Main
         {
             DBOperate operate = new DBOperate();//创建操作数据库对象
 
-            int hid = operate.GetIdByName("select id from hpes_hospital where name='" + cboHospital.ComboBox.Text + "'");
-
-            int yid = operate.GetIdByName("select yid from hpes_time where year='" + cboYear.ComboBox.Text + "'");
-
-            try
+            if (excelFile.Contains('_'))
             {
+                
+                string[] names = excelFile.Substring(excelFile.LastIndexOf("\\")+1).Split('_');
 
-                //string strConn = "Provider=Microsoft.Jet.OLEDB.4.0;" + "Data Source=" + excelFile + ";" + "Extended Properties='Excel 12.0;HDR=YES;IMEX=1;'"
-                ;
-                string strConn = "Provider=Microsoft.ACE.OLEDB.12.0;" + "Data Source=" + excelFile + ";" + "Extended Properties='Excel 12.0;HDR=YES;IMEX=1;'";
+               
 
+                int hid = operate.GetIdByName("select id from hpes_hospital where name='" + names[0] + "'");
 
-                //(1)HDR表示要把第一行作为数据还是作为列名,作为数据用HDR=no,作为列名用HDR=yes;通过Imex=1来把混合型作为文本型读取,避免 null值。 
+                int yid = operate.GetIdByName("select yid from hpes_time where year='" + names[1].Substring(0, names[1].IndexOf(".")) + "'");
 
-                //(2)左右两个单引号不能少 
-
-
-                OleDbConnection conn = new OleDbConnection(strConn);
-
-                conn.Open();
-
-                DataSet ds = new DataSet();
-
-                DataTable dtSheetName = conn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, new object[] { null, null, null, "Table" });
-
-                string[] strTableNames = new string[dtSheetName.Rows.Count]; //包含excel中表名的字符串数组 
-
-                for (int k = 0; k < dtSheetName.Rows.Count; k++)
+                if (hid == 0 || yid == 0)
                 {
-                    strTableNames[k] = dtSheetName.Rows[k]["TABLE_NAME"].ToString();
-
-
-                    string sheetName = strTableNames[k].Substring(0, strTableNames[k].Length - 1);
-
-                    string targetTable = "";
-
-                    string strExcel = "";
-
-                    if (sheetName.Equals("基础数据"))
-                    {
-                        targetTable = "hpes_submit_data";
-
-                        strExcel = "select 名称,值,说明 from [" + strTableNames[k] + "]";
-
-                    }
-                    else if (sheetName.Equals("医用耗材"))
-                    {
-                        targetTable = "hpes_material";
-
-                        strExcel = "select 耗材编码,耗材名称,耗材单位,耗材厂家,耗材规格,iif(中标='是',1,0) as 中标,iif(统计='是',1,0) as 统计 from [" + strTableNames[k] + "]";
-                    }
-                    else if (sheetName.Equals("医院在用药品"))
+                    MessageBox.Show("操作无法完成，因为文件名中医院名称或者年度不符合规范！");
+                }
+                else
+                {
+                    try
                     {
 
-                        targetTable = "hpes_drug";
-
-                        strExcel = "select 药品编码,药品名称,药品规格,药品单位,药品厂家,iif(抗菌药='是',1,0) as 抗菌药,iif(中标='是',1,0) as 中标,iif(统计='是',1,0) as 统计 from [" + strTableNames[k] + "]";
-                        //strExcel = "select * from [" + strTableNames[k] + "]";
-
-
-                    }
+                        //string strConn = "Provider=Microsoft.Jet.OLEDB.4.0;" + "Data Source=" + excelFile + ";" + "Extended Properties='Excel 12.0;HDR=YES;IMEX=1;'"
+                        ;
+                        string strConn = "Provider=Microsoft.ACE.OLEDB.12.0;" + "Data Source=" + excelFile + ";" + "Extended Properties='Excel 12.0;HDR=YES;IMEX=1;'";
 
 
+                        //(1)HDR表示要把第一行作为数据还是作为列名,作为数据用HDR=no,作为列名用HDR=yes;通过Imex=1来把混合型作为文本型读取,避免 null值。 
+
+                        //(2)左右两个单引号不能少 
 
 
-                    OleDbDataAdapter myCommand = null;
+                        OleDbConnection conn = new OleDbConnection(strConn);
 
-                    myCommand = new OleDbDataAdapter(strExcel, strConn);
+                        conn.Open();
 
-                    myCommand.Fill(ds, sheetName);
+                        DataSet ds = new DataSet();
 
-                    ds.Tables[k].Columns.Add("HID", typeof(int));
+                        DataTable dtSheetName = conn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, new object[] { null, null, null, "Table" });
 
-                    ds.Tables[k].Columns.Add("YID", typeof(int));
+                        string[] strTableNames = new string[dtSheetName.Rows.Count]; //包含excel中表名的字符串数组 
 
-                    if (sheetName.Equals("基础数据"))
-                    {
-
-                        for (int i = 0; i < ds.Tables[sheetName].Rows.Count; i++) //开始循环赋值
+                        for (int k = 0; k < dtSheetName.Rows.Count; k++)
                         {
-                            //ds.Tables[k].Rows[i]["HID"] = hid;
-                            //ds.Tables[k].Rows[i]["YID"] = yid;
+                            strTableNames[k] = dtSheetName.Rows[k]["TABLE_NAME"].ToString();
 
 
-                            string sql = "if exists (select * from hpes_submit_data where name='" + ds.Tables[k].Rows[i]["名称"] + "')"
-                                + "begin update hpes_submit_data set value='" + ds.Tables[k].Rows[i]["值"] + "',info='" + ds.Tables[k].Rows[i]["说明"] + "',hid=" + hid + ",yid=" + yid
-                                + " where name='" + ds.Tables[k].Rows[i]["名称"] + "' end"
-                                + " else begin insert into hpes_submit_data(name,value,info,hid,yid) values('" + ds.Tables[k].Rows[i]["名称"] + "','" + ds.Tables[k].Rows[i]["值"] + "','" + ds.Tables[k].Rows[i]["说明"] + "'," + hid + "," + yid + ") end";
+                            string sheetName = strTableNames[k].Substring(0, strTableNames[k].Length - 1);
 
-                            //string sql = "insert into hpes_submit_data(name,value,info,hid,yid) values('" + ds.Tables[k].Rows[i]["名称"] + "','" + ds.Tables[k].Rows[i]["值"] + "','" + ds.Tables[k].Rows[i]["说明"] + "'," + hid + "," + yid + ")";
+                            string targetTable = "";
 
-                            int num = new DBOperate().UpdateSubmitData(sql);
+                            string strExcel = "";
 
-                          
-
-                        }
-
-
-                    }
-                    else
-                    {
-
-                        for (int i = 0; i < ds.Tables[k].Rows.Count; i++) //开始循环赋值
-                        {
-                            ds.Tables[k].Rows[i]["HID"] = hid;
-                            ds.Tables[k].Rows[i]["YID"] = yid;
-
-                        }
-
-
-
-
-                        System.Data.SqlClient.SqlBulkCopy bcp = DBConnection.SqlBulkCopy();
-
-                        using (bcp)
-                        {
-
-                            bcp.SqlRowsCopied += new System.Data.SqlClient.SqlRowsCopiedEventHandler(bcp_SqlRowsCopied);
-                            bcp.BatchSize = 100;//每次传输的行数
-                            bcp.NotifyAfter = 100;//进度提示的行数
-                            bcp.DestinationTableName = targetTable;//目标表
-
-                            if (sheetName.Equals("医用耗材"))
+                            if (sheetName.Equals("基础数据"))
                             {
+                                targetTable = "hpes_submit_data";
 
-                                bcp.ColumnMappings.Add("耗材编码", "MCODE");
-                                bcp.ColumnMappings.Add("耗材名称", "NAME");
-                                bcp.ColumnMappings.Add("耗材单位", "UNIT");
-                                bcp.ColumnMappings.Add("耗材厂家", "FACTORY");
-                                bcp.ColumnMappings.Add("耗材规格", "SPECIFICATION");
-                                bcp.ColumnMappings.Add("中标", "BID");
-                                bcp.ColumnMappings.Add("统计", "STATISTICS");
-                                bcp.ColumnMappings.Add("HID", "HID");
-                                bcp.ColumnMappings.Add("YID", "YID");
+                                strExcel = "select 名称,值,说明 from [" + strTableNames[k] + "]";
 
+                            }
+                            else if (sheetName.Equals("医用耗材"))
+                            {
+                                targetTable = "hpes_material";
+
+                                strExcel = "select 耗材编码,耗材名称,耗材单位,耗材厂家,耗材规格,iif(中标='是',1,0) as 中标,iif(统计='是',1,0) as 统计 from [" + strTableNames[k] + "]";
                             }
                             else if (sheetName.Equals("医院在用药品"))
                             {
 
-                                bcp.ColumnMappings.Add("药品编码", "DCODE");
-                                bcp.ColumnMappings.Add("药品名称", "NAME");
-                                bcp.ColumnMappings.Add("药品规格", "SPECIFICATION");
-                                bcp.ColumnMappings.Add("药品单位", "UNIT");
-                                bcp.ColumnMappings.Add("药品厂家", "FACTORY");
-                                bcp.ColumnMappings.Add("抗菌药", "ANTIBACTERIAL");
-                                bcp.ColumnMappings.Add("中标", "BID");
-                                bcp.ColumnMappings.Add("统计", "STATISTICS");
-                                bcp.ColumnMappings.Add("HID", "HID");
-                                bcp.ColumnMappings.Add("YID", "YID");
+                                targetTable = "hpes_drug";
+
+                                strExcel = "select 药品编码,药品名称,药品规格,药品单位,药品厂家,iif(抗菌药='是',1,0) as 抗菌药,iif(中标='是',1,0) as 中标,iif(统计='是',1,0) as 统计 from [" + strTableNames[k] + "]";
+                                //strExcel = "select * from [" + strTableNames[k] + "]";
+
+
                             }
 
-                            bcp.WriteToServer(ds.Tables[k]);
-                            bcp.Close();
 
+
+
+                            OleDbDataAdapter myCommand = null;
+
+                            myCommand = new OleDbDataAdapter(strExcel, strConn);
+
+                            myCommand.Fill(ds, sheetName);
+
+                            ds.Tables[k].Columns.Add("HID", typeof(int));
+
+                            ds.Tables[k].Columns.Add("YID", typeof(int));
+
+                            if (sheetName.Equals("基础数据"))
+                            {
+
+                                for (int i = 0; i < ds.Tables[sheetName].Rows.Count; i++) //开始循环赋值
+                                {
+                                   
+                                    string sql = "if exists (select * from hpes_submit_data where name='" + ds.Tables[k].Rows[i]["名称"] + "')"
+                                        + "begin update hpes_submit_data set value='" + ds.Tables[k].Rows[i]["值"] + "',info='" + ds.Tables[k].Rows[i]["说明"] + "',hid=" + hid + ",yid=" + yid
+                                        + " where name='" + ds.Tables[k].Rows[i]["名称"] + "' end"
+                                        + " else begin insert into hpes_submit_data(name,value,info,hid,yid) values('" + ds.Tables[k].Rows[i]["名称"] + "','" + ds.Tables[k].Rows[i]["值"] + "','" + ds.Tables[k].Rows[i]["说明"] + "'," + hid + "," + yid + ") end";
+
+                                    //string sql = "insert into hpes_submit_data(name,value,info,hid,yid) values('" + ds.Tables[k].Rows[i]["名称"] + "','" + ds.Tables[k].Rows[i]["值"] + "','" + ds.Tables[k].Rows[i]["说明"] + "'," + hid + "," + yid + ")";
+
+                                    int num = new DBOperate().UpdateSubmitData(sql);
+
+
+
+                                }
+
+
+                            }
+                            else
+                            {
+
+                                for (int i = 0; i < ds.Tables[k].Rows.Count; i++) //开始循环赋值
+                                {
+                                    ds.Tables[k].Rows[i]["HID"] = hid;
+                                    ds.Tables[k].Rows[i]["YID"] = yid;
+
+                                }
+
+
+
+
+                                System.Data.SqlClient.SqlBulkCopy bcp = DBConnection.SqlBulkCopy();
+
+                                using (bcp)
+                                {
+
+                                    bcp.SqlRowsCopied += new System.Data.SqlClient.SqlRowsCopiedEventHandler(bcp_SqlRowsCopied);
+                                    bcp.BatchSize = 100;//每次传输的行数
+                                    bcp.NotifyAfter = 100;//进度提示的行数
+                                    bcp.DestinationTableName = targetTable;//目标表
+
+                                    if (sheetName.Equals("医用耗材"))
+                                    {
+
+                                        bcp.ColumnMappings.Add("耗材编码", "MCODE");
+                                        bcp.ColumnMappings.Add("耗材名称", "NAME");
+                                        bcp.ColumnMappings.Add("耗材单位", "UNIT");
+                                        bcp.ColumnMappings.Add("耗材厂家", "FACTORY");
+                                        bcp.ColumnMappings.Add("耗材规格", "SPECIFICATION");
+                                        bcp.ColumnMappings.Add("中标", "BID");
+                                        bcp.ColumnMappings.Add("统计", "STATISTICS");
+                                        bcp.ColumnMappings.Add("HID", "HID");
+                                        bcp.ColumnMappings.Add("YID", "YID");
+
+
+                                    }
+                                    else if (sheetName.Equals("医院在用药品"))
+                                    {
+
+                                        bcp.ColumnMappings.Add("药品编码", "DCODE");
+                                        bcp.ColumnMappings.Add("药品名称", "NAME");
+                                        bcp.ColumnMappings.Add("药品规格", "SPECIFICATION");
+                                        bcp.ColumnMappings.Add("药品单位", "UNIT");
+                                        bcp.ColumnMappings.Add("药品厂家", "FACTORY");
+                                        bcp.ColumnMappings.Add("抗菌药", "ANTIBACTERIAL");
+                                        bcp.ColumnMappings.Add("中标", "BID");
+                                        bcp.ColumnMappings.Add("统计", "STATISTICS");
+                                        bcp.ColumnMappings.Add("HID", "HID");
+                                        bcp.ColumnMappings.Add("YID", "YID");
+                                    }
+
+                                    string del = "delete from " + targetTable +" where hid="+hid+" and yid="+yid;
+
+                                    new DBOperate().UpdateSubmitData(del);
+
+                                    bcp.WriteToServer(ds.Tables[k]);
+                                    bcp.Close();
+
+
+
+                                }
+
+                            }
+
+                            lblSysMessage.Visible = true;
+                            uiProgressBar1.Visible = true;
+                            uiProgressBar1.Value = 0;
+                            uiProgressBar1.Minimum = 0;
+                            uiProgressBar1.Maximum = ds.Tables[k].Rows.Count;
+                            // MessageBox.Show("进度条长度"+uiProgressBar1.Maximum.ToString());
+
+
+                            for (int i = 0; i < uiProgressBar1.Maximum; i++)
+                            {
+                                uiProgressBar1.Value = i + 1;
+
+                                Application.DoEvents();
+
+                                this.lblSysMessage.Text = Convert.ToString("数据导入完成！");
+                            }
+
+
+
+                        }
+
+                        conn.Close();
+
+                        MessageBox.Show(names[0]+"，"+names[1].Substring(0, names[1].IndexOf("."))+"，"+"医院提报数据导入成功！");
 
 
                     }
-
-                    }
-
-                    lblSysMessage.Visible = true;
-                    uiProgressBar1.Visible = true;
-                    uiProgressBar1.Value = 0;
-                    uiProgressBar1.Minimum = 0;
-                    uiProgressBar1.Maximum = ds.Tables[k].Rows.Count;
-                    // MessageBox.Show("进度条长度"+uiProgressBar1.Maximum.ToString());
-
-
-                    for (int i = 0; i < uiProgressBar1.Maximum; i++)
+                    catch (Exception ex)
                     {
-                        uiProgressBar1.Value = i + 1;
-
-                        Application.DoEvents();
-
-                        this.lblSysMessage.Text = Convert.ToString("已经导入" + uiProgressBar1.Value + "条数据");
+                        MessageBox.Show("操作无法！因为数据格式不符合规范。");
                     }
-
-
 
                 }
+   
 
-                conn.Close();
-
-                MessageBox.Show("数据导入成功！");
-
-
-            }
-            catch (Exception ex)
+            }else
             {
-                MessageBox.Show("数据导入异常！请检查文件名称及数据格式。");
+
+                MessageBox.Show("操作无法完成！因为文件命名不符合规范");
+
             }
 
         }
