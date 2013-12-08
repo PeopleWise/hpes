@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSubmitData));
+            Janus.Windows.GridEX.GridEXLayout gridEX1_DesignTimeLayout = new Janus.Windows.GridEX.GridEXLayout();
             this.hpes_submit_dataBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.hpes_submit_dataBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -45,18 +46,14 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.hpes_submit_dataBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.hpes_submit_dataDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hpes_submit_dataTableAdapter = new HPES.dsSubmitDataTableAdapters.hpes_submit_dataTableAdapter();
             this.tableAdapterManager = new HPES.dsSubmitDataTableAdapters.TableAdapterManager();
+            this.gridEX1 = new Janus.Windows.GridEX.GridEX();
             ((System.ComponentModel.ISupportInitialize)(this.hpes_submit_dataBindingNavigator)).BeginInit();
             this.hpes_submit_dataBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hpes_submit_dataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSubmitData)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hpes_submit_dataDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEX1)).BeginInit();
             this.SuspendLayout();
             // 
             // hpes_submit_dataBindingNavigator
@@ -193,50 +190,6 @@
             this.hpes_submit_dataBindingNavigatorSaveItem.Text = "保存数据";
             this.hpes_submit_dataBindingNavigatorSaveItem.Click += new System.EventHandler(this.hpes_submit_dataBindingNavigatorSaveItem_Click_1);
             // 
-            // hpes_submit_dataDataGridView
-            // 
-            this.hpes_submit_dataDataGridView.AutoGenerateColumns = false;
-            this.hpes_submit_dataDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.hpes_submit_dataDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.hpes_submit_dataDataGridView.DataSource = this.hpes_submit_dataBindingSource;
-            this.hpes_submit_dataDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.hpes_submit_dataDataGridView.Location = new System.Drawing.Point(0, 25);
-            this.hpes_submit_dataDataGridView.Name = "hpes_submit_dataDataGridView";
-            this.hpes_submit_dataDataGridView.RowTemplate.Height = 23;
-            this.hpes_submit_dataDataGridView.Size = new System.Drawing.Size(443, 269);
-            this.hpes_submit_dataDataGridView.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "序号";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "NAME";
-            this.dataGridViewTextBoxColumn2.HeaderText = "名称";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "VALUE";
-            this.dataGridViewTextBoxColumn3.HeaderText = "值";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "INFO";
-            this.dataGridViewTextBoxColumn4.HeaderText = "说明";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
             // hpes_submit_dataTableAdapter
             // 
             this.hpes_submit_dataTableAdapter.ClearBeforeFill = true;
@@ -247,12 +200,24 @@
             this.tableAdapterManager.hpes_submit_dataTableAdapter = this.hpes_submit_dataTableAdapter;
             this.tableAdapterManager.UpdateOrder = HPES.dsSubmitDataTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // gridEX1
+            // 
+            this.gridEX1.DataSource = this.hpes_submit_dataBindingSource;
+            gridEX1_DesignTimeLayout.LayoutString = resources.GetString("gridEX1_DesignTimeLayout.LayoutString");
+            this.gridEX1.DesignTimeLayout = gridEX1_DesignTimeLayout;
+            this.gridEX1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridEX1.GroupByBoxVisible = false;
+            this.gridEX1.Location = new System.Drawing.Point(0, 25);
+            this.gridEX1.Name = "gridEX1";
+            this.gridEX1.Size = new System.Drawing.Size(443, 269);
+            this.gridEX1.TabIndex = 1;
+            // 
             // frmSubmitData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(443, 294);
-            this.Controls.Add(this.hpes_submit_dataDataGridView);
+            this.Controls.Add(this.gridEX1);
             this.Controls.Add(this.hpes_submit_dataBindingNavigator);
             this.Name = "frmSubmitData";
             this.Text = "基础数据";
@@ -262,7 +227,7 @@
             this.hpes_submit_dataBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hpes_submit_dataBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSubmitData)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hpes_submit_dataDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEX1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,11 +252,7 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton hpes_submit_dataBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView hpes_submit_dataDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private Janus.Windows.GridEX.GridEX gridEX1;
 
     }
 }
