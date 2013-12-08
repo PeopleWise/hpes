@@ -38,7 +38,7 @@ namespace HPES.Model
                 for (int col = 0; col < dt.Columns.Count; col++)
                 {
                     newSheet.Cells[1, col + 1] = dt.Columns[col].ColumnName;
-                    ((Range)newSheet.Columns[1, Missing.Value]).Cells.Validation.Add(XlDVType.xlValidateList, XlDVAlertStyle.xlValidAlertInformation, XlFormatConditionOperator.xlBetween, "1,100", Type.Missing);
+                    //((Range)newSheet.Columns[1, Missing.Value]).Cells.Validation.Add(XlDVType.xlValidateList, XlDVAlertStyle.xlValidAlertInformation, XlFormatConditionOperator.xlBetween, "1,100", Type.Missing);
                     //((Range)newSheet.Columns[1, Missing.Value]).Cells.Validation.Modify(Microsoft.Office.Interop.Excel.XlDVType.xlValidateList, Microsoft.Office.Interop.Excel.XlDVAlertStyle.xlValidAlertStop, Microsoft.Office.Interop.Excel.XlFormatConditionOperator.xlBetween, 99, Missing.Value); 
                 }
                 for (int row = 0; row < dt.Rows.Count; row++)
@@ -48,6 +48,46 @@ namespace HPES.Model
                         newSheet.Cells[row + 2, col + 1] = (dt.Rows[row][col] == null ? "" : dt.Rows[row][col].ToString());
                     }
                 }
+
+
+
+                if (newSheet.Name.Equals("医用耗材"))
+                {
+                    var column = (Range)newSheet.Columns["F", Missing.Value];
+                    var column1 = (Range)newSheet.Columns["G", Missing.Value];
+
+                    column.Validation.Delete();
+                    column.Validation.Add(XlDVType.xlValidateList, XlDVAlertStyle.xlValidAlertWarning, XlFormatConditionOperator.xlBetween, "是,否", Type.Missing);
+                    //column.Validation.IgnoreBlank = true;
+                    //column.Validation.InCellDropdown = true;
+                    column1.Validation.Delete();
+                    column1.Validation.Add(XlDVType.xlValidateList, XlDVAlertStyle.xlValidAlertWarning, XlFormatConditionOperator.xlBetween, "是,否", Type.Missing);
+
+                }
+                else if (newSheet.Name.Equals("医院在用药品"))
+                {
+                    var column = (Range)newSheet.Columns["F", Missing.Value];
+                    var column1 = (Range)newSheet.Columns["G", Missing.Value];
+                    var column2 = (Range)newSheet.Columns["H", Missing.Value];
+                    column.Validation.Delete();
+                    column.Validation.Add(XlDVType.xlValidateList, XlDVAlertStyle.xlValidAlertWarning, XlFormatConditionOperator.xlBetween, "是,否", Type.Missing);
+                    column1.Validation.Delete();
+                    column1.Validation.Add(XlDVType.xlValidateList, XlDVAlertStyle.xlValidAlertWarning, XlFormatConditionOperator.xlBetween, "是,否", Type.Missing);
+                    column2.Validation.Delete();
+                    column2.Validation.Add(XlDVType.xlValidateList, XlDVAlertStyle.xlValidAlertWarning, XlFormatConditionOperator.xlBetween, "是,否", Type.Missing);
+
+
+                }
+                else if (newSheet.Name.Equals("基础数据"))
+                {
+
+                    var column = (Range)newSheet.Columns["A", Missing.Value];
+
+                    column.ColumnWidth = 20;
+
+                }
+
+
             }
 
             try
