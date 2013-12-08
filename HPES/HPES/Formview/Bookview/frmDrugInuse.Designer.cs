@@ -31,10 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDrugInuse));
             Janus.Windows.GridEX.GridEXLayout gridEX1_DesignTimeLayout = new Janus.Windows.GridEX.GridEXLayout();
-            this.dsDrug = new HPES.dsDrug();
-            this.hpes_drugBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.hpes_drugTableAdapter = new HPES.dsDrugTableAdapters.hpes_drugTableAdapter();
-            this.tableAdapterManager = new HPES.dsDrugTableAdapters.TableAdapterManager();
             this.hpes_drugBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -49,32 +45,20 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.hpes_drugBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.gridEX1 = new Janus.Windows.GridEX.GridEX();
-            ((System.ComponentModel.ISupportInitialize)(this.dsDrug)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hpes_drugBindingSource)).BeginInit();
+            this.hpes_drugBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsDrug = new HPES.dsDrug();
+            this.hpes_drugTableAdapter = new HPES.dsDrugTableAdapters.hpes_drugTableAdapter();
+            this.tableAdapterManager = new HPES.dsDrugTableAdapters.TableAdapterManager();
+            this.dsDrugInuse = new HPES.dsDrugInuse();
+            this.dsDrugInuseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.hpes_drugBindingNavigator)).BeginInit();
             this.hpes_drugBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEX1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hpes_drugBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsDrug)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsDrugInuse)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsDrugInuseBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dsDrug
-            // 
-            this.dsDrug.DataSetName = "dsDrug";
-            this.dsDrug.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // hpes_drugBindingSource
-            // 
-            this.hpes_drugBindingSource.DataMember = "hpes_drug";
-            this.hpes_drugBindingSource.DataSource = this.dsDrug;
-            // 
-            // hpes_drugTableAdapter
-            // 
-            this.hpes_drugTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.hpes_drugTableAdapter = this.hpes_drugTableAdapter;
-            this.tableAdapterManager.UpdateOrder = HPES.dsDrugTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // hpes_drugBindingNavigator
             // 
@@ -202,14 +186,45 @@
             // 
             // gridEX1
             // 
-            this.gridEX1.DataSource = this.hpes_drugBindingSource;
+            this.gridEX1.DataSource = this.dsDrugInuseBindingSource;
             gridEX1_DesignTimeLayout.LayoutString = resources.GetString("gridEX1_DesignTimeLayout.LayoutString");
             this.gridEX1.DesignTimeLayout = gridEX1_DesignTimeLayout;
             this.gridEX1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridEX1.GroupByBoxVisible = false;
             this.gridEX1.Location = new System.Drawing.Point(0, 25);
             this.gridEX1.Name = "gridEX1";
             this.gridEX1.Size = new System.Drawing.Size(894, 400);
             this.gridEX1.TabIndex = 1;
+            // 
+            // hpes_drugBindingSource
+            // 
+            this.hpes_drugBindingSource.DataMember = "hpes_drug";
+            this.hpes_drugBindingSource.DataSource = this.dsDrug;
+            // 
+            // dsDrug
+            // 
+            this.dsDrug.DataSetName = "dsDrug";
+            this.dsDrug.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // hpes_drugTableAdapter
+            // 
+            this.hpes_drugTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.hpes_drugTableAdapter = this.hpes_drugTableAdapter;
+            this.tableAdapterManager.UpdateOrder = HPES.dsDrugTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // dsDrugInuse
+            // 
+            this.dsDrugInuse.DataSetName = "dsDrugInuse";
+            this.dsDrugInuse.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dsDrugInuseBindingSource
+            // 
+            this.dsDrugInuseBindingSource.DataSource = this.dsDrugInuse;
+            this.dsDrugInuseBindingSource.Position = 0;
             // 
             // frmDrugInuse
             // 
@@ -221,12 +236,14 @@
             this.Name = "frmDrugInuse";
             this.Text = "医院在用药品";
             this.Load += new System.EventHandler(this.frmDrugInuse_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dsDrug)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hpes_drugBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hpes_drugBindingNavigator)).EndInit();
             this.hpes_drugBindingNavigator.ResumeLayout(false);
             this.hpes_drugBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEX1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hpes_drugBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsDrug)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsDrugInuse)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsDrugInuseBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,5 +269,7 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton hpes_drugBindingNavigatorSaveItem;
         private Janus.Windows.GridEX.GridEX gridEX1;
+        private System.Windows.Forms.BindingSource dsDrugInuseBindingSource;
+        private dsDrugInuse dsDrugInuse;
     }
 }
