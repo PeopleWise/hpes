@@ -615,15 +615,15 @@ namespace HPES.Formview.Main
                     {
                         targetTable = "hpes_material";
 
-                        strExcel = "select 耗材编码,耗材名称,耗材单位,耗材厂家,耗材规格,中标,统计 from [" + strTableNames[k] + "]";
+                        strExcel = "select 耗材编码,耗材名称,耗材单位,耗材厂家,耗材规格,iif(中标='是',1,0) as 中标,iif(统计='是',1,0) as 统计 from [" + strTableNames[k] + "]";
                     }
                     else if (sheetName.Equals("医院在用药品"))
                     {
 
                         targetTable = "hpes_drug";
 
-                        //strexcel = "select 药品编码,药品名称,药品规格,药品单位,药品厂家,抗菌药,中标,统计 from [" + strtablenames[k] + "]";
-                        strExcel = "select * from [" + strTableNames[k] + "]";
+                        strExcel = "select 药品编码,药品名称,药品规格,药品单位,药品厂家,iif(抗菌药='是',1,0) as 抗菌药,iif(中标='是',1,0) as 中标,iif(统计='是',1,0) as 统计 from [" + strTableNames[k] + "]";
+                        //strExcel = "select * from [" + strTableNames[k] + "]";
 
 
                     }

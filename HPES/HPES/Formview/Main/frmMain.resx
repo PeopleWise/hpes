@@ -131,7 +131,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAD0
-        WgAAAk1TRnQBSQFMAgEBHgEAAeQBAAHkAQABIAEAASABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        WgAAAk1TRnQBSQFMAgEBHgEAAewBAAHsAQABIAEAASABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABgAQAAQECAAEBAQABCAYAAYAYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -2507,26 +2507,6 @@
         Oc0UUgCk5xzRRTA//9k=
 </value>
   </data>
-  <data name="ribbon1.BackstageMenuData" xml:space="preserve">
-    <value>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;BackstageMenu&gt;&lt;ImageKey /&gt;&lt;Key /&gt;&lt;Text&gt;系统&lt;/Text&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;BackColor&gt;Desktop&lt;/BackColor&gt;&lt;Commands Collection="true" ElementName="Command"&gt;&lt;Command0 ID="backstageTab1"&gt;&lt;CommandType&gt;Janus.Windows.Ribbon.BackstageTab&lt;/CommandType&gt;&lt;AllowAddToQuickAccessBar&gt;False&lt;/AllowAddToQuickAccessBar&gt;&lt;Key&gt;backstageTab1&lt;/Key&gt;&lt;Name&gt;backstageTab1&lt;/Name&gt;&lt;Text&gt;关于系统...&lt;/Text&gt;&lt;/Command0&gt;&lt;Command1 ID="backstageTab2"&gt;&lt;CommandType&gt;Janus.Windows.Ribbon.BackstageTab&lt;/CommandType&gt;&lt;AllowAddToQuickAccessBar&gt;False&lt;/AllowAddToQuickAccessBar&gt;&lt;Key&gt;backstageTab2&lt;/Key&gt;&lt;Name&gt;backstageTab2&lt;/Name&gt;&lt;Text&gt;使用说明...&lt;/Text&gt;&lt;/Command1&gt;&lt;Command2 ID="buttonCommand6"&gt;&lt;CommandType&gt;Janus.Windows.Ribbon.ButtonCommand&lt;/CommandType&gt;&lt;Key&gt;buttonCommand6&lt;/Key&gt;&lt;Name&gt;buttonCommand6&lt;/Name&gt;&lt;ImageIndex&gt;29&lt;/ImageIndex&gt;&lt;LargeImageIndex&gt;29&lt;/LargeImageIndex&gt;&lt;Style&gt;ImageAndText&lt;/Style&gt;&lt;Text&gt;退出系统&lt;/Text&gt;&lt;/Command2&gt;&lt;/Commands&gt;&lt;/BackstageMenu&gt;</value>
-  </data>
-  <data name="ribbon1.BuiltInTextsData" xml:space="preserve">
-    <value>&lt;LocalizableData ID="LocalizableStrings" Collection="true"&gt;&lt;Minimize&gt;最小化&lt;/Minimize&gt;&lt;Maximize&gt;最大化&lt;/Maximize&gt;&lt;Close&gt;关闭&lt;/Close&gt;&lt;Restore&gt;还原&lt;/Restore&gt;&lt;CustomizeQA&gt;自定义快速访问工具栏&lt;/CustomizeQA&gt;&lt;RemoveFromQA&gt;从快速访问工具栏中移除(&amp;amp;R)...&lt;/RemoveFromQA&gt;&lt;AddToQA&gt;添加到快速访问工具栏(&amp;amp;A)&lt;/AddToQA&gt;&lt;ShowBelowRibbon&gt;在工具栏下面显示(&amp;amp;S)&lt;/ShowBelowRibbon&gt;&lt;ShowAboveRibbon&gt;在工具栏上面显示(&amp;amp;S)&lt;/ShowAboveRibbon&gt;&lt;MinimizeRibbon&gt;最小化工具栏(&amp;amp;N)&lt;/MinimizeRibbon&gt;&lt;/LocalizableData&gt;</value>
-  </data>
-  <data name="ribbon1.HelpButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAblJREFUOE99U71L
-        w0AUv24uFnFw829wq2uXFlSEboWitUOLoFUyFHUQWyGKimi0Dt2sm5MUsghVCC0FRSpZBMeMgiihk+Dw
-        fO/l0nwYPfhBSPL7encXExFrRevDx+BbfA7ehQAhxuMjYmx0RExOxMX2wlQsisPvVs/6kKp0oHBgQkFD
-        NCTwOVMzIVXWYfmoi5IRq3T8xEQFSUrDYmgtB/SOBVnIgKxqBEXK531JdohNwwL7yw6g9WAFRBYPO55I
-        GmMPnZse2Xi1OYFtO2LatRTBpAmss9M0QazXnyPdiezGJncS4BQ0H0RyywBOkVMf+Ue3N/f1daZv1puT
-        oEYJkJwh4CxmKm0Q6YrOBEcgSK756jRvfWQWwBpF3S/w29ntHnR2yJSABXLqvbfncqvc7hTdMHEWw9gu
-        2ZnBLFVQLnqsGO7NInJg3FnGdt2TCg5RxSHWb14gvYZzCLkT2T0LDsmLnkF3il+9xG2kpWiUwvBEpDNV
-        IITJ5J5XQ0c6j3vKIv/EJmciZ6uho+xejdJpD6axDg2IxIZ9JTFR0mFp74/L5L9fxZMezG/eAREIcxtt
-        KOx3YfdKdvb9/AOyO1H4TBVTXAAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         /9j/4AAQSkZJRgABAQEASABIAAD/7gAOQWRvYmUAZAAAAAAB/+EjCkV4aWYAAE1NACoAAAAIAAcBEgAD
@@ -3811,39 +3791,59 @@
 数据录入完成后，点击“实用工具”中的“保存”按钮进行保存。
 考评完成后，可以在“考评汇总”中查看各医院、各年度的评分汇总，点击分值还可以查看详细的考评评分记录。</value>
   </data>
+  <data name="ribbon1.BackstageMenuData" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;BackstageMenu&gt;&lt;ImageKey /&gt;&lt;Key /&gt;&lt;Text&gt;系统&lt;/Text&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;BackColor&gt;Desktop&lt;/BackColor&gt;&lt;Commands Collection="true" ElementName="Command"&gt;&lt;Command0 ID="backstageTab1"&gt;&lt;CommandType&gt;Janus.Windows.Ribbon.BackstageTab&lt;/CommandType&gt;&lt;AllowAddToQuickAccessBar&gt;False&lt;/AllowAddToQuickAccessBar&gt;&lt;Key&gt;backstageTab1&lt;/Key&gt;&lt;Name&gt;backstageTab1&lt;/Name&gt;&lt;Text&gt;关于系统...&lt;/Text&gt;&lt;/Command0&gt;&lt;Command1 ID="backstageTab2"&gt;&lt;CommandType&gt;Janus.Windows.Ribbon.BackstageTab&lt;/CommandType&gt;&lt;AllowAddToQuickAccessBar&gt;False&lt;/AllowAddToQuickAccessBar&gt;&lt;Key&gt;backstageTab2&lt;/Key&gt;&lt;Name&gt;backstageTab2&lt;/Name&gt;&lt;Text&gt;使用说明...&lt;/Text&gt;&lt;/Command1&gt;&lt;Command2 ID="buttonCommand6"&gt;&lt;CommandType&gt;Janus.Windows.Ribbon.ButtonCommand&lt;/CommandType&gt;&lt;Key&gt;buttonCommand6&lt;/Key&gt;&lt;Name&gt;buttonCommand6&lt;/Name&gt;&lt;ImageIndex&gt;29&lt;/ImageIndex&gt;&lt;LargeImageIndex&gt;29&lt;/LargeImageIndex&gt;&lt;Style&gt;ImageAndText&lt;/Style&gt;&lt;Text&gt;退出系统&lt;/Text&gt;&lt;/Command2&gt;&lt;/Commands&gt;&lt;/BackstageMenu&gt;</value>
+  </data>
+  <data name="ribbon1.BuiltInTextsData" xml:space="preserve">
+    <value>&lt;LocalizableData ID="LocalizableStrings" Collection="true"&gt;&lt;Minimize&gt;最小化&lt;/Minimize&gt;&lt;Maximize&gt;最大化&lt;/Maximize&gt;&lt;Close&gt;关闭&lt;/Close&gt;&lt;Restore&gt;还原&lt;/Restore&gt;&lt;CustomizeQA&gt;自定义快速访问工具栏&lt;/CustomizeQA&gt;&lt;RemoveFromQA&gt;从快速访问工具栏中移除(&amp;amp;R)...&lt;/RemoveFromQA&gt;&lt;AddToQA&gt;添加到快速访问工具栏(&amp;amp;A)&lt;/AddToQA&gt;&lt;ShowBelowRibbon&gt;在工具栏下面显示(&amp;amp;S)&lt;/ShowBelowRibbon&gt;&lt;ShowAboveRibbon&gt;在工具栏上面显示(&amp;amp;S)&lt;/ShowAboveRibbon&gt;&lt;MinimizeRibbon&gt;最小化工具栏(&amp;amp;N)&lt;/MinimizeRibbon&gt;&lt;/LocalizableData&gt;</value>
+  </data>
+  <data name="ribbon1.HelpButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAadJREFUOE99U71L
+        w0AUz19V1y4tqAjdAgVrh5aCVglY1KkfEkVFarQO3Yzg4CSFLEIVQkuhIpU4CI4ZHTO6Pd97d5cvowcP
+        wuV+X+/daVrG2rQWoB/OodByoLDrgN4bQ6M/BfPuHbLOh3tblwsETaB64kHVwhrKwu9S14NC04HG2TSb
+        pH7+ykADQcbQ57JGomiPCZnIBd10kyTNq4UEC6Dt+hB8B4kazf0EyfrpJCIpou1Q2Y7A7mfADoJAkFn3
+        kgSd5jBO2/ZA2xm8ZaoTWNkmdSJgF9QfrPyBC+yibL7wQZWb88Yy0z//SzjokgMEl6iwF8utMWhFHBUB
+        BEES3I3FsR9jYCbAGDUnTvBbWWVPKgswOWCCsvkczVyOSmUn666HvQhtK7DowQpFMK5nzJjOzSSyYZxZ
+        2lbqeQObaGITBw8fUNzGPqTUCazuggBF1kuoTvY7NzhGWoZFLtyIRCpTBKo0mNQrZupKV3CmTPKPbVIm
+        sN5JXWX1muoXM1jCONQgIgvzSmCu7sDG0R+PKf5Ma/0ZrO0/AQGoVvfGUD2eQu9WZo4d/gHY21lz7Gyy
+        0QAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="buttonCommand4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="buttonCommand5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAQ+QAA
-        EPkBZn47PwAAAkBJREFUWEfFVz1LA0EQvQhaihYWsRPShUi+SPIHLLQWBEGIP8HC0iZVQLDLHxADkkJi
-        axG0EOxSWgVCSGG6gIUQSM73jl1Zjgs7mztJYLhl9828N7M7m7uU7/veWn8UILFisZgplUq3eL7j+RFl
-        ao2YjCRmkLwEiIBnIJzDfKHN6SOJbRWA7dkA6VARL8rl8hvG3ShTawuFHdLXJsIqAEGPdNbI6tIWkBiN
-        p68NbxWAgHUdMJfL7doCEmMIrtvwTgLy+fyOLSAxSQvIsAq0bDa7ZRNAjMZLuuGvApVK5QB7dmo4B6RJ
-        GznIpRPhHcRT3oLp0ytttTg4crXI7SHDa2FvxyGM9CW3B/LPdQkgNwW43HDMZAblz3jeYD+PaRyruZlj
-        MnMKcCltH0SHyzqBa4jXd4npIuABgTdtbUgMjFhRYlIBo2q1um0j1+vEQsBIIkIkAPt8EiZHuWvGjVcL
-        r9MnKQFT9GvKVQB9IGBqEyGpQM8kR2YXCNqE3RvBOW5yzcRirhdbAEp9FwrKd4FlB6xrYukbWwACdEIC
-        2qq030ZwjlnudgjbSULAIOr02w4hfUA+SEKAXygU9l0PIX1s5FyXHELu91NYAAj29F81x+F1+iQpgCLO
-        pRcRsRJylwpQwA/a7CrqTjBeLlLEEPsfAoLWQ9lf1S2X1sSYT3OOa1JijeMZmLg6GfgvjGmiP54I3MSD
-        8scYAVYlDvzI7al2Ga9BxJjcwVux+phoQMQLLPLDM8F5cjT0R471w0TaeqvifgHcLlvy2o0aQwAAAABJ
-        RU5ErkJggg==
+        EPkBZn47PwAAAjxJREFUWEfFVz1LA0EQ3QhaihYWsRPShUi+SPIHLLQWBEGIP8HC0iZVQLDLHxADkkJi
+        axG0EOwsrQIhWGgXsBACyfnesSvLcWFnvZMUwy27b+a9mdvZu1VBEKhlmpi8XC7nKpXKJZ7PeL7EmV4j
+        JidNSiQAAY9AOIMFQpvRRyLCKUAptQLSkSaeV6vVJ4z7cabX5ho7oq9LhFMAgu6ZrJHVqSsgMQZPXxfe
+        KQABmyZgoVDYdAUkxhLcdOG9BBSLxQ1XQGLSFpBjFWj5fH7NJYAYg5d0w28FarXaDt7ZoeUckqZt5CCX
+        SQQbNdzlHZjZvdJWS4IjV4fcChmeC3s7CWGsL7kVyN+WJYDcFOBzwjGTKZTf43mB97lP41jPTT2TmVGA
+        T2lfQbS7qBO4hnivPjF9BNwg8KqrDYmBEStKTCpgXK/X113kZp1YCBhLRIgE4D0fRMlR7oZ14jWi6/RJ
+        S8AE/ZrxFUAfCJi4REgqMLDJkdkJgrZh11Zwjttcs7GYGyQWgFJfRYLyX2DRBuvbWPomFoAAvYiAri7t
+        lxWcY5a7G8H20hAwjNv9rk1IH5AP0xAQlEqlbd9NSB8XOdclm5Dv+y4qAARb5lPNcXSdPmkKoIhj6UFE
+        rITcpwIU8I02O4s7E6yfiwwxxP6HgLD1UPZHfcplDTHms5zjmpTY4LgHPn2dLPwHxjTRhycG96mg/DZB
+        gL8Sh37kVrpd3pcg4p3c4V+xvky0IOIBFnvxTHGeHC1zyXFeTKSt91fcDwSZuJRzoBxaAAAAAElFTkSu
+        QmCC
 </value>
   </data>
   <metadata name="dsHospitalBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -3852,14 +3852,8 @@
   <metadata name="dsHospital.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>380, 128</value>
   </metadata>
-  <metadata name="dsHospital.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>380, 128</value>
-  </metadata>
   <metadata name="dsYearBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>782, 128</value>
-  </metadata>
-  <metadata name="dsYear.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>693, 128</value>
   </metadata>
   <metadata name="dsYear.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>693, 128</value>
@@ -12088,9 +12082,6 @@
   <data name="gridEX1_DesignTimeLayout.LayoutString" xml:space="preserve">
     <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;AllowAddNew&gt;False&lt;/AllowAddNew&gt;&lt;AllowChildTableGroups&gt;False&lt;/AllowChildTableGroups&gt;&lt;Key&gt;hpes_submit_data&lt;/Key&gt;&lt;Caption&gt;hpes_submit_data&lt;/Caption&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="ID"&gt;&lt;Caption&gt;标识&lt;/Caption&gt;&lt;DataTypeCode&gt;Int32&lt;/DataTypeCode&gt;&lt;TypeNameEmptyStringValue&gt;NULL&lt;/TypeNameEmptyStringValue&gt;&lt;EmptyStringValue /&gt;&lt;DataMember&gt;ID&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;ID&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column0&gt;&lt;Column1 ID="NAME"&gt;&lt;Caption&gt;名称&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;NAME&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;NAME&lt;/Key&gt;&lt;MaxLength&gt;50&lt;/MaxLength&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Width&gt;130&lt;/Width&gt;&lt;/Column1&gt;&lt;Column2 ID="VALUE"&gt;&lt;Caption&gt;数据&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;VALUE&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;InputMask&gt;Number&lt;/InputMask&gt;&lt;Key&gt;VALUE&lt;/Key&gt;&lt;MaxLength&gt;50&lt;/MaxLength&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;&lt;Width&gt;70&lt;/Width&gt;&lt;FormatMode&gt;UseInputMask&lt;/FormatMode&gt;&lt;/Column2&gt;&lt;Column3 ID="INFO"&gt;&lt;Caption&gt;说明&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;INFO&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;INFO&lt;/Key&gt;&lt;MaxLength&gt;50&lt;/MaxLength&gt;&lt;Position&gt;3&lt;/Position&gt;&lt;Width&gt;80&lt;/Width&gt;&lt;/Column3&gt;&lt;/Columns&gt;&lt;AllowDelete&gt;False&lt;/AllowDelete&gt;&lt;AllowEdit&gt;False&lt;/AllowEdit&gt;&lt;AllowGroup&gt;False&lt;/AllowGroup&gt;&lt;GroupCondition /&gt;&lt;PreviewRowLines&gt;7&lt;/PreviewRowLines&gt;&lt;/RootTable&gt;&lt;/GridEXLayoutData&gt;</value>
   </data>
-  <metadata name="dsSubmitData.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>211, 54</value>
-  </metadata>
   <metadata name="hpesdrugBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 91</value>
   </metadata>
@@ -12100,9 +12091,6 @@
   <data name="gridEX2_DesignTimeLayout.LayoutString" xml:space="preserve">
     <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;AllowAddNew&gt;False&lt;/AllowAddNew&gt;&lt;Key&gt;hpes_drug&lt;/Key&gt;&lt;Caption&gt;hpes_drug&lt;/Caption&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="ID"&gt;&lt;Caption&gt;ID&lt;/Caption&gt;&lt;DataTypeCode&gt;Int32&lt;/DataTypeCode&gt;&lt;TypeNameEmptyStringValue&gt;NULL&lt;/TypeNameEmptyStringValue&gt;&lt;EmptyStringValue /&gt;&lt;DataMember&gt;ID&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;ID&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column0&gt;&lt;Column1 ID="DCODE"&gt;&lt;Caption&gt;编码&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;DCODE&lt;/DataMember&gt;&lt;Key&gt;DCODE&lt;/Key&gt;&lt;MaxLength&gt;50&lt;/MaxLength&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column1&gt;&lt;Column2 ID="HID"&gt;&lt;Caption&gt;HID&lt;/Caption&gt;&lt;DataTypeCode&gt;Int32&lt;/DataTypeCode&gt;&lt;DataMember&gt;HID&lt;/DataMember&gt;&lt;Key&gt;HID&lt;/Key&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column2&gt;&lt;Column3 ID="YID"&gt;&lt;Caption&gt;YID&lt;/Caption&gt;&lt;DataTypeCode&gt;Int32&lt;/DataTypeCode&gt;&lt;DataMember&gt;YID&lt;/DataMember&gt;&lt;Key&gt;YID&lt;/Key&gt;&lt;Position&gt;3&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column3&gt;&lt;Column4 ID="STATISTICS"&gt;&lt;Caption&gt;统计&lt;/Caption&gt;&lt;DataTypeCode&gt;Boolean&lt;/DataTypeCode&gt;&lt;ColumnType&gt;CheckBox&lt;/ColumnType&gt;&lt;DataMember&gt;STATISTICS&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;STATISTICS&lt;/Key&gt;&lt;Position&gt;4&lt;/Position&gt;&lt;Width&gt;34&lt;/Width&gt;&lt;/Column4&gt;&lt;Column5 ID="BID"&gt;&lt;Caption&gt;中标&lt;/Caption&gt;&lt;DataTypeCode&gt;Boolean&lt;/DataTypeCode&gt;&lt;ColumnType&gt;CheckBox&lt;/ColumnType&gt;&lt;DataMember&gt;BID&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;BID&lt;/Key&gt;&lt;Position&gt;5&lt;/Position&gt;&lt;Width&gt;34&lt;/Width&gt;&lt;/Column5&gt;&lt;Column6 ID="ANTIBACTERIAL"&gt;&lt;Caption&gt;抗菌&lt;/Caption&gt;&lt;DataTypeCode&gt;Boolean&lt;/DataTypeCode&gt;&lt;ColumnType&gt;CheckBox&lt;/ColumnType&gt;&lt;DataMember&gt;ANTIBACTERIAL&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;ANTIBACTERIAL&lt;/Key&gt;&lt;Position&gt;6&lt;/Position&gt;&lt;Width&gt;34&lt;/Width&gt;&lt;/Column6&gt;&lt;Column7 ID="NAME"&gt;&lt;Caption&gt;药品名称&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;NAME&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;NAME&lt;/Key&gt;&lt;MaxLength&gt;50&lt;/MaxLength&gt;&lt;Position&gt;7&lt;/Position&gt;&lt;Width&gt;110&lt;/Width&gt;&lt;/Column7&gt;&lt;Column8 ID="SPECIFICATION"&gt;&lt;Caption&gt;规格&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;SPECIFICATION&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;SPECIFICATION&lt;/Key&gt;&lt;MaxLength&gt;50&lt;/MaxLength&gt;&lt;Position&gt;8&lt;/Position&gt;&lt;Width&gt;60&lt;/Width&gt;&lt;/Column8&gt;&lt;Column9 ID="UNIT"&gt;&lt;Caption&gt;单位&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;UNIT&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;FilterEditType&gt;Combo&lt;/FilterEditType&gt;&lt;Key&gt;UNIT&lt;/Key&gt;&lt;MaxLength&gt;50&lt;/MaxLength&gt;&lt;Position&gt;9&lt;/Position&gt;&lt;Width&gt;50&lt;/Width&gt;&lt;/Column9&gt;&lt;Column10 ID="FACTORY"&gt;&lt;Caption&gt;厂家&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;FACTORY&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;FACTORY&lt;/Key&gt;&lt;MaxLength&gt;50&lt;/MaxLength&gt;&lt;Position&gt;10&lt;/Position&gt;&lt;Width&gt;70&lt;/Width&gt;&lt;/Column10&gt;&lt;/Columns&gt;&lt;SortKeys Collection="true" ElementName="SortKey"&gt;&lt;SortKey0 ID="SortKey0"&gt;&lt;ColIndex&gt;8&lt;/ColIndex&gt;&lt;/SortKey0&gt;&lt;/SortKeys&gt;&lt;AllowDelete&gt;False&lt;/AllowDelete&gt;&lt;AllowEdit&gt;False&lt;/AllowEdit&gt;&lt;AllowGroup&gt;False&lt;/AllowGroup&gt;&lt;GroupCondition /&gt;&lt;/RootTable&gt;&lt;/GridEXLayoutData&gt;</value>
   </data>
-  <metadata name="dsDrug.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>781, 54</value>
-  </metadata>
   <metadata name="hpesmaterialBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>492, 91</value>
   </metadata>
@@ -12112,9 +12100,6 @@
   <data name="gridEX3_DesignTimeLayout.LayoutString" xml:space="preserve">
     <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Key&gt;hpes_material&lt;/Key&gt;&lt;Caption&gt;hpes_material&lt;/Caption&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="ID"&gt;&lt;Caption&gt;ID&lt;/Caption&gt;&lt;DataTypeCode&gt;Int32&lt;/DataTypeCode&gt;&lt;TypeNameEmptyStringValue&gt;NULL&lt;/TypeNameEmptyStringValue&gt;&lt;EmptyStringValue /&gt;&lt;DataMember&gt;ID&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;ID&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column0&gt;&lt;Column1 ID="HID"&gt;&lt;Caption&gt;HID&lt;/Caption&gt;&lt;DataTypeCode&gt;Int32&lt;/DataTypeCode&gt;&lt;TypeNameEmptyStringValue&gt;NULL&lt;/TypeNameEmptyStringValue&gt;&lt;EmptyStringValue /&gt;&lt;DataMember&gt;HID&lt;/DataMember&gt;&lt;Key&gt;HID&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column1&gt;&lt;Column2 ID="YID"&gt;&lt;Caption&gt;YID&lt;/Caption&gt;&lt;DataTypeCode&gt;Int32&lt;/DataTypeCode&gt;&lt;DataMember&gt;YID&lt;/DataMember&gt;&lt;Key&gt;YID&lt;/Key&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column2&gt;&lt;Column3 ID="STATISTICS"&gt;&lt;Caption&gt;统计&lt;/Caption&gt;&lt;DataTypeCode&gt;Boolean&lt;/DataTypeCode&gt;&lt;ColumnType&gt;CheckBox&lt;/ColumnType&gt;&lt;DataMember&gt;STATISTICS&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;STATISTICS&lt;/Key&gt;&lt;Position&gt;3&lt;/Position&gt;&lt;Width&gt;33&lt;/Width&gt;&lt;/Column3&gt;&lt;Column4 ID="BID"&gt;&lt;Caption&gt;中标&lt;/Caption&gt;&lt;DataTypeCode&gt;Boolean&lt;/DataTypeCode&gt;&lt;ColumnType&gt;CheckBox&lt;/ColumnType&gt;&lt;DataMember&gt;BID&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;BID&lt;/Key&gt;&lt;Position&gt;4&lt;/Position&gt;&lt;Width&gt;33&lt;/Width&gt;&lt;/Column4&gt;&lt;Column5 ID="MCODE"&gt;&lt;Caption&gt;编码&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;MCODE&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;MCODE&lt;/Key&gt;&lt;MaxLength&gt;50&lt;/MaxLength&gt;&lt;Position&gt;5&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column5&gt;&lt;Column6 ID="NAME"&gt;&lt;Caption&gt;耗材名称&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;NAME&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;NAME&lt;/Key&gt;&lt;MaxLength&gt;50&lt;/MaxLength&gt;&lt;Position&gt;6&lt;/Position&gt;&lt;/Column6&gt;&lt;Column7 ID="SPECIFICATION"&gt;&lt;Caption&gt;规格&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;SPECIFICATION&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;SPECIFICATION&lt;/Key&gt;&lt;Position&gt;7&lt;/Position&gt;&lt;/Column7&gt;&lt;Column8 ID="UNIT"&gt;&lt;Caption&gt;单位&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;UNIT&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;UNIT&lt;/Key&gt;&lt;MaxLength&gt;50&lt;/MaxLength&gt;&lt;Position&gt;8&lt;/Position&gt;&lt;/Column8&gt;&lt;Column9 ID="FACTORY"&gt;&lt;Caption&gt;厂家&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;FACTORY&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;FACTORY&lt;/Key&gt;&lt;MaxLength&gt;50&lt;/MaxLength&gt;&lt;Position&gt;9&lt;/Position&gt;&lt;/Column9&gt;&lt;/Columns&gt;&lt;GroupCondition /&gt;&lt;/RootTable&gt;&lt;/GridEXLayoutData&gt;</value>
   </data>
-  <metadata name="dsMaterial.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>379, 91</value>
-  </metadata>
   <metadata name="hpescijunbiBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>124, 165</value>
   </metadata>
@@ -12124,9 +12109,6 @@
   <data name="gridEX4_DesignTimeLayout.LayoutString" xml:space="preserve">
     <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Key&gt;hpes_cijunbi&lt;/Key&gt;&lt;Caption&gt;hpes_cijunbi&lt;/Caption&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="TYPE"&gt;&lt;Caption&gt;类型&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;TYPE&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;TYPE&lt;/Key&gt;&lt;MaxLength&gt;50&lt;/MaxLength&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Width&gt;34&lt;/Width&gt;&lt;/Column0&gt;&lt;Column1 ID="AGE"&gt;&lt;Caption&gt;年龄段&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;AGE&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;AGE&lt;/Key&gt;&lt;MaxLength&gt;50&lt;/MaxLength&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Width&gt;56&lt;/Width&gt;&lt;/Column1&gt;&lt;Column2 ID="diagnosis_code"&gt;&lt;Caption&gt;diagnosis code&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;diagnosis_code&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;diagnosis_code&lt;/Key&gt;&lt;MaxLength&gt;50&lt;/MaxLength&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column2&gt;&lt;Column3 ID="diagnosis_name"&gt;&lt;Caption&gt;病种&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;diagnosis_name&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;diagnosis_name&lt;/Key&gt;&lt;MaxLength&gt;50&lt;/MaxLength&gt;&lt;Position&gt;3&lt;/Position&gt;&lt;Width&gt;80&lt;/Width&gt;&lt;/Column3&gt;&lt;Column4 ID="COUNT"&gt;&lt;Caption&gt;人次&lt;/Caption&gt;&lt;DataTypeCode&gt;Double&lt;/DataTypeCode&gt;&lt;DataMember&gt;COUNT&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;InputMask&gt;General&lt;/InputMask&gt;&lt;Key&gt;COUNT&lt;/Key&gt;&lt;Position&gt;4&lt;/Position&gt;&lt;Width&gt;34&lt;/Width&gt;&lt;FormatMode&gt;UseInputMask&lt;/FormatMode&gt;&lt;/Column4&gt;&lt;Column5 ID="AVERAGECOST"&gt;&lt;Caption&gt;平均费用&lt;/Caption&gt;&lt;DataTypeCode&gt;Double&lt;/DataTypeCode&gt;&lt;DataMember&gt;AVERAGECOST&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;InputMask&gt;Number&lt;/InputMask&gt;&lt;Key&gt;AVERAGECOST&lt;/Key&gt;&lt;Position&gt;5&lt;/Position&gt;&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;&lt;Width&gt;80&lt;/Width&gt;&lt;FormatMode&gt;UseInputMask&lt;/FormatMode&gt;&lt;/Column5&gt;&lt;/Columns&gt;&lt;SortKeys Collection="true" ElementName="SortKey"&gt;&lt;SortKey0 ID="SortKey0"&gt;&lt;ColIndex&gt;3&lt;/ColIndex&gt;&lt;/SortKey0&gt;&lt;/SortKeys&gt;&lt;GroupCondition /&gt;&lt;/RootTable&gt;&lt;/GridEXLayoutData&gt;</value>
   </data>
-  <metadata name="dsCiJunBi.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 165</value>
-  </metadata>
   <metadata name="hpes_submit_dataTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>556, 54</value>
   </metadata>

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Janus.Windows.Common.JanusColorScheme janusColorScheme5 = new Janus.Windows.Common.JanusColorScheme();
-            Janus.Windows.Common.JanusColorScheme janusColorScheme6 = new Janus.Windows.Common.JanusColorScheme();
+            Janus.Windows.Common.JanusColorScheme janusColorScheme1 = new Janus.Windows.Common.JanusColorScheme();
+            Janus.Windows.Common.JanusColorScheme janusColorScheme2 = new Janus.Windows.Common.JanusColorScheme();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             Janus.Windows.GridEX.GridEXLayout gridEX1_DesignTimeLayout = new Janus.Windows.GridEX.GridEXLayout();
             Janus.Windows.GridEX.GridEXLayout gridEX2_DesignTimeLayout = new Janus.Windows.GridEX.GridEXLayout();
@@ -195,17 +195,17 @@
             // 
             // visualStyleManager1
             // 
-            janusColorScheme5.HighlightTextColor = System.Drawing.SystemColors.HighlightText;
-            janusColorScheme5.Name = "Scheme0";
-            janusColorScheme5.OfficeColorScheme = Janus.Windows.Common.OfficeColorScheme.Blue;
-            janusColorScheme5.OfficeCustomColor = System.Drawing.Color.Empty;
-            janusColorScheme5.VisualStyle = Janus.Windows.Common.VisualStyle.Office2010;
-            janusColorScheme6.HighlightTextColor = System.Drawing.SystemColors.HighlightText;
-            janusColorScheme6.Name = "Scheme1";
-            janusColorScheme6.OfficeCustomColor = System.Drawing.Color.Empty;
-            janusColorScheme6.VisualStyle = Janus.Windows.Common.VisualStyle.Office2007;
-            this.visualStyleManager1.ColorSchemes.Add(janusColorScheme5);
-            this.visualStyleManager1.ColorSchemes.Add(janusColorScheme6);
+            janusColorScheme1.HighlightTextColor = System.Drawing.SystemColors.HighlightText;
+            janusColorScheme1.Name = "Scheme0";
+            janusColorScheme1.OfficeColorScheme = Janus.Windows.Common.OfficeColorScheme.Blue;
+            janusColorScheme1.OfficeCustomColor = System.Drawing.Color.Empty;
+            janusColorScheme1.VisualStyle = Janus.Windows.Common.VisualStyle.Office2010;
+            janusColorScheme2.HighlightTextColor = System.Drawing.SystemColors.HighlightText;
+            janusColorScheme2.Name = "Scheme1";
+            janusColorScheme2.OfficeCustomColor = System.Drawing.Color.Empty;
+            janusColorScheme2.VisualStyle = Janus.Windows.Common.VisualStyle.Office2007;
+            this.visualStyleManager1.ColorSchemes.Add(janusColorScheme1);
+            this.visualStyleManager1.ColorSchemes.Add(janusColorScheme2);
             this.visualStyleManager1.DefaultColorScheme = "Scheme0";
             // 
             // janusSuperTip1
@@ -278,7 +278,7 @@
             this.StatusBar1.LeftPanelCommands.AddRange(new Janus.Windows.Ribbon.CommandBase[] {
             this.lblSysMessage,
             this.containerControlCommand1});
-            this.StatusBar1.Location = new System.Drawing.Point(0, 743);
+            this.StatusBar1.Location = new System.Drawing.Point(0, 723);
             this.StatusBar1.Name = "StatusBar1";
             this.StatusBar1.OfficeCustomColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.StatusBar1.Size = new System.Drawing.Size(1272, 23);
@@ -1065,7 +1065,7 @@
             // Design Time Panel Info:
             // 
             this.uiPanelManager1.BeginPanelInfo();
-            this.uiPanelManager1.AddDockPanelInfo(new System.Guid("567c3f27-489f-4aa8-ae60-e57a1faa7459"), Janus.Windows.UI.Dock.PanelGroupStyle.HorizontalTiles, Janus.Windows.UI.Dock.PanelDockStyle.Right, true, new System.Drawing.Size(300, 616), true);
+            this.uiPanelManager1.AddDockPanelInfo(new System.Guid("567c3f27-489f-4aa8-ae60-e57a1faa7459"), Janus.Windows.UI.Dock.PanelGroupStyle.HorizontalTiles, Janus.Windows.UI.Dock.PanelDockStyle.Right, true, new System.Drawing.Size(300, 596), true);
             this.uiPanelManager1.AddDockPanelInfo(new System.Guid("42d13bcf-aa5b-476c-96e5-9ce9ffd37596"), new System.Guid("567c3f27-489f-4aa8-ae60-e57a1faa7459"), 608, true);
             this.uiPanelManager1.AddFloatingPanelInfo(new System.Guid("567c3f27-489f-4aa8-ae60-e57a1faa7459"), Janus.Windows.UI.Dock.PanelGroupStyle.HorizontalTiles, true, new System.Drawing.Point(-1, -1), new System.Drawing.Size(-1, -1), false);
             this.uiPanelManager1.AddFloatingPanelInfo(new System.Guid("42d13bcf-aa5b-476c-96e5-9ce9ffd37596"), new System.Drawing.Point(-1, -1), new System.Drawing.Size(-1, -1), false);
@@ -1078,7 +1078,7 @@
             this.uiPanel0.CloseButtonVisible = Janus.Windows.UI.InheritableBoolean.False;
             this.uiPanel0.Location = new System.Drawing.Point(969, 124);
             this.uiPanel0.Name = "uiPanel0";
-            this.uiPanel0.Size = new System.Drawing.Size(300, 616);
+            this.uiPanel0.Size = new System.Drawing.Size(300, 596);
             this.uiPanel0.TabIndex = 4;
             this.uiPanel0.Text = "医院提报数据";
             // 
@@ -1089,7 +1089,7 @@
             this.uiPanel1.InnerContainer = this.uiPanel1Container;
             this.uiPanel1.Location = new System.Drawing.Point(3, 22);
             this.uiPanel1.Name = "uiPanel1";
-            this.uiPanel1.Size = new System.Drawing.Size(297, 594);
+            this.uiPanel1.Size = new System.Drawing.Size(297, 574);
             this.uiPanel1.TabIndex = 4;
             // 
             // uiPanel1Container
@@ -1097,7 +1097,7 @@
             this.uiPanel1Container.Controls.Add(this.uiTab1);
             this.uiPanel1Container.Location = new System.Drawing.Point(1, 1);
             this.uiPanel1Container.Name = "uiPanel1Container";
-            this.uiPanel1Container.Size = new System.Drawing.Size(295, 592);
+            this.uiPanel1Container.Size = new System.Drawing.Size(295, 572);
             this.uiPanel1Container.TabIndex = 0;
             // 
             // uiTab1
@@ -1109,7 +1109,7 @@
             this.uiTab1.Margin = new System.Windows.Forms.Padding(2);
             this.uiTab1.Name = "uiTab1";
             this.uiTab1.OfficeColorScheme = Janus.Windows.UI.OfficeColorScheme.Blue;
-            this.uiTab1.Size = new System.Drawing.Size(295, 592);
+            this.uiTab1.Size = new System.Drawing.Size(295, 572);
             this.uiTab1.TabIndex = 0;
             this.uiTab1.TabPages.AddRange(new Janus.Windows.UI.Tab.UITabPage[] {
             this.uiTabPage1,
@@ -1124,7 +1124,7 @@
             this.uiTabPage1.Controls.Add(this.gridEX1);
             this.uiTabPage1.Location = new System.Drawing.Point(1, 20);
             this.uiTabPage1.Name = "uiTabPage1";
-            this.uiTabPage1.Size = new System.Drawing.Size(293, 571);
+            this.uiTabPage1.Size = new System.Drawing.Size(293, 551);
             this.uiTabPage1.TabStop = true;
             this.uiTabPage1.Text = "基础数据(&B)";
             this.uiTabPage1.ToolTipText = "由医院提报的基础数据";
@@ -1143,7 +1143,7 @@
             this.gridEX1.Location = new System.Drawing.Point(0, 0);
             this.gridEX1.Name = "gridEX1";
             this.gridEX1.OfficeColorScheme = Janus.Windows.GridEX.OfficeColorScheme.Blue;
-            this.gridEX1.Size = new System.Drawing.Size(293, 571);
+            this.gridEX1.Size = new System.Drawing.Size(293, 551);
             this.gridEX1.TabIndex = 0;
             this.gridEX1.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2010;
             this.gridEX1.VisualStyleManager = this.visualStyleManager1;
@@ -1296,7 +1296,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1272, 766);
+            this.ClientSize = new System.Drawing.Size(1272, 746);
             this.Controls.Add(this.uiPanel0);
             this.Controls.Add(this.StatusBar1);
             this.Controls.Add(this.ribbon1);
