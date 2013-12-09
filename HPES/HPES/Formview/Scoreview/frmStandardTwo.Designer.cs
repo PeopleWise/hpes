@@ -37,21 +37,22 @@
             this.hpes_standard_twoTableAdapter = new HPES.dsStandardTwoTableAdapters.hpes_standard_twoTableAdapter();
             this.tableAdapterManager = new HPES.dsStandardTwoTableAdapters.TableAdapterManager();
             this.hpes_standard_twoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.hpes_standard_twoBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.gridEX1 = new Janus.Windows.GridEX.GridEX();
             this.dsStandardOne = new HPES.dsStandardOne();
             this.hpes_standard_oneTableAdapter = new HPES.dsStandardOneTableAdapters.hpes_standard_oneTableAdapter();
+            this.hpes_standard_oneBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.officeFormAdorner1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsStandardTwo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hpes_standard_twoBindingSource)).BeginInit();
@@ -59,6 +60,7 @@
             this.hpes_standard_twoBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEX1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsStandardOne)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hpes_standard_oneBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // officeFormAdorner1
@@ -116,37 +118,6 @@
             this.hpes_standard_twoBindingNavigator.TabIndex = 0;
             this.hpes_standard_twoBindingNavigator.Text = "bindingNavigator1";
             // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "位置";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 21);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "当前位置";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "/ {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "总项数";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
             // bindingNavigatorAddNewItem
             // 
             this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -155,6 +126,13 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "新添";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "/ {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "总项数";
             // 
             // bindingNavigatorDeleteItem
             // 
@@ -183,6 +161,25 @@
             this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMovePreviousItem.Text = "移到上一条记录";
             // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "位置";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 21);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "当前位置";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
             // bindingNavigatorMoveNextItem
             // 
             this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -200,6 +197,11 @@
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "移到最后一条记录";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // hpes_standard_twoBindingNavigatorSaveItem
             // 
@@ -240,6 +242,11 @@
             // 
             this.hpes_standard_oneTableAdapter.ClearBeforeFill = true;
             // 
+            // hpes_standard_oneBindingSource
+            // 
+            this.hpes_standard_oneBindingSource.DataMember = "hpes_standard_one";
+            this.hpes_standard_oneBindingSource.DataSource = this.dsStandardOne;
+            // 
             // frmStandardTwo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -258,6 +265,7 @@
             this.hpes_standard_twoBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEX1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsStandardOne)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hpes_standard_oneBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,5 +294,6 @@
         private Janus.Windows.GridEX.GridEX gridEX1;
         private dsStandardOne dsStandardOne;
         private HPES.dsStandardOneTableAdapters.hpes_standard_oneTableAdapter hpes_standard_oneTableAdapter;
+        private System.Windows.Forms.BindingSource hpes_standard_oneBindingSource;
     }
 }

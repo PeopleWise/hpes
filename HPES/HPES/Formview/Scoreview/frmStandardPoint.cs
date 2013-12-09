@@ -28,7 +28,12 @@ namespace HPES.Formview.Scoreview
         {
             // TODO: 这行代码将数据加载到表“dsStandardPoint.hpes_standard_point”中。您可以根据需要移动或移除它。
             this.hpes_standard_pointTableAdapter.Fill(this.dsStandardPoint.hpes_standard_point);
-
+            this.hpes_standard_oneTableAdapter.Fill(this.dsStandardPoint.hpes_standard_one);
+            this.hpes_standard_twoTableAdapter.Fill(this.dsStandardPoint.hpes_standard_two);
+            this.gridEX1.DropDowns[0].DataSource = this.dsStandardPoint.hpes_standard_one;
+            this.gridEX1.DropDowns[0].Refresh();
+            this.gridEX1.DropDowns[1].DataSource = this.dsStandardPoint.hpes_standard_two;
+            this.gridEX1.DropDowns[0].Refresh();
         }
     }
 }
