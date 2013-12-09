@@ -123,11 +123,11 @@
         #endregion
 
         private System.Windows.Forms.ImageList imageList1;
-        public Janus.Windows.GridEX.GridEX gridEX1;
         private Janus.Windows.Ribbon.OfficeFormAdorner officeFormAdorner1;
         private System.Windows.Forms.BindingSource hpes_query_dataBindingSource;
         private HPES.dsQueryTableAdapters.hpes_query_dataTableAdapter hpes_query_dataTableAdapter;
         private dsQuery dsQuery;
         private HPES.dsQueryTableAdapters.TableAdapterManager tableAdapterManager;
+        public Janus.Windows.GridEX.GridEX gridEX1;
     }
 }
