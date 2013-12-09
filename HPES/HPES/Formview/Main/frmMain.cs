@@ -283,7 +283,7 @@ namespace HPES.Formview.Main
 
         private void btn3Level_Click(object sender, CommandEventArgs e)
         {
-            foreach (Form frm in this.MdiChildren)
+            /*foreach (Form frm in this.MdiChildren)
             {
                 if (frm.Name == "frmInput")
                 {
@@ -295,6 +295,19 @@ namespace HPES.Formview.Main
             frmInput frmInput = new frmInput();
             frmInput.MdiParent = this;
             frmInput.Show();
+            */
+            foreach (Form frm in this.MdiChildren)
+            {
+                if (frm.Name == "frmStandardPoint")
+                {
+                    frm.Activate();
+                    frm.Focus();
+                    return;
+                }
+            }
+            frmStandardPoint frmStandardPoint = new frmStandardPoint();
+            frmStandardPoint.MdiParent = this;
+            frmStandardPoint.Show();
         }
        
         private void btnUserManage_Click(object sender, CommandEventArgs e)
