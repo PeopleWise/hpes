@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmYear));
+            Janus.Windows.GridEX.GridEXLayout gridEX1_DesignTimeLayout = new Janus.Windows.GridEX.GridEXLayout();
             this.dsYear = new HPES.dsYear();
             this.dsYearBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableAdapterManager = new HPES.dsYearTableAdapters.TableAdapterManager();
@@ -47,18 +48,14 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.dsYearBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.dsYearDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.officeFormAdorner1 = new Janus.Windows.Ribbon.OfficeFormAdorner(this.components);
+            this.gridEX1 = new Janus.Windows.GridEX.GridEX();
             ((System.ComponentModel.ISupportInitialize)(this.dsYear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsYearBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsYearBindingNavigator)).BeginInit();
             this.dsYearBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dsYearDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.officeFormAdorner1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEX1)).BeginInit();
             this.SuspendLayout();
             // 
             // dsYear
@@ -123,7 +120,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(32, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "/ {0}";
             this.bindingNavigatorCountItem.ToolTipText = "总项数";
             // 
@@ -204,70 +201,43 @@
             this.dsYearBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.dsYearBindingNavigatorSaveItem.Text = "保存数据";
             // 
-            // dsYearDataGridView
-            // 
-            this.dsYearDataGridView.AutoGenerateColumns = false;
-            this.dsYearDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dsYearDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.dsYearDataGridView.DataSource = this.dsYearBindingSource;
-            this.dsYearDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dsYearDataGridView.Location = new System.Drawing.Point(0, 25);
-            this.dsYearDataGridView.Name = "dsYearDataGridView";
-            this.dsYearDataGridView.RowTemplate.Height = 23;
-            this.dsYearDataGridView.Size = new System.Drawing.Size(444, 351);
-            this.dsYearDataGridView.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "序号";
-            this.dataGridViewTextBoxColumn1.HeaderText = "序号";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "年度";
-            this.dataGridViewTextBoxColumn2.HeaderText = "年度";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "开始日期";
-            this.dataGridViewTextBoxColumn3.HeaderText = "开始日期";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "结束日期";
-            this.dataGridViewTextBoxColumn4.HeaderText = "结束日期";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
             // officeFormAdorner1
             // 
             this.officeFormAdorner1.Form = this;
             this.officeFormAdorner1.VisualStyle = Janus.Windows.Ribbon.VisualStyle.Office2010;
+            // 
+            // gridEX1
+            // 
+            this.gridEX1.AlternatingColors = true;
+            this.gridEX1.DataSource = this.dsYearBindingSource;
+            gridEX1_DesignTimeLayout.LayoutString = resources.GetString("gridEX1_DesignTimeLayout.LayoutString");
+            this.gridEX1.DesignTimeLayout = gridEX1_DesignTimeLayout;
+            this.gridEX1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridEX1.GroupByBoxVisible = false;
+            this.gridEX1.Location = new System.Drawing.Point(0, 25);
+            this.gridEX1.Name = "gridEX1";
+            this.gridEX1.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.True;
+            this.gridEX1.Size = new System.Drawing.Size(444, 351);
+            this.gridEX1.TabIndex = 1;
+            this.gridEX1.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2010;
             // 
             // frmYear
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(444, 376);
-            this.Controls.Add(this.dsYearDataGridView);
+            this.Controls.Add(this.gridEX1);
             this.Controls.Add(this.dsYearBindingNavigator);
             this.Name = "frmYear";
-            this.Text = "Form1";
+            this.Text = "考评年度维护";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dsYear)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsYearBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsYearBindingNavigator)).EndInit();
             this.dsYearBindingNavigator.ResumeLayout(false);
             this.dsYearBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dsYearDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.officeFormAdorner1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEX1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,13 +261,9 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton dsYearBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView dsYearDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private Janus.Windows.Ribbon.OfficeFormAdorner officeFormAdorner1;
         private HPES.dsYearTableAdapters.dsYearTableAdapter dsYearTableAdapter;
+        private Janus.Windows.GridEX.GridEX gridEX1;
 
 
 
