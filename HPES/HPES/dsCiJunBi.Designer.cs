@@ -262,23 +262,25 @@ namespace HPES {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class hpes_cijunbiDataTable : global::System.Data.TypedTableBase<hpes_cijunbiRow> {
             
-            private global::System.Data.DataColumn columnID;
+            private global::System.Data.DataColumn columnDSTR1;
             
-            private global::System.Data.DataColumn columnYID;
+            private global::System.Data.DataColumn columnDSTR2;
             
-            private global::System.Data.DataColumn columnHID;
+            private global::System.Data.DataColumn columnDSTR3;
             
-            private global::System.Data.DataColumn columnAGE;
+            private global::System.Data.DataColumn columnJUNSUM;
             
-            private global::System.Data.DataColumn columndiagnosis_code;
+            private global::System.Data.DataColumn columnJUMAMT;
             
-            private global::System.Data.DataColumn columndiagnosis_name;
+            private global::System.Data.DataColumn columnJUNAVG;
             
-            private global::System.Data.DataColumn columnTYPE;
+            private global::System.Data.DataColumn columnDISUM;
             
-            private global::System.Data.DataColumn columnCOUNT;
+            private global::System.Data.DataColumn columnDIAMT;
             
-            private global::System.Data.DataColumn columnAVERAGECOST;
+            private global::System.Data.DataColumn columnDIAVG;
+            
+            private global::System.Data.DataColumn columnDIFF;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public hpes_cijunbiDataTable() {
@@ -311,65 +313,72 @@ namespace HPES {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn IDColumn {
+            public global::System.Data.DataColumn DSTR1Column {
                 get {
-                    return this.columnID;
+                    return this.columnDSTR1;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn YIDColumn {
+            public global::System.Data.DataColumn DSTR2Column {
                 get {
-                    return this.columnYID;
+                    return this.columnDSTR2;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn HIDColumn {
+            public global::System.Data.DataColumn DSTR3Column {
                 get {
-                    return this.columnHID;
+                    return this.columnDSTR3;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn AGEColumn {
+            public global::System.Data.DataColumn JUNSUMColumn {
                 get {
-                    return this.columnAGE;
+                    return this.columnJUNSUM;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn diagnosis_codeColumn {
+            public global::System.Data.DataColumn JUMAMTColumn {
                 get {
-                    return this.columndiagnosis_code;
+                    return this.columnJUMAMT;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn diagnosis_nameColumn {
+            public global::System.Data.DataColumn JUNAVGColumn {
                 get {
-                    return this.columndiagnosis_name;
+                    return this.columnJUNAVG;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn TYPEColumn {
+            public global::System.Data.DataColumn DISUMColumn {
                 get {
-                    return this.columnTYPE;
+                    return this.columnDISUM;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn COUNTColumn {
+            public global::System.Data.DataColumn DIAMTColumn {
                 get {
-                    return this.columnCOUNT;
+                    return this.columnDIAMT;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn AVERAGECOSTColumn {
+            public global::System.Data.DataColumn DIAVGColumn {
                 get {
-                    return this.columnAVERAGECOST;
+                    return this.columnDIAVG;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn DIFFColumn {
+                get {
+                    return this.columnDIFF;
                 }
             }
             
@@ -402,27 +411,22 @@ namespace HPES {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public hpes_cijunbiRow Addhpes_cijunbiRow(int YID, int HID, string AGE, string diagnosis_code, string diagnosis_name, string TYPE, double COUNT, double AVERAGECOST) {
+            public hpes_cijunbiRow Addhpes_cijunbiRow(string DSTR1, string DSTR2, string DSTR3, decimal JUNSUM, decimal JUMAMT, decimal JUNAVG, decimal DISUM, decimal DIAMT, decimal DIAVG, decimal DIFF) {
                 hpes_cijunbiRow rowhpes_cijunbiRow = ((hpes_cijunbiRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
-                        YID,
-                        HID,
-                        AGE,
-                        diagnosis_code,
-                        diagnosis_name,
-                        TYPE,
-                        COUNT,
-                        AVERAGECOST};
+                        DSTR1,
+                        DSTR2,
+                        DSTR3,
+                        JUNSUM,
+                        JUMAMT,
+                        JUNAVG,
+                        DISUM,
+                        DIAMT,
+                        DIAVG,
+                        DIFF};
                 rowhpes_cijunbiRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowhpes_cijunbiRow);
                 return rowhpes_cijunbiRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public hpes_cijunbiRow FindByID(int ID) {
-                return ((hpes_cijunbiRow)(this.Rows.Find(new object[] {
-                            ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -439,49 +443,44 @@ namespace HPES {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             internal void InitVars() {
-                this.columnID = base.Columns["ID"];
-                this.columnYID = base.Columns["YID"];
-                this.columnHID = base.Columns["HID"];
-                this.columnAGE = base.Columns["AGE"];
-                this.columndiagnosis_code = base.Columns["diagnosis_code"];
-                this.columndiagnosis_name = base.Columns["diagnosis_name"];
-                this.columnTYPE = base.Columns["TYPE"];
-                this.columnCOUNT = base.Columns["COUNT"];
-                this.columnAVERAGECOST = base.Columns["AVERAGECOST"];
+                this.columnDSTR1 = base.Columns["DSTR1"];
+                this.columnDSTR2 = base.Columns["DSTR2"];
+                this.columnDSTR3 = base.Columns["DSTR3"];
+                this.columnJUNSUM = base.Columns["JUNSUM"];
+                this.columnJUMAMT = base.Columns["JUMAMT"];
+                this.columnJUNAVG = base.Columns["JUNAVG"];
+                this.columnDISUM = base.Columns["DISUM"];
+                this.columnDIAMT = base.Columns["DIAMT"];
+                this.columnDIAVG = base.Columns["DIAVG"];
+                this.columnDIFF = base.Columns["DIFF"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             private void InitClass() {
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
-                this.columnYID = new global::System.Data.DataColumn("YID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnYID);
-                this.columnHID = new global::System.Data.DataColumn("HID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHID);
-                this.columnAGE = new global::System.Data.DataColumn("AGE", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAGE);
-                this.columndiagnosis_code = new global::System.Data.DataColumn("diagnosis_code", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndiagnosis_code);
-                this.columndiagnosis_name = new global::System.Data.DataColumn("diagnosis_name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndiagnosis_name);
-                this.columnTYPE = new global::System.Data.DataColumn("TYPE", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTYPE);
-                this.columnCOUNT = new global::System.Data.DataColumn("COUNT", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCOUNT);
-                this.columnAVERAGECOST = new global::System.Data.DataColumn("AVERAGECOST", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAVERAGECOST);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID}, true));
-                this.columnID.AutoIncrement = true;
-                this.columnID.AutoIncrementSeed = -1;
-                this.columnID.AutoIncrementStep = -1;
-                this.columnID.AllowDBNull = false;
-                this.columnID.ReadOnly = true;
-                this.columnID.Unique = true;
-                this.columnAGE.MaxLength = 50;
-                this.columndiagnosis_code.MaxLength = 50;
-                this.columndiagnosis_name.MaxLength = 50;
-                this.columnTYPE.MaxLength = 50;
+                this.columnDSTR1 = new global::System.Data.DataColumn("DSTR1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDSTR1);
+                this.columnDSTR2 = new global::System.Data.DataColumn("DSTR2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDSTR2);
+                this.columnDSTR3 = new global::System.Data.DataColumn("DSTR3", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDSTR3);
+                this.columnJUNSUM = new global::System.Data.DataColumn("JUNSUM", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnJUNSUM);
+                this.columnJUMAMT = new global::System.Data.DataColumn("JUMAMT", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnJUMAMT);
+                this.columnJUNAVG = new global::System.Data.DataColumn("JUNAVG", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnJUNAVG);
+                this.columnDISUM = new global::System.Data.DataColumn("DISUM", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDISUM);
+                this.columnDIAMT = new global::System.Data.DataColumn("DIAMT", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDIAMT);
+                this.columnDIAVG = new global::System.Data.DataColumn("DIAVG", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDIAVG);
+                this.columnDIFF = new global::System.Data.DataColumn("DIFF", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDIFF);
+                this.columnDSTR1.MaxLength = 2000;
+                this.columnDSTR2.MaxLength = 2000;
+                this.columnDSTR3.MaxLength = 2000;
+                this.columnDIFF.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -614,213 +613,253 @@ namespace HPES {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public int ID {
-                get {
-                    return ((int)(this[this.tablehpes_cijunbi.IDColumn]));
-                }
-                set {
-                    this[this.tablehpes_cijunbi.IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public int YID {
+            public string DSTR1 {
                 get {
                     try {
-                        return ((int)(this[this.tablehpes_cijunbi.YIDColumn]));
+                        return ((string)(this[this.tablehpes_cijunbi.DSTR1Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“hpes_cijunbi”中列“YID”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“hpes_cijunbi”中列“DSTR1”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tablehpes_cijunbi.YIDColumn] = value;
+                    this[this.tablehpes_cijunbi.DSTR1Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public int HID {
+            public string DSTR2 {
                 get {
                     try {
-                        return ((int)(this[this.tablehpes_cijunbi.HIDColumn]));
+                        return ((string)(this[this.tablehpes_cijunbi.DSTR2Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“hpes_cijunbi”中列“HID”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“hpes_cijunbi”中列“DSTR2”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tablehpes_cijunbi.HIDColumn] = value;
+                    this[this.tablehpes_cijunbi.DSTR2Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string AGE {
+            public string DSTR3 {
                 get {
                     try {
-                        return ((string)(this[this.tablehpes_cijunbi.AGEColumn]));
+                        return ((string)(this[this.tablehpes_cijunbi.DSTR3Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“hpes_cijunbi”中列“AGE”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“hpes_cijunbi”中列“DSTR3”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tablehpes_cijunbi.AGEColumn] = value;
+                    this[this.tablehpes_cijunbi.DSTR3Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string diagnosis_code {
+            public decimal JUNSUM {
                 get {
                     try {
-                        return ((string)(this[this.tablehpes_cijunbi.diagnosis_codeColumn]));
+                        return ((decimal)(this[this.tablehpes_cijunbi.JUNSUMColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“hpes_cijunbi”中列“diagnosis_code”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“hpes_cijunbi”中列“JUNSUM”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tablehpes_cijunbi.diagnosis_codeColumn] = value;
+                    this[this.tablehpes_cijunbi.JUNSUMColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string diagnosis_name {
+            public decimal JUMAMT {
                 get {
                     try {
-                        return ((string)(this[this.tablehpes_cijunbi.diagnosis_nameColumn]));
+                        return ((decimal)(this[this.tablehpes_cijunbi.JUMAMTColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“hpes_cijunbi”中列“diagnosis_name”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“hpes_cijunbi”中列“JUMAMT”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tablehpes_cijunbi.diagnosis_nameColumn] = value;
+                    this[this.tablehpes_cijunbi.JUMAMTColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string TYPE {
+            public decimal JUNAVG {
                 get {
                     try {
-                        return ((string)(this[this.tablehpes_cijunbi.TYPEColumn]));
+                        return ((decimal)(this[this.tablehpes_cijunbi.JUNAVGColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“hpes_cijunbi”中列“TYPE”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“hpes_cijunbi”中列“JUNAVG”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tablehpes_cijunbi.TYPEColumn] = value;
+                    this[this.tablehpes_cijunbi.JUNAVGColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public double COUNT {
+            public decimal DISUM {
                 get {
                     try {
-                        return ((double)(this[this.tablehpes_cijunbi.COUNTColumn]));
+                        return ((decimal)(this[this.tablehpes_cijunbi.DISUMColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“hpes_cijunbi”中列“COUNT”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“hpes_cijunbi”中列“DISUM”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tablehpes_cijunbi.COUNTColumn] = value;
+                    this[this.tablehpes_cijunbi.DISUMColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public double AVERAGECOST {
+            public decimal DIAMT {
                 get {
                     try {
-                        return ((double)(this[this.tablehpes_cijunbi.AVERAGECOSTColumn]));
+                        return ((decimal)(this[this.tablehpes_cijunbi.DIAMTColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“hpes_cijunbi”中列“AVERAGECOST”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“hpes_cijunbi”中列“DIAMT”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tablehpes_cijunbi.AVERAGECOSTColumn] = value;
+                    this[this.tablehpes_cijunbi.DIAMTColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsYIDNull() {
-                return this.IsNull(this.tablehpes_cijunbi.YIDColumn);
+            public decimal DIAVG {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablehpes_cijunbi.DIAVGColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“hpes_cijunbi”中列“DIAVG”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablehpes_cijunbi.DIAVGColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetYIDNull() {
-                this[this.tablehpes_cijunbi.YIDColumn] = global::System.Convert.DBNull;
+            public decimal DIFF {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablehpes_cijunbi.DIFFColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“hpes_cijunbi”中列“DIFF”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablehpes_cijunbi.DIFFColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsHIDNull() {
-                return this.IsNull(this.tablehpes_cijunbi.HIDColumn);
+            public bool IsDSTR1Null() {
+                return this.IsNull(this.tablehpes_cijunbi.DSTR1Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetHIDNull() {
-                this[this.tablehpes_cijunbi.HIDColumn] = global::System.Convert.DBNull;
+            public void SetDSTR1Null() {
+                this[this.tablehpes_cijunbi.DSTR1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsAGENull() {
-                return this.IsNull(this.tablehpes_cijunbi.AGEColumn);
+            public bool IsDSTR2Null() {
+                return this.IsNull(this.tablehpes_cijunbi.DSTR2Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetAGENull() {
-                this[this.tablehpes_cijunbi.AGEColumn] = global::System.Convert.DBNull;
+            public void SetDSTR2Null() {
+                this[this.tablehpes_cijunbi.DSTR2Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool Isdiagnosis_codeNull() {
-                return this.IsNull(this.tablehpes_cijunbi.diagnosis_codeColumn);
+            public bool IsDSTR3Null() {
+                return this.IsNull(this.tablehpes_cijunbi.DSTR3Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void Setdiagnosis_codeNull() {
-                this[this.tablehpes_cijunbi.diagnosis_codeColumn] = global::System.Convert.DBNull;
+            public void SetDSTR3Null() {
+                this[this.tablehpes_cijunbi.DSTR3Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool Isdiagnosis_nameNull() {
-                return this.IsNull(this.tablehpes_cijunbi.diagnosis_nameColumn);
+            public bool IsJUNSUMNull() {
+                return this.IsNull(this.tablehpes_cijunbi.JUNSUMColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void Setdiagnosis_nameNull() {
-                this[this.tablehpes_cijunbi.diagnosis_nameColumn] = global::System.Convert.DBNull;
+            public void SetJUNSUMNull() {
+                this[this.tablehpes_cijunbi.JUNSUMColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsTYPENull() {
-                return this.IsNull(this.tablehpes_cijunbi.TYPEColumn);
+            public bool IsJUMAMTNull() {
+                return this.IsNull(this.tablehpes_cijunbi.JUMAMTColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetTYPENull() {
-                this[this.tablehpes_cijunbi.TYPEColumn] = global::System.Convert.DBNull;
+            public void SetJUMAMTNull() {
+                this[this.tablehpes_cijunbi.JUMAMTColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsCOUNTNull() {
-                return this.IsNull(this.tablehpes_cijunbi.COUNTColumn);
+            public bool IsJUNAVGNull() {
+                return this.IsNull(this.tablehpes_cijunbi.JUNAVGColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetCOUNTNull() {
-                this[this.tablehpes_cijunbi.COUNTColumn] = global::System.Convert.DBNull;
+            public void SetJUNAVGNull() {
+                this[this.tablehpes_cijunbi.JUNAVGColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsAVERAGECOSTNull() {
-                return this.IsNull(this.tablehpes_cijunbi.AVERAGECOSTColumn);
+            public bool IsDISUMNull() {
+                return this.IsNull(this.tablehpes_cijunbi.DISUMColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetAVERAGECOSTNull() {
-                this[this.tablehpes_cijunbi.AVERAGECOSTColumn] = global::System.Convert.DBNull;
+            public void SetDISUMNull() {
+                this[this.tablehpes_cijunbi.DISUMColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsDIAMTNull() {
+                return this.IsNull(this.tablehpes_cijunbi.DIAMTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetDIAMTNull() {
+                this[this.tablehpes_cijunbi.DIAMTColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsDIAVGNull() {
+                return this.IsNull(this.tablehpes_cijunbi.DIAVGColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetDIAVGNull() {
+                this[this.tablehpes_cijunbi.DIAVGColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsDIFFNull() {
+                return this.IsNull(this.tablehpes_cijunbi.DIFFColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetDIFFNull() {
+                this[this.tablehpes_cijunbi.DIFFColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -974,80 +1013,17 @@ namespace HPES.dsCiJunBiTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "hpes_cijunbi";
-            tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("YID", "YID");
-            tableMapping.ColumnMappings.Add("HID", "HID");
-            tableMapping.ColumnMappings.Add("AGE", "AGE");
-            tableMapping.ColumnMappings.Add("diagnosis_code", "diagnosis_code");
-            tableMapping.ColumnMappings.Add("diagnosis_name", "diagnosis_name");
-            tableMapping.ColumnMappings.Add("TYPE", "TYPE");
-            tableMapping.ColumnMappings.Add("COUNT", "COUNT");
-            tableMapping.ColumnMappings.Add("AVERAGECOST", "AVERAGECOST");
+            tableMapping.ColumnMappings.Add("DSTR1", "DSTR1");
+            tableMapping.ColumnMappings.Add("DSTR2", "DSTR2");
+            tableMapping.ColumnMappings.Add("DSTR3", "DSTR3");
+            tableMapping.ColumnMappings.Add("JUNSUM", "JUNSUM");
+            tableMapping.ColumnMappings.Add("JUMAMT", "JUMAMT");
+            tableMapping.ColumnMappings.Add("JUNAVG", "JUNAVG");
+            tableMapping.ColumnMappings.Add("DISUM", "DISUM");
+            tableMapping.ColumnMappings.Add("DIAMT", "DIAMT");
+            tableMapping.ColumnMappings.Add("DIAVG", "DIAVG");
+            tableMapping.ColumnMappings.Add("DIFF", "DIFF");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [HPES].[dbo].[hpes_cijunbi] WHERE (([ID] = ?) AND ((? = 1 AND [YID] IS NULL) OR ([YID] = ?)) AND ((? = 1 AND [HID] IS NULL) OR ([HID] = ?)) AND ((? = 1 AND [AGE] IS NULL) OR ([AGE] = ?)) AND ((? = 1 AND [diagnosis_code] IS NULL) OR ([diagnosis_code] = ?)) AND ((? = 1 AND [diagnosis_name] IS NULL) OR ([diagnosis_name] = ?)) AND ((? = 1 AND [TYPE] IS NULL) OR ([TYPE] = ?)) AND ((? = 1 AND [COUNT] IS NULL) OR ([COUNT] = ?)) AND ((? = 1 AND [AVERAGECOST] IS NULL) OR ([AVERAGECOST] = ?)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_YID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "YID", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_YID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "YID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_HID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HID", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_HID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_AGE", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "AGE", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_AGE", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "AGE", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_diagnosis_code", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diagnosis_code", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_diagnosis_code", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diagnosis_code", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_diagnosis_name", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diagnosis_name", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_diagnosis_name", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diagnosis_name", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_TYPE", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TYPE", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_TYPE", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TYPE", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_COUNT", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "COUNT", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_COUNT", global::System.Data.OleDb.OleDbType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "COUNT", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_AVERAGECOST", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "AVERAGECOST", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_AVERAGECOST", global::System.Data.OleDb.OleDbType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "AVERAGECOST", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [HPES].[dbo].[hpes_cijunbi] ([YID], [HID], [AGE], [diagnosis_code], [" +
-                "diagnosis_name], [TYPE], [COUNT], [AVERAGECOST]) VALUES (?, ?, ?, ?, ?, ?, ?, ?)" +
-                "";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("YID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "YID", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("HID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HID", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("AGE", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "AGE", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("diagnosis_code", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diagnosis_code", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("diagnosis_name", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diagnosis_name", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("TYPE", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TYPE", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("COUNT", global::System.Data.OleDb.OleDbType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "COUNT", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("AVERAGECOST", global::System.Data.OleDb.OleDbType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "AVERAGECOST", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [HPES].[dbo].[hpes_cijunbi] SET [YID] = ?, [HID] = ?, [AGE] = ?, [diagnosis_code] = ?, [diagnosis_name] = ?, [TYPE] = ?, [COUNT] = ?, [AVERAGECOST] = ? WHERE (([ID] = ?) AND ((? = 1 AND [YID] IS NULL) OR ([YID] = ?)) AND ((? = 1 AND [HID] IS NULL) OR ([HID] = ?)) AND ((? = 1 AND [AGE] IS NULL) OR ([AGE] = ?)) AND ((? = 1 AND [diagnosis_code] IS NULL) OR ([diagnosis_code] = ?)) AND ((? = 1 AND [diagnosis_name] IS NULL) OR ([diagnosis_name] = ?)) AND ((? = 1 AND [TYPE] IS NULL) OR ([TYPE] = ?)) AND ((? = 1 AND [COUNT] IS NULL) OR ([COUNT] = ?)) AND ((? = 1 AND [AVERAGECOST] IS NULL) OR ([AVERAGECOST] = ?)))";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("YID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "YID", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("HID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HID", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("AGE", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "AGE", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("diagnosis_code", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diagnosis_code", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("diagnosis_name", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diagnosis_name", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("TYPE", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TYPE", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("COUNT", global::System.Data.OleDb.OleDbType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "COUNT", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("AVERAGECOST", global::System.Data.OleDb.OleDbType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "AVERAGECOST", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_YID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "YID", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_YID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "YID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_HID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HID", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_HID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_AGE", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "AGE", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_AGE", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "AGE", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_diagnosis_code", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diagnosis_code", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_diagnosis_code", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diagnosis_code", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_diagnosis_name", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diagnosis_name", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_diagnosis_name", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diagnosis_name", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_TYPE", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TYPE", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_TYPE", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TYPE", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_COUNT", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "COUNT", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_COUNT", global::System.Data.OleDb.OleDbType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "COUNT", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_AVERAGECOST", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "AVERAGECOST", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_AVERAGECOST", global::System.Data.OleDb.OleDbType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "AVERAGECOST", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1061,8 +1037,12 @@ namespace HPES.dsCiJunBiTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, YID, HID, AGE, diagnosis_code, diagnosis_name, TYPE, [COUNT], AVERAGEC" +
-                "OST FROM dbo.hpes_cijunbi\r\nWHERE HID = ? AND YID = ?";
+            this._commandCollection[0].CommandText = @"SELECT     j.DSTR1, j.DSTR2, j.DSTR3, j.DNUM1 AS JUNSUM, j.DNUM2 AS JUMAMT, j.DNUM3 AS JUNAVG, d.DNUM1 AS DISUM, d.DNUM2 AS DIAMT, 
+                      d.DNUM3 AS DIAVG, j.DNUM3 - d.DNUM3 AS DIFF
+FROM         hpes_query_data AS j FULL OUTER JOIN
+                      hpes_query_data AS d ON j.HID = d.HID AND j.YID = d.YID AND j.DSTR1 = d.DSTR1 AND j.DSTR3 = d.DSTR3
+WHERE     (d.QID = 9) AND (j.QID = 8) AND j.hid = ? and j.yid = ?
+ORDER BY d.DSTR3 DESC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("HID", global::System.Data.OleDb.OleDbType.Integer, 4, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HID", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[0].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("YID", global::System.Data.OleDb.OleDbType.Integer, 4, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "YID", global::System.Data.DataRowVersion.Current, false, null));
@@ -1071,20 +1051,10 @@ namespace HPES.dsCiJunBiTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dsCiJunBi.hpes_cijunbiDataTable dataTable, global::System.Nullable<int> HID, global::System.Nullable<int> YID) {
+        public virtual int Fill(dsCiJunBi.hpes_cijunbiDataTable dataTable, int HID, int YID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((HID.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(HID.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((YID.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(YID.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(HID));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(YID));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -1095,48 +1065,13 @@ namespace HPES.dsCiJunBiTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsCiJunBi.hpes_cijunbiDataTable GetData(global::System.Nullable<int> HID, global::System.Nullable<int> YID) {
+        public virtual dsCiJunBi.hpes_cijunbiDataTable GetData(int HID, int YID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((HID.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(HID.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((YID.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(YID.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(HID));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(YID));
             dsCiJunBi.hpes_cijunbiDataTable dataTable = new dsCiJunBi.hpes_cijunbiDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dsCiJunBi.hpes_cijunbiDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dsCiJunBi dataSet) {
-            return this.Adapter.Update(dataSet, "hpes_cijunbi");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
         }
     }
     
@@ -1153,8 +1088,6 @@ namespace HPES.dsCiJunBiTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private hpes_cijunbiTableAdapter _hpes_cijunbiTableAdapter;
-        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -1166,19 +1099,6 @@ namespace HPES.dsCiJunBiTableAdapters {
             }
             set {
                 this._updateOrder = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" +
-            "", "System.Drawing.Design.UITypeEditor")]
-        public hpes_cijunbiTableAdapter hpes_cijunbiTableAdapter {
-            get {
-                return this._hpes_cijunbiTableAdapter;
-            }
-            set {
-                this._hpes_cijunbiTableAdapter = value;
             }
         }
         
@@ -1199,10 +1119,6 @@ namespace HPES.dsCiJunBiTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._hpes_cijunbiTableAdapter != null) 
-                            && (this._hpes_cijunbiTableAdapter.Connection != null))) {
-                    return this._hpes_cijunbiTableAdapter.Connection;
-                }
                 return null;
             }
             set {
@@ -1215,9 +1131,6 @@ namespace HPES.dsCiJunBiTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._hpes_cijunbiTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 return count;
             }
         }
@@ -1228,15 +1141,6 @@ namespace HPES.dsCiJunBiTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private int UpdateUpdatedRows(dsCiJunBi dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._hpes_cijunbiTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.hpes_cijunbi.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._hpes_cijunbiTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             return result;
         }
         
@@ -1246,14 +1150,6 @@ namespace HPES.dsCiJunBiTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private int UpdateInsertedRows(dsCiJunBi dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._hpes_cijunbiTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.hpes_cijunbi.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._hpes_cijunbiTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -1263,14 +1159,6 @@ namespace HPES.dsCiJunBiTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private int UpdateDeletedRows(dsCiJunBi dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._hpes_cijunbiTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.hpes_cijunbi.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._hpes_cijunbiTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             return result;
         }
         
@@ -1308,10 +1196,6 @@ namespace HPES.dsCiJunBiTableAdapters {
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._hpes_cijunbiTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._hpes_cijunbiTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("由 TableAdapterManager 管理的所有 TableAdapter 必须使用相同的连接字符串。");
-            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager 不包含任何连接信息。请将每个 TableAdapterManager TableAdapter 属性设置为有效的 Tabl" +
@@ -1343,15 +1227,6 @@ namespace HPES.dsCiJunBiTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._hpes_cijunbiTableAdapter != null)) {
-                    revertConnections.Add(this._hpes_cijunbiTableAdapter, this._hpes_cijunbiTableAdapter.Connection);
-                    this._hpes_cijunbiTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
-                    this._hpes_cijunbiTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
-                    if (this._hpes_cijunbiTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._hpes_cijunbiTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._hpes_cijunbiTableAdapter.Adapter);
-                    }
-                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -1409,10 +1284,6 @@ namespace HPES.dsCiJunBiTableAdapters {
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
-                }
-                if ((this._hpes_cijunbiTableAdapter != null)) {
-                    this._hpes_cijunbiTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._hpes_cijunbiTableAdapter]));
-                    this._hpes_cijunbiTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
