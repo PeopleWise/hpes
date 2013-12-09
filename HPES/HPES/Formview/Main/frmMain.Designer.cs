@@ -148,9 +148,9 @@
             this.hpes_submit_dataTableAdapter = new HPES.dsSubmitDataTableAdapters.hpes_submit_dataTableAdapter();
             this.hpes_drugTableAdapter = new HPES.dsDrugTableAdapters.hpes_drugTableAdapter();
             this.hpes_materialTableAdapter = new HPES.dsMaterialTableAdapters.hpes_materialTableAdapter();
-            this.hpes_cijunbiTableAdapter = new HPES.dsCiJunBiTableAdapters.hpes_cijunbiTableAdapter();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.rptEvalSummary1 = new HPES.Report.rptEvalSummary();
+            this.hpes_cijunbiTableAdapter = new HPES.dsCiJunBiTableAdapters.hpes_cijunbiTableAdapter();
             this.StatusBar1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon1)).BeginInit();
             this.backstageTabControl1.SuspendLayout();
@@ -278,7 +278,7 @@
             this.StatusBar1.LeftPanelCommands.AddRange(new Janus.Windows.Ribbon.CommandBase[] {
             this.lblSysMessage,
             this.containerControlCommand1});
-            this.StatusBar1.Location = new System.Drawing.Point(0, 735);
+            this.StatusBar1.Location = new System.Drawing.Point(0, 785);
             this.StatusBar1.Name = "StatusBar1";
             this.StatusBar1.OfficeCustomColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.StatusBar1.Size = new System.Drawing.Size(1272, 23);
@@ -1065,7 +1065,7 @@
             // Design Time Panel Info:
             // 
             this.uiPanelManager1.BeginPanelInfo();
-            this.uiPanelManager1.AddDockPanelInfo(new System.Guid("567c3f27-489f-4aa8-ae60-e57a1faa7459"), Janus.Windows.UI.Dock.PanelGroupStyle.HorizontalTiles, Janus.Windows.UI.Dock.PanelDockStyle.Right, true, new System.Drawing.Size(300, 608), true);
+            this.uiPanelManager1.AddDockPanelInfo(new System.Guid("567c3f27-489f-4aa8-ae60-e57a1faa7459"), Janus.Windows.UI.Dock.PanelGroupStyle.HorizontalTiles, Janus.Windows.UI.Dock.PanelDockStyle.Right, true, new System.Drawing.Size(333, 658), true);
             this.uiPanelManager1.AddDockPanelInfo(new System.Guid("42d13bcf-aa5b-476c-96e5-9ce9ffd37596"), new System.Guid("567c3f27-489f-4aa8-ae60-e57a1faa7459"), 608, true);
             this.uiPanelManager1.AddFloatingPanelInfo(new System.Guid("567c3f27-489f-4aa8-ae60-e57a1faa7459"), Janus.Windows.UI.Dock.PanelGroupStyle.HorizontalTiles, true, new System.Drawing.Point(-1, -1), new System.Drawing.Size(-1, -1), false);
             this.uiPanelManager1.AddFloatingPanelInfo(new System.Guid("42d13bcf-aa5b-476c-96e5-9ce9ffd37596"), new System.Drawing.Point(-1, -1), new System.Drawing.Size(-1, -1), false);
@@ -1076,9 +1076,9 @@
             this.uiPanel0.AutoHideButtonVisible = Janus.Windows.UI.InheritableBoolean.True;
             this.uiPanel0.CaptionStyle = Janus.Windows.UI.Dock.PanelCaptionStyle.Dark;
             this.uiPanel0.CloseButtonVisible = Janus.Windows.UI.InheritableBoolean.False;
-            this.uiPanel0.Location = new System.Drawing.Point(969, 124);
+            this.uiPanel0.Location = new System.Drawing.Point(936, 124);
             this.uiPanel0.Name = "uiPanel0";
-            this.uiPanel0.Size = new System.Drawing.Size(300, 608);
+            this.uiPanel0.Size = new System.Drawing.Size(333, 658);
             this.uiPanel0.TabIndex = 4;
             this.uiPanel0.Text = "医院提报数据";
             // 
@@ -1089,7 +1089,7 @@
             this.uiPanel1.InnerContainer = this.uiPanel1Container;
             this.uiPanel1.Location = new System.Drawing.Point(3, 22);
             this.uiPanel1.Name = "uiPanel1";
-            this.uiPanel1.Size = new System.Drawing.Size(297, 586);
+            this.uiPanel1.Size = new System.Drawing.Size(330, 636);
             this.uiPanel1.TabIndex = 4;
             // 
             // uiPanel1Container
@@ -1097,7 +1097,7 @@
             this.uiPanel1Container.Controls.Add(this.uiTab1);
             this.uiPanel1Container.Location = new System.Drawing.Point(1, 1);
             this.uiPanel1Container.Name = "uiPanel1Container";
-            this.uiPanel1Container.Size = new System.Drawing.Size(295, 584);
+            this.uiPanel1Container.Size = new System.Drawing.Size(328, 634);
             this.uiPanel1Container.TabIndex = 0;
             // 
             // uiTab1
@@ -1109,7 +1109,7 @@
             this.uiTab1.Margin = new System.Windows.Forms.Padding(2);
             this.uiTab1.Name = "uiTab1";
             this.uiTab1.OfficeColorScheme = Janus.Windows.UI.OfficeColorScheme.Blue;
-            this.uiTab1.Size = new System.Drawing.Size(295, 584);
+            this.uiTab1.Size = new System.Drawing.Size(328, 634);
             this.uiTab1.TabIndex = 0;
             this.uiTab1.TabPages.AddRange(new Janus.Windows.UI.Tab.UITabPage[] {
             this.uiTabPage1,
@@ -1124,7 +1124,7 @@
             this.uiTabPage1.Controls.Add(this.gridEX1);
             this.uiTabPage1.Location = new System.Drawing.Point(1, 20);
             this.uiTabPage1.Name = "uiTabPage1";
-            this.uiTabPage1.Size = new System.Drawing.Size(293, 563);
+            this.uiTabPage1.Size = new System.Drawing.Size(326, 613);
             this.uiTabPage1.TabStop = true;
             this.uiTabPage1.Text = "基础数据(&B)";
             this.uiTabPage1.ToolTipText = "由医院提报的基础数据";
@@ -1143,7 +1143,7 @@
             this.gridEX1.Location = new System.Drawing.Point(0, 0);
             this.gridEX1.Name = "gridEX1";
             this.gridEX1.OfficeColorScheme = Janus.Windows.GridEX.OfficeColorScheme.Blue;
-            this.gridEX1.Size = new System.Drawing.Size(293, 563);
+            this.gridEX1.Size = new System.Drawing.Size(326, 613);
             this.gridEX1.TabIndex = 0;
             this.gridEX1.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2010;
             this.gridEX1.VisualStyleManager = this.visualStyleManager1;
@@ -1238,7 +1238,7 @@
             this.uiTabPage4.Controls.Add(this.gridEX4);
             this.uiTabPage4.Location = new System.Drawing.Point(1, 20);
             this.uiTabPage4.Name = "uiTabPage4";
-            this.uiTabPage4.Size = new System.Drawing.Size(293, 583);
+            this.uiTabPage4.Size = new System.Drawing.Size(501, 609);
             this.uiTabPage4.TabStop = true;
             this.uiTabPage4.Text = "次均比(&R)";
             this.uiTabPage4.ToolTipText = "军队/地方分年龄段前五病种次均费用比较";
@@ -1255,7 +1255,7 @@
             this.gridEX4.Location = new System.Drawing.Point(0, 0);
             this.gridEX4.Name = "gridEX4";
             this.gridEX4.OfficeColorScheme = Janus.Windows.GridEX.OfficeColorScheme.Blue;
-            this.gridEX4.Size = new System.Drawing.Size(293, 583);
+            this.gridEX4.Size = new System.Drawing.Size(501, 609);
             this.gridEX4.TabIndex = 1;
             this.gridEX4.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2010;
             this.gridEX4.VisualStyleManager = this.visualStyleManager1;
@@ -1282,13 +1282,13 @@
             // 
             this.hpes_materialTableAdapter.ClearBeforeFill = true;
             // 
-            // hpes_cijunbiTableAdapter
-            // 
-            this.hpes_cijunbiTableAdapter.ClearBeforeFill = true;
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // hpes_cijunbiTableAdapter
+            // 
+            this.hpes_cijunbiTableAdapter.ClearBeforeFill = true;
             // 
             // frmMain
             // 
@@ -1296,7 +1296,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1272, 758);
+            this.ClientSize = new System.Drawing.Size(1272, 808);
             this.Controls.Add(this.uiPanel0);
             this.Controls.Add(this.StatusBar1);
             this.Controls.Add(this.ribbon1);
@@ -1442,7 +1442,6 @@
         private Janus.Windows.GridEX.GridEX gridEX4;
         private System.Windows.Forms.BindingSource hpescijunbiBindingSource;
         private dsCiJunBi dsCiJunBi;
-        private HPES.dsCiJunBiTableAdapters.hpes_cijunbiTableAdapter hpes_cijunbiTableAdapter;
         private Janus.Windows.Ribbon.RibbonGroup ribbonGroup14;
         private Janus.Windows.Ribbon.ButtonCommand buttonCommand10;
         private Janus.Windows.Ribbon.ButtonCommand buttonCommand11;
@@ -1474,6 +1473,7 @@
         private Janus.Windows.Ribbon.ButtonCommand btnQuery;
         public Janus.Windows.Ribbon.LabelCommand lblSysMessage;
         public Janus.Windows.EditControls.UIProgressBar uiProgressBar1;
+        private HPES.dsCiJunBiTableAdapters.hpes_cijunbiTableAdapter hpes_cijunbiTableAdapter;
 
 
     }
