@@ -18,25 +18,26 @@ namespace HPES.Formview.Scoreview
             InitializeComponent();
         }
 
-        private void uiCommandBar1_CommandClick(object sender, Janus.Windows.UI.CommandBars.CommandEventArgs e)
-        {
-            if (e.Command.Text.IndexOf("确定")>0)
-            {
-                this.Hide();
-            }
-            else if (MessageBox.Show("您确定要放弃选择诊断名称吗？\n放弃选择将使用默认的前五种诊断名称进行单病种次均费用比计算。", Application.ProductName, MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2)==DialogResult.OK)
-            {
-                this.Hide();
-            }
-        }
-
+       
         private void frmQueryData_Load(object sender, EventArgs e)
         {
             frmSubjectEval frmTemp = (frmSubjectEval)this.Owner;
             try
             {
                 this.hpes_query_dataTableAdapter.Fill(this.dsQuery.hpes_query_data, frmTemp.hid, frmTemp.yid);
-                this.dsQuery.hpes_query.DefaultView.RowFilter = "QID = 5";
+                this.hpes_query_dataBindingSource.Filter = "QID = 5";
+                //this.dsQuery.hpes_query.DefaultView.RowFilter = "QID = 5";
+                GridEXRow[] rows=this.gridEX1.GetRows();
+                if (this.gridEX1.RecordCount >= 5)
+                {
+                    for (int i = 0; i < 5; i++)
+                    {
+                        rows[i].CheckState = RowCheckState.Checked;
+                        rows[i].BeginEdit();
+                        rows[i].Cells[0].Value = true;
+                        rows[i].EndEdit();
+                    }
+                }
             }
             catch (System.Exception ex)
             {
@@ -47,12 +48,29 @@ namespace HPES.Formview.Scoreview
         private void frmQueryData_FormClosing(object sender, FormClosingEventArgs e)
         {
             frmSubjectEval frmTemp = (frmSubjectEval)this.Owner;
-            GridEXRow[] datarows = this.gridEX1.GetRows();
+            GridEXRow[] datarows = this.gridEX1.GetCheckedRows();
             foreach (GridEXRow datarow in datarows)
             {
-                if ((Boolean)datarow.Cells[0].Value)
+                frmTemp.sDIAGCODES += "'" + datarow.Cells[5].Value.ToString() + "', ";
+            }
+            frmTemp.sDIAGCODES = frmTemp.sDIAGCODES.Substring(0, frmTemp.sDIAGCODES.Length - 2);
+        }
+
+        private void gridEX1_CellValueChanged(object sender, ColumnActionEventArgs e)
+        {
+            if (e.Column.Caption == "选择")
+            {
+                GridEXRow row = this.gridEX1.CurrentRow;
+                if (row.Cells[0].Value != null)
                 {
-                    frmTemp.sDIAGCODES += "'" + datarow.Cells[5].Value.ToString() + "', ";
+                    if ((Boolean)row.Cells[0].Value)
+                    {
+                        row.CheckState = RowCheckState.Checked;
+                    }
+                    else
+                    {
+                        row.CheckState = RowCheckState.Unchecked;
+                    }
                 }
             }
         }
