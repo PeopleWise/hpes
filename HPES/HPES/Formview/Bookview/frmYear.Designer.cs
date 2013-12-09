@@ -208,6 +208,7 @@
             // 
             // gridEX1
             // 
+            this.gridEX1.AllowAddNew = Janus.Windows.GridEX.InheritableBoolean.True;
             this.gridEX1.AlternatingColors = true;
             this.gridEX1.DataSource = this.dsYearBindingSource;
             gridEX1_DesignTimeLayout.LayoutString = resources.GetString("gridEX1_DesignTimeLayout.LayoutString");
