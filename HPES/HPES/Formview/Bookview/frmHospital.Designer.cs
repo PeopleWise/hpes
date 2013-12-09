@@ -120,7 +120,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(32, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "/ {0}";
             this.bindingNavigatorCountItem.ToolTipText = "总项数";
             // 
@@ -217,10 +217,10 @@
             this.gridEX1.GroupByBoxVisible = false;
             this.gridEX1.Location = new System.Drawing.Point(0, 25);
             this.gridEX1.Name = "gridEX1";
-            this.gridEX1.RecordNavigator = true;
             this.gridEX1.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.True;
             this.gridEX1.Size = new System.Drawing.Size(920, 426);
             this.gridEX1.TabIndex = 1;
+            this.gridEX1.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2010;
             // 
             // frmHospital
             // 
