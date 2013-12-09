@@ -253,6 +253,38 @@ namespace HPES.Formview.Main
         {
             foreach (Form frm in this.MdiChildren)
             {
+                if (frm.Name == "frmStandardOne")
+                {
+                    frm.Activate();
+                    frm.Focus();
+                    return;
+                }
+            }
+            frmStandardOne frmStandardOne = new frmStandardOne();
+            frmStandardOne.MdiParent = this;
+            frmStandardOne.Show();
+        }
+
+        private void btn2Level_Click(object sender, CommandEventArgs e)
+        {
+            foreach (Form frm in this.MdiChildren)
+            {
+                if (frm.Name == "frmStandardTwo")
+                {
+                    frm.Activate();
+                    frm.Focus();
+                    return;
+                }
+            }
+            frmStandardTwo frmStandardTwo = new frmStandardTwo();
+            frmStandardTwo.MdiParent = this;
+            frmStandardTwo.Show();
+        }
+
+        private void btn3Level_Click(object sender, CommandEventArgs e)
+        {
+            foreach (Form frm in this.MdiChildren)
+            {
                 if (frm.Name == "frmInput")
                 {
                     frm.Activate();
@@ -264,8 +296,6 @@ namespace HPES.Formview.Main
             frmInput.MdiParent = this;
             frmInput.Show();
         }
-
-
        
         private void btnUserManage_Click(object sender, CommandEventArgs e)
         {
@@ -792,37 +822,7 @@ namespace HPES.Formview.Main
             this.Update();
         }
 
-        private void btn2Level_Click(object sender, CommandEventArgs e)
-        {
-            foreach (Form frm in this.MdiChildren)
-            {
-                if (frm.Name == "frmInput")
-                {
-                    frm.Activate();
-                    frm.Focus();
-                    return;
-                }
-            }
-            frmInput frmInput = new frmInput();
-            frmInput.MdiParent = this;
-            frmInput.Show();
-        }
 
-        private void btn3Level_Click(object sender, CommandEventArgs e)
-        {
-            foreach (Form frm in this.MdiChildren)
-            {
-                if (frm.Name == "frmInput")
-                {
-                    frm.Activate();
-                    frm.Focus();
-                    return;
-                }
-            }
-            frmInput frmInput = new frmInput();
-            frmInput.MdiParent = this;
-            frmInput.Show();
-        }
 
         private void btnOption_Click(object sender, CommandEventArgs e)
         {
