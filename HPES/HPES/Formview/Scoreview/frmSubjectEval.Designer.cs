@@ -55,11 +55,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnCalcAll = new Janus.Windows.EditControls.UIButton();
             this.gridEX1 = new Janus.Windows.GridEX.GridEX();
+            this.hpes_queryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsQuery = new HPES.dsQuery();
             this.gridEXExporter1 = new Janus.Windows.GridEX.Export.GridEXExporter(this.components);
             this.gridEXPrintDocument1 = new Janus.Windows.GridEX.GridEXPrintDocument();
             this.janusSuperTip = new Janus.Windows.Common.JanusSuperTip(this.components);
-            this.hpes_queryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsQuery = new HPES.dsQuery();
             this.tableAdapterManager = new HPES.dsEvaluationTableAdapters.TableAdapterManager();
             this.dsHospital1 = new HPES.dsHospital();
             this.dsHospitalTableAdapter1 = new HPES.dsHospitalTableAdapters.dsHospitalTableAdapter();
@@ -359,8 +359,19 @@
             this.gridEX1.TotalRowPosition = Janus.Windows.GridEX.TotalRowPosition.BottomFixed;
             this.gridEX1.UpdateMode = Janus.Windows.GridEX.UpdateMode.CellUpdate;
             this.gridEX1.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2010;
+            this.gridEX1.ColumnButtonClick += new Janus.Windows.GridEX.ColumnActionEventHandler(this.gridEX1_ColumnButtonClick);
             this.gridEX1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.gridEX1_MouseClick);
             this.gridEX1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.gridEX1_MouseMove);
+            // 
+            // hpes_queryBindingSource
+            // 
+            this.hpes_queryBindingSource.DataMember = "hpes_query";
+            this.hpes_queryBindingSource.DataSource = this.dsQuery;
+            // 
+            // dsQuery
+            // 
+            this.dsQuery.DataSetName = "dsQuery";
+            this.dsQuery.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridEXExporter1
             // 
@@ -377,16 +388,6 @@
             this.janusSuperTip.AutoPopDelay = 2000;
             this.janusSuperTip.ImageList = null;
             this.janusSuperTip.OfficeColorScheme = Janus.Windows.Common.OfficeColorScheme.Blue;
-            // 
-            // hpes_queryBindingSource
-            // 
-            this.hpes_queryBindingSource.DataMember = "hpes_query";
-            this.hpes_queryBindingSource.DataSource = this.dsQuery;
-            // 
-            // dsQuery
-            // 
-            this.dsQuery.DataSetName = "dsQuery";
-            this.dsQuery.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tableAdapterManager
             // 
