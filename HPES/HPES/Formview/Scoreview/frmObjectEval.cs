@@ -36,6 +36,18 @@ namespace HPES
             hid = int.Parse(frm.cboHospital.ComboBox.SelectedValue.ToString());
             yid = int.Parse(frm.cboYear.ComboBox.SelectedValue.ToString());
 
+            OleDbConnection conn = new OleDbConnection();
+            conn = this.dsEvaluationTableAdapter.Connection;
+            if (conn.State != ConnectionState.Open) conn.Open();
+            OleDbCommand cmd = new OleDbCommand();
+            cmd.CommandText = "CreateEvaluation";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new OleDbParameter("@HID", OleDbType.Integer));
+            cmd.Parameters.Add(new OleDbParameter("@YID", OleDbType.Integer));
+            cmd.Parameters[0].Value = hid;
+            cmd.Parameters[1].Value = yid;
+            cmd.Connection = conn;
+            cmd.ExecuteNonQuery();
             this.dsEvaluationTableAdapter.Fill(this.dsEvaluation._dsEvaluation, hid, yid);
         
 

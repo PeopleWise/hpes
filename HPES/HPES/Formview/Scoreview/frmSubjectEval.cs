@@ -296,12 +296,6 @@ namespace HPES
                                 try
                                 {
                                     crow.Cells[j + 4].ToolTipText = aTitles[i]+": "+crow.Cells[j + 4].Value.ToString();
-                                    SuperTipSettings tipset=new SuperTipSettings();
-                                    tipset.HeaderText=aTitles[i];
-                                    tipset.Text=crow.Cells[j + 4].Value.ToString();
-                                    tipset.FooterText = "说明此数据项的含义";
-                                    this.janusSuperTip.SetSuperTip(this.gridEX1, tipset);
-                                    //this.janusSuperTip.Show(tipset);
                                 }
                                 catch (Exception exec)
                                 {
