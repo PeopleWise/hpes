@@ -62,17 +62,23 @@
             // 
             // gridEX1
             // 
+            this.gridEX1.AllowAddNew = Janus.Windows.GridEX.InheritableBoolean.True;
+            this.gridEX1.AlternatingColors = true;
             this.gridEX1.BuiltInTextsData = "<LocalizableData ID=\"LocalizableStrings\" Collection=\"true\"><GroupByBoxInfo>拖动一列到这" +
                 "里进行汇总显示</GroupByBoxInfo></LocalizableData>";
+            this.gridEX1.ColumnAutoResize = true;
             this.gridEX1.DataSource = this.dsStandardBindingSource;
             gridEX1_DesignTimeLayout.LayoutString = resources.GetString("gridEX1_DesignTimeLayout.LayoutString");
             this.gridEX1.DesignTimeLayout = gridEX1_DesignTimeLayout;
             this.gridEX1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridEX1.GroupRowVisualStyle = Janus.Windows.GridEX.GroupRowVisualStyle.UseRowStyle;
+            this.gridEX1.GroupTotals = Janus.Windows.GridEX.GroupTotals.Always;
             this.gridEX1.Hierarchical = true;
             this.gridEX1.Location = new System.Drawing.Point(0, 0);
             this.gridEX1.Name = "gridEX1";
-            this.gridEX1.Size = new System.Drawing.Size(726, 485);
+            this.gridEX1.Size = new System.Drawing.Size(1043, 485);
             this.gridEX1.TabIndex = 0;
+            this.gridEX1.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2010;
             // 
             // dsStandardBindingSource
             // 
@@ -97,7 +103,7 @@
             // officeFormAdorner1
             // 
             this.officeFormAdorner1.Form = this;
-            this.officeFormAdorner1.OfficeColorScheme = Janus.Windows.Ribbon.OfficeColorScheme.Black;
+            this.officeFormAdorner1.OfficeColorScheme = Janus.Windows.Ribbon.OfficeColorScheme.Blue;
             this.officeFormAdorner1.VisualStyle = Janus.Windows.Ribbon.VisualStyle.Office2010;
             // 
             // hpes_standard_BindingNavigator
@@ -126,7 +132,7 @@
             this.hpes_standard_BindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.hpes_standard_BindingNavigator.Name = "hpes_standard_BindingNavigator";
             this.hpes_standard_BindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.hpes_standard_BindingNavigator.Size = new System.Drawing.Size(726, 25);
+            this.hpes_standard_BindingNavigator.Size = new System.Drawing.Size(1043, 25);
             this.hpes_standard_BindingNavigator.TabIndex = 1;
             this.hpes_standard_BindingNavigator.Text = "bindingNavigator1";
             // 
@@ -142,7 +148,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(32, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "/ {0}";
             this.bindingNavigatorCountItem.ToolTipText = "总项数";
             // 
@@ -227,7 +233,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 485);
+            this.ClientSize = new System.Drawing.Size(1043, 485);
             this.Controls.Add(this.hpes_standard_BindingNavigator);
             this.Controls.Add(this.gridEX1);
             this.Name = "frmInput";
@@ -249,7 +255,6 @@
 
         private Janus.Windows.GridEX.GridEXPrintDocument gridEXPrintDocument1;
         private Janus.Windows.GridEX.Export.GridEXExporter gridEXExporter1;
-        private Janus.Windows.GridEX.GridEX gridEX1;
         private dsStandard dsStandard;
         private System.Windows.Forms.BindingSource dsStandardBindingSource;
         private HPES.dsStandardTableAdapters.dsStandardTableAdapter dsStandardTableAdapter;
@@ -268,5 +273,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton hpes_submit_dictionaryBindingNavigatorSaveItem;
+        private Janus.Windows.GridEX.GridEX gridEX1;
     }
 }
