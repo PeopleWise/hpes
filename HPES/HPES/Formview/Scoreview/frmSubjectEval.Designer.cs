@@ -121,7 +121,7 @@
             this.uiButton1.Size = new System.Drawing.Size(75, 23);
             this.uiButton1.TabIndex = 20;
             this.uiButton1.Text = "uiButton1";
-            this.uiButton1.Click += new System.EventHandler(this.uiButton1_Click);
+
             // 
             // edtFISDBName
             // 
@@ -360,7 +360,6 @@
             this.gridEX1.UpdateMode = Janus.Windows.GridEX.UpdateMode.CellUpdate;
             this.gridEX1.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2010;
             this.gridEX1.ColumnButtonClick += new Janus.Windows.GridEX.ColumnActionEventHandler(this.gridEX1_ColumnButtonClick);
-            this.gridEX1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.gridEX1_MouseClick);
             this.gridEX1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.gridEX1_MouseMove);
             // 
             // hpes_queryBindingSource
