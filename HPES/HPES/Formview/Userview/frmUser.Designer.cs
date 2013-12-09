@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Janus.Windows.GridEX.GridEXLayout gridEX1_DesignTimeLayout = new Janus.Windows.GridEX.GridEXLayout();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUser));
             this.officeFormAdorner1 = new Janus.Windows.Ribbon.OfficeFormAdorner(this.components);
             this.dsUser = new HPES.dsUser();
@@ -48,20 +49,15 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.ds_userBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.ds_userDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.officeFormAdorner2 = new Janus.Windows.Ribbon.OfficeFormAdorner(this.components);
+            this.gridEX1 = new Janus.Windows.GridEX.GridEX();
             ((System.ComponentModel.ISupportInitialize)(this.officeFormAdorner1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_userBindingNavigator)).BeginInit();
             this.ds_userBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ds_userDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.officeFormAdorner2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEX1)).BeginInit();
             this.SuspendLayout();
             // 
             // officeFormAdorner1
@@ -130,7 +126,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(32, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "/ {0}";
             this.bindingNavigatorCountItem.ToolTipText = "总项数";
             // 
@@ -212,67 +208,35 @@
             this.ds_userBindingNavigatorSaveItem.Text = "保存数据";
             this.ds_userBindingNavigatorSaveItem.Click += new System.EventHandler(this.ds_userBindingNavigatorSaveItem_Click);
             // 
-            // ds_userDataGridView
-            // 
-            this.ds_userDataGridView.AutoGenerateColumns = false;
-            this.ds_userDataGridView.BackgroundColor = System.Drawing.Color.White;
-            this.ds_userDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ds_userDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
-            this.ds_userDataGridView.DataSource = this.ds_userBindingSource;
-            this.ds_userDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ds_userDataGridView.Location = new System.Drawing.Point(0, 25);
-            this.ds_userDataGridView.Name = "ds_userDataGridView";
-            this.ds_userDataGridView.RowTemplate.Height = 23;
-            this.ds_userDataGridView.Size = new System.Drawing.Size(550, 233);
-            this.ds_userDataGridView.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "序号";
-            this.dataGridViewTextBoxColumn1.HeaderText = "序号";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "用户名";
-            this.dataGridViewTextBoxColumn2.HeaderText = "用户名";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "密码";
-            this.dataGridViewTextBoxColumn3.HeaderText = "密码";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "登陆时间";
-            this.dataGridViewTextBoxColumn4.HeaderText = "登陆时间";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "用户权限";
-            this.dataGridViewTextBoxColumn5.HeaderText = "用户权限";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
             // officeFormAdorner2
             // 
             this.officeFormAdorner2.Form = this;
             this.officeFormAdorner2.VisualStyle = Janus.Windows.Ribbon.VisualStyle.Office2010;
+            // 
+            // gridEX1
+            // 
+            this.gridEX1.AllowAddNew = Janus.Windows.GridEX.InheritableBoolean.True;
+            this.gridEX1.AllowColumnDrag = false;
+            this.gridEX1.AllowDelete = Janus.Windows.GridEX.InheritableBoolean.True;
+            this.gridEX1.AlternatingColors = true;
+            this.gridEX1.DataSource = this.ds_userBindingSource;
+            gridEX1_DesignTimeLayout.LayoutString = resources.GetString("gridEX1_DesignTimeLayout.LayoutString");
+            this.gridEX1.DesignTimeLayout = gridEX1_DesignTimeLayout;
+            this.gridEX1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridEX1.GroupByBoxVisible = false;
+            this.gridEX1.Location = new System.Drawing.Point(0, 25);
+            this.gridEX1.Name = "gridEX1";
+            this.gridEX1.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.True;
+            this.gridEX1.Size = new System.Drawing.Size(550, 233);
+            this.gridEX1.TabIndex = 1;
+            this.gridEX1.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2010;
             // 
             // frmUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(550, 258);
-            this.Controls.Add(this.ds_userDataGridView);
+            this.Controls.Add(this.gridEX1);
             this.Controls.Add(this.ds_userBindingNavigator);
             this.Name = "frmUser";
             this.Text = "用户管理";
@@ -283,8 +247,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ds_userBindingNavigator)).EndInit();
             this.ds_userBindingNavigator.ResumeLayout(false);
             this.ds_userBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ds_userDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.officeFormAdorner2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEX1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -310,13 +274,8 @@
         private System.Windows.Forms.ToolStripButton ds_userBindingNavigatorSaveItem;
         private HPES.dsUserTableAdapters.dsUserTableAdapter dsUserTableAdapter;
         private HPES.dsUserTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridView ds_userDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private Janus.Windows.Ribbon.OfficeFormAdorner officeFormAdorner2;
+        private Janus.Windows.GridEX.GridEX gridEX1;
 
     }
 }
