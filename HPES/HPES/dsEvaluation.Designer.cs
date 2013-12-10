@@ -296,10 +296,6 @@ namespace HPES {
             
             private global::System.Data.DataColumn columnYID;
             
-            private global::System.Data.DataColumn column得分1;
-            
-            private global::System.Data.DataColumn column上次得分1;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public dsEvaluationDataTable() {
                 this.TableName = "dsEvaluation";
@@ -450,20 +446,6 @@ namespace HPES {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn 得分1Column {
-                get {
-                    return this.column得分1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn 上次得分1Column {
-                get {
-                    return this.column上次得分1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -504,13 +486,11 @@ namespace HPES {
                         int 分值, 
                         string 考评方法, 
                         string 参考依据, 
-                        int 得分, 
-                        int 上次得分, 
+                        double 得分, 
+                        double 上次得分, 
                         string 考评说明, 
                         System.DateTime 录入时间, 
-                        int YID, 
-                        double 得分1, 
-                        double 上次得分1) {
+                        int YID) {
                 dsEvaluationRow rowdsEvaluationRow = ((dsEvaluationRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -529,9 +509,7 @@ namespace HPES {
                         上次得分,
                         考评说明,
                         录入时间,
-                        YID,
-                        得分1,
-                        上次得分1};
+                        YID};
                 rowdsEvaluationRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdsEvaluationRow);
                 return rowdsEvaluationRow;
@@ -574,8 +552,6 @@ namespace HPES {
                 this.column考评说明 = base.Columns["考评说明"];
                 this.column录入时间 = base.Columns["录入时间"];
                 this.columnYID = base.Columns["YID"];
-                this.column得分1 = base.Columns["得分1"];
-                this.column上次得分1 = base.Columns["上次得分1"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -606,9 +582,9 @@ namespace HPES {
                 base.Columns.Add(this.column考评方法);
                 this.column参考依据 = new global::System.Data.DataColumn("参考依据", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column参考依据);
-                this.column得分 = new global::System.Data.DataColumn("得分", typeof(int), null, global::System.Data.MappingType.Element);
+                this.column得分 = new global::System.Data.DataColumn("得分", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column得分);
-                this.column上次得分 = new global::System.Data.DataColumn("上次得分", typeof(int), null, global::System.Data.MappingType.Element);
+                this.column上次得分 = new global::System.Data.DataColumn("上次得分", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column上次得分);
                 this.column考评说明 = new global::System.Data.DataColumn("考评说明", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column考评说明);
@@ -616,11 +592,7 @@ namespace HPES {
                 base.Columns.Add(this.column录入时间);
                 this.columnYID = new global::System.Data.DataColumn("YID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnYID);
-                this.column得分1 = new global::System.Data.DataColumn("得分1", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column得分1);
-                this.column上次得分1 = new global::System.Data.DataColumn("上次得分1", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column上次得分1);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint21", new global::System.Data.DataColumn[] {
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
                 this.columnID.AutoIncrementSeed = -1;
@@ -628,30 +600,16 @@ namespace HPES {
                 this.columnID.AllowDBNull = false;
                 this.columnID.ReadOnly = true;
                 this.columnID.Unique = true;
-                this.column年度.ReadOnly = true;
                 this.column年度.MaxLength = 50;
-                this.column医院编码.ReadOnly = true;
                 this.column医院编码.MaxLength = 50;
-                this.column医院名称.ReadOnly = true;
                 this.column医院名称.MaxLength = 200;
-                this.column指标编码.ReadOnly = true;
-                this.column一级指标.ReadOnly = true;
                 this.column一级指标.MaxLength = 500;
-                this.column二级指标.ReadOnly = true;
                 this.column二级指标.MaxLength = 500;
-                this._column考评要点_计算方法_.ReadOnly = true;
                 this._column考评要点_计算方法_.MaxLength = 2000;
-                this.column标准.ReadOnly = true;
                 this.column标准.MaxLength = 500;
-                this.column分值.ReadOnly = true;
-                this.column考评方法.ReadOnly = true;
                 this.column考评方法.MaxLength = 2000;
-                this.column参考依据.ReadOnly = true;
                 this.column参考依据.MaxLength = 2000;
                 this.column考评说明.MaxLength = 2000;
-                this.column录入时间.ReadOnly = true;
-                this.column得分1.Caption = "得分";
-                this.column上次得分1.Caption = "上次得分";
                 this.ExtendedProperties.Add("Generator_TablePropName", "_dsEvaluation");
                 this.ExtendedProperties.Add("Generator_UserTableName", "dsEvaluation");
             }
@@ -961,10 +919,10 @@ namespace HPES {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public int 得分 {
+            public double 得分 {
                 get {
                     try {
-                        return ((int)(this[this.tabledsEvaluation.得分Column]));
+                        return ((double)(this[this.tabledsEvaluation.得分Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("表“dsEvaluation”中列“得分”的值为 DBNull。", e);
@@ -976,10 +934,10 @@ namespace HPES {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public int 上次得分 {
+            public double 上次得分 {
                 get {
                     try {
-                        return ((int)(this[this.tabledsEvaluation.上次得分Column]));
+                        return ((double)(this[this.tabledsEvaluation.上次得分Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("表“dsEvaluation”中列“上次得分”的值为 DBNull。", e);
@@ -1032,36 +990,6 @@ namespace HPES {
                 }
                 set {
                     this[this.tabledsEvaluation.YIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public double 得分1 {
-                get {
-                    try {
-                        return ((double)(this[this.tabledsEvaluation.得分1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“dsEvaluation”中列“得分1”的值为 DBNull。", e);
-                    }
-                }
-                set {
-                    this[this.tabledsEvaluation.得分1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public double 上次得分1 {
-                get {
-                    try {
-                        return ((double)(this[this.tabledsEvaluation.上次得分1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“dsEvaluation”中列“上次得分1”的值为 DBNull。", e);
-                    }
-                }
-                set {
-                    this[this.tabledsEvaluation.上次得分1Column] = value;
                 }
             }
             
@@ -1224,26 +1152,6 @@ namespace HPES {
             public void SetYIDNull() {
                 this[this.tabledsEvaluation.YIDColumn] = global::System.Convert.DBNull;
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool Is得分1Null() {
-                return this.IsNull(this.tabledsEvaluation.得分1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void Set得分1Null() {
-                this[this.tabledsEvaluation.得分1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool Is上次得分1Null() {
-                return this.IsNull(this.tabledsEvaluation.上次得分1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void Set上次得分1Null() {
-                this[this.tabledsEvaluation.上次得分1Column] = global::System.Convert.DBNull;
-            }
         }
         
         /// <summary>
@@ -1396,6 +1304,7 @@ namespace HPES.dsEvaluationTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "dsEvaluation";
+            tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("年度", "年度");
             tableMapping.ColumnMappings.Add("医院编码", "医院编码");
             tableMapping.ColumnMappings.Add("医院名称", "医院名称");
@@ -1407,12 +1316,11 @@ namespace HPES.dsEvaluationTableAdapters {
             tableMapping.ColumnMappings.Add("分值", "分值");
             tableMapping.ColumnMappings.Add("考评方法", "考评方法");
             tableMapping.ColumnMappings.Add("参考依据", "参考依据");
+            tableMapping.ColumnMappings.Add("得分", "得分");
+            tableMapping.ColumnMappings.Add("上次得分", "上次得分");
             tableMapping.ColumnMappings.Add("考评说明", "考评说明");
             tableMapping.ColumnMappings.Add("录入时间", "录入时间");
-            tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("YID", "YID");
-            tableMapping.ColumnMappings.Add("得分", "得分1");
-            tableMapping.ColumnMappings.Add("上次得分", "上次得分1");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

@@ -40,6 +40,7 @@ WHERE (HPES_evaluation.HID = ?) AND
               </DbSource>
             </MainSource>
             <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
               <Mapping SourceColumn="年度" DataSetColumn="年度" />
               <Mapping SourceColumn="医院编码" DataSetColumn="医院编码" />
               <Mapping SourceColumn="医院名称" DataSetColumn="医院名称" />
@@ -51,12 +52,11 @@ WHERE (HPES_evaluation.HID = ?) AND
               <Mapping SourceColumn="分值" DataSetColumn="分值" />
               <Mapping SourceColumn="考评方法" DataSetColumn="考评方法" />
               <Mapping SourceColumn="参考依据" DataSetColumn="参考依据" />
+              <Mapping SourceColumn="得分" DataSetColumn="得分" />
+              <Mapping SourceColumn="上次得分" DataSetColumn="上次得分" />
               <Mapping SourceColumn="考评说明" DataSetColumn="考评说明" />
               <Mapping SourceColumn="录入时间" DataSetColumn="录入时间" />
-              <Mapping SourceColumn="ID" DataSetColumn="ID" />
               <Mapping SourceColumn="YID" DataSetColumn="YID" />
-              <Mapping SourceColumn="得分" DataSetColumn="得分1" />
-              <Mapping SourceColumn="上次得分" DataSetColumn="上次得分1" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -68,94 +68,92 @@ WHERE (HPES_evaluation.HID = ?) AND
   <xs:element name="dsEvaluation" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsEvaluation" msprop:Generator_DataSetName="dsEvaluation" msprop:EnableTableAdapterManager="true">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="dsEvaluation" msprop:Generator_UserTableName="dsEvaluation" msprop:Generator_RowDeletedName="dsEvaluationRowDeleted" msprop:Generator_RowChangedName="dsEvaluationRowChanged" msprop:Generator_RowClassName="dsEvaluationRow" msprop:Generator_RowChangingName="dsEvaluationRowChanging" msprop:Generator_RowEvArgName="dsEvaluationRowChangeEvent" msprop:Generator_RowEvHandlerName="dsEvaluationRowChangeEventHandler" msprop:Generator_TableClassName="dsEvaluationDataTable" msprop:Generator_TableVarName="tabledsEvaluation" msprop:Generator_RowDeletingName="dsEvaluationRowDeleting" msprop:Generator_TablePropName="_dsEvaluation">
+        <xs:element name="dsEvaluation" msprop:Generator_UserTableName="dsEvaluation" msprop:Generator_RowDeletedName="dsEvaluationRowDeleted" msprop:Generator_TableClassName="dsEvaluationDataTable" msprop:Generator_RowChangedName="dsEvaluationRowChanged" msprop:Generator_RowClassName="dsEvaluationRow" msprop:Generator_RowChangingName="dsEvaluationRowChanging" msprop:Generator_RowEvArgName="dsEvaluationRowChangeEvent" msprop:Generator_RowEvHandlerName="dsEvaluationRowChangeEventHandler" msprop:Generator_TablePropName="_dsEvaluation" msprop:Generator_TableVarName="tabledsEvaluation" msprop:Generator_RowDeletingName="dsEvaluationRowDeleting">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" type="xs:int" />
-              <xs:element name="年度" msdata:ReadOnly="true" msprop:Generator_UserColumnName="年度" msprop:Generator_ColumnVarNameInTable="column年度" msprop:Generator_ColumnPropNameInRow="年度" msprop:Generator_ColumnPropNameInTable="年度Column" minOccurs="0">
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInTable="IDColumn" type="xs:int" />
+              <xs:element name="年度" msprop:Generator_UserColumnName="年度" msprop:Generator_ColumnPropNameInRow="年度" msprop:Generator_ColumnVarNameInTable="column年度" msprop:Generator_ColumnPropNameInTable="年度Column" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="医院编码" msdata:ReadOnly="true" msprop:Generator_UserColumnName="医院编码" msprop:Generator_ColumnVarNameInTable="column医院编码" msprop:Generator_ColumnPropNameInRow="医院编码" msprop:Generator_ColumnPropNameInTable="医院编码Column" minOccurs="0">
+              <xs:element name="医院编码" msprop:Generator_UserColumnName="医院编码" msprop:Generator_ColumnPropNameInRow="医院编码" msprop:Generator_ColumnVarNameInTable="column医院编码" msprop:Generator_ColumnPropNameInTable="医院编码Column" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="医院名称" msdata:ReadOnly="true" msprop:Generator_UserColumnName="医院名称" msprop:Generator_ColumnVarNameInTable="column医院名称" msprop:Generator_ColumnPropNameInRow="医院名称" msprop:Generator_ColumnPropNameInTable="医院名称Column" minOccurs="0">
+              <xs:element name="医院名称" msprop:Generator_UserColumnName="医院名称" msprop:Generator_ColumnPropNameInRow="医院名称" msprop:Generator_ColumnVarNameInTable="column医院名称" msprop:Generator_ColumnPropNameInTable="医院名称Column" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="200" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="指标编码" msdata:ReadOnly="true" msprop:Generator_UserColumnName="指标编码" msprop:Generator_ColumnVarNameInTable="column指标编码" msprop:Generator_ColumnPropNameInRow="指标编码" msprop:Generator_ColumnPropNameInTable="指标编码Column" type="xs:int" minOccurs="0" />
-              <xs:element name="一级指标" msdata:ReadOnly="true" msprop:Generator_UserColumnName="一级指标" msprop:Generator_ColumnVarNameInTable="column一级指标" msprop:Generator_ColumnPropNameInRow="一级指标" msprop:Generator_ColumnPropNameInTable="一级指标Column" minOccurs="0">
+              <xs:element name="指标编码" msprop:Generator_UserColumnName="指标编码" msprop:Generator_ColumnPropNameInRow="指标编码" msprop:Generator_ColumnVarNameInTable="column指标编码" msprop:Generator_ColumnPropNameInTable="指标编码Column" type="xs:int" minOccurs="0" />
+              <xs:element name="一级指标" msprop:Generator_UserColumnName="一级指标" msprop:Generator_ColumnPropNameInRow="一级指标" msprop:Generator_ColumnVarNameInTable="column一级指标" msprop:Generator_ColumnPropNameInTable="一级指标Column" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="500" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="二级指标" msdata:ReadOnly="true" msprop:Generator_UserColumnName="二级指标" msprop:Generator_ColumnVarNameInTable="column二级指标" msprop:Generator_ColumnPropNameInRow="二级指标" msprop:Generator_ColumnPropNameInTable="二级指标Column" minOccurs="0">
+              <xs:element name="二级指标" msprop:Generator_UserColumnName="二级指标" msprop:Generator_ColumnPropNameInRow="二级指标" msprop:Generator_ColumnVarNameInTable="column二级指标" msprop:Generator_ColumnPropNameInTable="二级指标Column" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="500" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="考评要点_xFF08_计算方法_xFF09_" msdata:ReadOnly="true" msprop:Generator_UserColumnName="考评要点（计算方法）" msprop:Generator_ColumnVarNameInTable="_column考评要点_计算方法_" msprop:Generator_ColumnPropNameInRow="_考评要点_计算方法_" msprop:Generator_ColumnPropNameInTable="_考评要点_计算方法_Column" minOccurs="0">
+              <xs:element name="考评要点_xFF08_计算方法_xFF09_" msprop:Generator_UserColumnName="考评要点（计算方法）" msprop:Generator_ColumnPropNameInRow="_考评要点_计算方法_" msprop:Generator_ColumnVarNameInTable="_column考评要点_计算方法_" msprop:Generator_ColumnPropNameInTable="_考评要点_计算方法_Column" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2000" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="标准" msdata:ReadOnly="true" msprop:Generator_UserColumnName="标准" msprop:Generator_ColumnVarNameInTable="column标准" msprop:Generator_ColumnPropNameInRow="标准" msprop:Generator_ColumnPropNameInTable="标准Column" minOccurs="0">
+              <xs:element name="标准" msprop:Generator_UserColumnName="标准" msprop:Generator_ColumnPropNameInRow="标准" msprop:Generator_ColumnVarNameInTable="column标准" msprop:Generator_ColumnPropNameInTable="标准Column" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="500" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="分值" msdata:ReadOnly="true" msprop:Generator_UserColumnName="分值" msprop:Generator_ColumnVarNameInTable="column分值" msprop:Generator_ColumnPropNameInRow="分值" msprop:Generator_ColumnPropNameInTable="分值Column" type="xs:int" minOccurs="0" />
-              <xs:element name="考评方法" msdata:ReadOnly="true" msprop:Generator_UserColumnName="考评方法" msprop:Generator_ColumnVarNameInTable="column考评方法" msprop:Generator_ColumnPropNameInRow="考评方法" msprop:Generator_ColumnPropNameInTable="考评方法Column" minOccurs="0">
+              <xs:element name="分值" msprop:Generator_UserColumnName="分值" msprop:Generator_ColumnPropNameInRow="分值" msprop:Generator_ColumnVarNameInTable="column分值" msprop:Generator_ColumnPropNameInTable="分值Column" type="xs:int" minOccurs="0" />
+              <xs:element name="考评方法" msprop:Generator_UserColumnName="考评方法" msprop:Generator_ColumnPropNameInRow="考评方法" msprop:Generator_ColumnVarNameInTable="column考评方法" msprop:Generator_ColumnPropNameInTable="考评方法Column" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2000" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="参考依据" msdata:ReadOnly="true" msprop:Generator_UserColumnName="参考依据" msprop:Generator_ColumnVarNameInTable="column参考依据" msprop:Generator_ColumnPropNameInRow="参考依据" msprop:Generator_ColumnPropNameInTable="参考依据Column" minOccurs="0">
+              <xs:element name="参考依据" msprop:Generator_UserColumnName="参考依据" msprop:Generator_ColumnPropNameInRow="参考依据" msprop:Generator_ColumnVarNameInTable="column参考依据" msprop:Generator_ColumnPropNameInTable="参考依据Column" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2000" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="得分" msprop:Generator_UserColumnName="得分" msprop:Generator_ColumnVarNameInTable="column得分" msprop:Generator_ColumnPropNameInRow="得分" msprop:Generator_ColumnPropNameInTable="得分Column" type="xs:int" minOccurs="0" />
-              <xs:element name="上次得分" msprop:Generator_UserColumnName="上次得分" msprop:Generator_ColumnVarNameInTable="column上次得分" msprop:Generator_ColumnPropNameInRow="上次得分" msprop:Generator_ColumnPropNameInTable="上次得分Column" type="xs:int" minOccurs="0" />
-              <xs:element name="考评说明" msprop:Generator_UserColumnName="考评说明" msprop:Generator_ColumnVarNameInTable="column考评说明" msprop:Generator_ColumnPropNameInRow="考评说明" msprop:Generator_ColumnPropNameInTable="考评说明Column" minOccurs="0">
+              <xs:element name="得分" msprop:Generator_UserColumnName="得分" msprop:Generator_ColumnPropNameInRow="得分" msprop:Generator_ColumnVarNameInTable="column得分" msprop:Generator_ColumnPropNameInTable="得分Column" type="xs:double" minOccurs="0" />
+              <xs:element name="上次得分" msprop:Generator_UserColumnName="上次得分" msprop:Generator_ColumnPropNameInRow="上次得分" msprop:Generator_ColumnVarNameInTable="column上次得分" msprop:Generator_ColumnPropNameInTable="上次得分Column" type="xs:double" minOccurs="0" />
+              <xs:element name="考评说明" msprop:Generator_UserColumnName="考评说明" msprop:Generator_ColumnPropNameInRow="考评说明" msprop:Generator_ColumnVarNameInTable="column考评说明" msprop:Generator_ColumnPropNameInTable="考评说明Column" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2000" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="录入时间" msdata:ReadOnly="true" msprop:Generator_UserColumnName="录入时间" msprop:Generator_ColumnVarNameInTable="column录入时间" msprop:Generator_ColumnPropNameInRow="录入时间" msprop:Generator_ColumnPropNameInTable="录入时间Column" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="YID" msprop:Generator_UserColumnName="YID" msprop:Generator_ColumnVarNameInTable="columnYID" msprop:Generator_ColumnPropNameInRow="YID" msprop:Generator_ColumnPropNameInTable="YIDColumn" type="xs:int" minOccurs="0" />
-              <xs:element name="得分1" msdata:Caption="得分" msprop:Generator_UserColumnName="得分1" msprop:Generator_ColumnPropNameInRow="得分1" msprop:Generator_ColumnVarNameInTable="column得分1" msprop:Generator_ColumnPropNameInTable="得分1Column" type="xs:double" minOccurs="0" />
-              <xs:element name="上次得分1" msdata:Caption="上次得分" msprop:Generator_UserColumnName="上次得分1" msprop:Generator_ColumnPropNameInRow="上次得分1" msprop:Generator_ColumnVarNameInTable="column上次得分1" msprop:Generator_ColumnPropNameInTable="上次得分1Column" type="xs:double" minOccurs="0" />
+              <xs:element name="录入时间" msprop:Generator_UserColumnName="录入时间" msprop:Generator_ColumnPropNameInRow="录入时间" msprop:Generator_ColumnVarNameInTable="column录入时间" msprop:Generator_ColumnPropNameInTable="录入时间Column" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="YID" msprop:Generator_UserColumnName="YID" msprop:Generator_ColumnPropNameInRow="YID" msprop:Generator_ColumnVarNameInTable="columnYID" msprop:Generator_ColumnPropNameInTable="YIDColumn" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>
     </xs:complexType>
-    <xs:unique name="Constraint21" msdata:PrimaryKey="true">
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:dsEvaluation" />
       <xs:field xpath="mstns:ID" />
     </xs:unique>
