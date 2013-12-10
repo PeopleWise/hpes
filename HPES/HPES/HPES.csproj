@@ -103,6 +103,10 @@
   <ItemGroup>
     <Compile Include="DBClass\DBconnection.cs" />
     <Compile Include="DBClass\DBOperate.cs" />
+    <Compile Include="dsCiJunBi.cs">
+      <DependentUpon>dsCiJunBi.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="dsCiJunBi.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
