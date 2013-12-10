@@ -21,11 +21,21 @@ namespace HPES.Formview.Bookview
         {
             // TODO: 这行代码将数据加载到表“dsYear._dsYear”中。您可以根据需要移动或移除它。
             this.dsYearTableAdapter.Fill(this.dsYear._dsYear);
+            // TODO: 这行代码将数据加载到表“dsYear._dsYear”中。您可以根据需要移动或移除它。
+            this.dsYearTableAdapter.Fill(this.dsYear._dsYear);
 
 
         }
 
         private void dsYearBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.dsYearBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.dsYear);
+
+        }
+
+        private void dsYearBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
         {
             this.Validate();
             this.dsYearBindingSource.EndEdit();
