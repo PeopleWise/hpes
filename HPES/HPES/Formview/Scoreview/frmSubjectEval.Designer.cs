@@ -29,12 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Janus.Windows.Common.SuperTipSettings superTipSettings2 = new Janus.Windows.Common.SuperTipSettings();
+            Janus.Windows.Common.SuperTipSettings superTipSettings3 = new Janus.Windows.Common.SuperTipSettings();
+            Janus.Windows.Common.SuperTipSettings superTipSettings4 = new Janus.Windows.Common.SuperTipSettings();
+            Janus.Windows.Common.SuperTipSettings superTipSettings5 = new Janus.Windows.Common.SuperTipSettings();
+            Janus.Windows.Common.SuperTipSettings superTipSettings6 = new Janus.Windows.Common.SuperTipSettings();
+            Janus.Windows.Common.SuperTipSettings superTipSettings7 = new Janus.Windows.Common.SuperTipSettings();
+            Janus.Windows.Common.SuperTipSettings superTipSettings8 = new Janus.Windows.Common.SuperTipSettings();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSubjectEval));
             Janus.Windows.GridEX.GridEXLayout gridEX1_DesignTimeLayout = new Janus.Windows.GridEX.GridEXLayout();
             Janus.Windows.Common.SuperTipSettings superTipSettings1 = new Janus.Windows.Common.SuperTipSettings();
             this.officeFormAdorner1 = new Janus.Windows.Ribbon.OfficeFormAdorner(this.components);
             this.boxServerInfo = new Janus.Windows.EditControls.UIGroupBox();
-            this.uiButton1 = new Janus.Windows.EditControls.UIButton();
             this.edtFISDBName = new Janus.Windows.GridEX.EditControls.EditBox();
             this.edtFISPassword = new Janus.Windows.GridEX.EditControls.EditBox();
             this.edtFISUserName = new Janus.Windows.GridEX.EditControls.EditBox();
@@ -86,7 +92,6 @@
             // boxServerInfo
             // 
             this.boxServerInfo.BackgroundStyle = Janus.Windows.EditControls.BackgroundStyle.Panel;
-            this.boxServerInfo.Controls.Add(this.uiButton1);
             this.boxServerInfo.Controls.Add(this.edtFISDBName);
             this.boxServerInfo.Controls.Add(this.edtFISPassword);
             this.boxServerInfo.Controls.Add(this.edtFISUserName);
@@ -114,21 +119,17 @@
             this.boxServerInfo.TabIndex = 0;
             this.boxServerInfo.VisualStyle = Janus.Windows.UI.Dock.PanelVisualStyle.Office2010;
             // 
-            // uiButton1
-            // 
-            this.uiButton1.Location = new System.Drawing.Point(726, 8);
-            this.uiButton1.Name = "uiButton1";
-            this.uiButton1.Size = new System.Drawing.Size(75, 23);
-            this.uiButton1.TabIndex = 20;
-            this.uiButton1.Text = "uiButton1";
-
-            // 
             // edtFISDBName
             // 
             this.edtFISDBName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edtFISDBName.Location = new System.Drawing.Point(494, 66);
             this.edtFISDBName.Name = "edtFISDBName";
             this.edtFISDBName.Size = new System.Drawing.Size(131, 22);
+            superTipSettings2.FooterText = "系统提示";
+            superTipSettings2.HeaderText = "数据库名称";
+            superTipSettings2.ImageListProvider = null;
+            superTipSettings2.Text = "请输入数据库名称";
+            this.janusSuperTip.SetSuperTip(this.edtFISDBName, superTipSettings2);
             this.edtFISDBName.TabIndex = 7;
             this.edtFISDBName.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2010;
             // 
@@ -139,6 +140,11 @@
             this.edtFISPassword.Name = "edtFISPassword";
             this.edtFISPassword.PasswordChar = '*';
             this.edtFISPassword.Size = new System.Drawing.Size(104, 22);
+            superTipSettings3.FooterText = "系统提示";
+            superTipSettings3.HeaderText = "密码";
+            superTipSettings3.ImageListProvider = null;
+            superTipSettings3.Text = "请输入数据库密码";
+            this.janusSuperTip.SetSuperTip(this.edtFISPassword, superTipSettings3);
             this.edtFISPassword.TabIndex = 9;
             this.edtFISPassword.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2010;
             // 
@@ -148,6 +154,11 @@
             this.edtFISUserName.Location = new System.Drawing.Point(686, 37);
             this.edtFISUserName.Name = "edtFISUserName";
             this.edtFISUserName.Size = new System.Drawing.Size(104, 22);
+            superTipSettings4.FooterText = "系统提示";
+            superTipSettings4.HeaderText = "用户名";
+            superTipSettings4.ImageListProvider = null;
+            superTipSettings4.Text = "请输入数据库连接用户名";
+            this.janusSuperTip.SetSuperTip(this.edtFISUserName, superTipSettings4);
             this.edtFISUserName.TabIndex = 8;
             this.edtFISUserName.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2010;
             // 
@@ -157,6 +168,11 @@
             this.edtFISServerIP.Location = new System.Drawing.Point(494, 37);
             this.edtFISServerIP.Name = "edtFISServerIP";
             this.edtFISServerIP.Size = new System.Drawing.Size(131, 22);
+            superTipSettings5.FooterText = "系统提示";
+            superTipSettings5.HeaderText = "数据库地址";
+            superTipSettings5.ImageListProvider = null;
+            superTipSettings5.Text = "请输入军财一号SQL Server数据库服务器IP地址";
+            this.janusSuperTip.SetSuperTip(this.edtFISServerIP, superTipSettings5);
             this.edtFISServerIP.TabIndex = 6;
             this.edtFISServerIP.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2010;
             // 
@@ -231,6 +247,11 @@
             this.edtHISPassword.Name = "edtHISPassword";
             this.edtHISPassword.PasswordChar = '*';
             this.edtHISPassword.Size = new System.Drawing.Size(104, 22);
+            superTipSettings6.FooterText = "系统提示";
+            superTipSettings6.HeaderText = "密码";
+            superTipSettings6.ImageListProvider = null;
+            superTipSettings6.Text = "输入数据库连接密码";
+            this.janusSuperTip.SetSuperTip(this.edtHISPassword, superTipSettings6);
             this.edtHISPassword.TabIndex = 5;
             this.edtHISPassword.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2010;
             // 
@@ -240,6 +261,11 @@
             this.edtHISUserName.Location = new System.Drawing.Point(281, 37);
             this.edtHISUserName.Name = "edtHISUserName";
             this.edtHISUserName.Size = new System.Drawing.Size(104, 22);
+            superTipSettings7.FooterText = "系统提示";
+            superTipSettings7.HeaderText = "用户名";
+            superTipSettings7.ImageListProvider = null;
+            superTipSettings7.Text = "输入数据库连接用户名";
+            this.janusSuperTip.SetSuperTip(this.edtHISUserName, superTipSettings7);
             this.edtHISUserName.TabIndex = 4;
             this.edtHISUserName.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2010;
             // 
@@ -249,8 +275,14 @@
             this.edtHISServerIP.Location = new System.Drawing.Point(102, 37);
             this.edtHISServerIP.Name = "edtHISServerIP";
             this.edtHISServerIP.Size = new System.Drawing.Size(117, 22);
+            superTipSettings8.FooterText = "系统提示";
+            superTipSettings8.HeaderText = "数据库别名";
+            superTipSettings8.ImageListProvider = null;
+            superTipSettings8.Text = "输入在 Oracle 客户端（Net Manager）中配置的军卫一号数据库别名，请咨询数据库管理员";
+            this.janusSuperTip.SetSuperTip(this.edtHISServerIP, superTipSettings8);
             this.edtHISServerIP.TabIndex = 2;
             this.edtHISServerIP.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2010;
+            this.edtHISServerIP.TextChanged += new System.EventHandler(this.edtHISServerIP_TextChanged);
             // 
             // label5
             // 
@@ -293,7 +325,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 12);
             this.label2.TabIndex = 6;
-            this.label2.Text = "数据库地址：";
+            this.label2.Text = "数据库别名：";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label1
@@ -434,7 +466,7 @@
             this.Controls.Add(this.gridEX1);
             this.Controls.Add(this.boxServerInfo);
             this.Name = "frmSubjectEval";
-            this.Text = "客观评分浏览与计算";
+            this.Text = "外部数据提取";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmSubjectEval_Load);
             this.Activated += new System.EventHandler(this.frmSubjectEval_Activated);
@@ -487,7 +519,6 @@
         private HPES.dsPointTableAdapters.hpes_standard_pointTableAdapter hpes_standard_pointTableAdapter;
         private dsPoint dsPoint;
         private HPES.dsQueryTableAdapters.hpes_query_dataTableAdapter hpes_query_dataTableAdapter;
-        private Janus.Windows.EditControls.UIButton uiButton1;
         private Janus.Windows.Common.JanusSuperTip janusSuperTip;
     }
 }

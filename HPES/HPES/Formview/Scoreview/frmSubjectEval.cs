@@ -144,13 +144,26 @@ namespace HPES
             command = new OleDbCommand();
             command.Connection = this.hpes_standard_pointTableAdapter.Connection;
             if (command.Connection.State == ConnectionState.Closed) command.Connection.Open();
+
+            Application.DoEvents();
+
             GridEXRow[] rows;
             rows = gridEX1.GetRows();
             foreach (GridEXRow row in rows)
             {
                 row.GridEX.MoveToRowIndex(row.Position);
-                sQID = row.Cells[1].Value.ToString();
                 sName = row.Cells[3].Value.ToString();
+                sQID = row.Cells[1].Value.ToString();
+
+                frm.lblSysMessage.Text = "正在执行查询: " + sName;
+                frm.StatusBar1.Refresh();
+
+                frm.lblSysMessage.Text = "清除旧的查询数据...";
+                frm.StatusBar1.Refresh();
+                sSQL = @"DELETE FROM hpes_query_data WHERE HID = " + hid.ToString() + " AND YID = " + yid.ToString() + " AND QID = " + sQID + "";
+                UpdateCommand.CommandText = sSQL;
+                UpdateCommand.ExecuteNonQuery();
+                
                 sSQL = row.Cells[4].Value.ToString();
                 sBEGINDATE = row.Cells[6].Value.ToString().Replace("-", "");
                 sENDDATE = row.Cells[7].Value.ToString().Replace("-", "");
@@ -217,8 +230,6 @@ namespace HPES
                             }
                         }
 
-                        frm.lblSysMessage.Text = "正在执行查询: " + sName;
-                        frm.StatusBar1.Refresh();
                         Console.WriteLine("正在执行查询: {0}\n查询语句: {1}", sName, sSQLNew);
                         int iCount = RunExternalQuery(sSQLNew, oleconnhis, sQID, aFields, aAGETITLES[age]);
                         if (iCount > 0) row.Expanded = true;
@@ -241,8 +252,7 @@ namespace HPES
                                 break;
                         }
                     }
-                    frm.lblSysMessage.Text = "正在执行查询: " + sName;
-                    frm.StatusBar1.Refresh();
+
                     Console.WriteLine("正在执行查询: {0}\n查询语句: {1}", sName, sSQL);
                     try
                     {
@@ -250,10 +260,6 @@ namespace HPES
                         reader = command.ExecuteReader();
                         if (reader.HasRows)
                         {
-                            sSQL = @"DELETE FROM hpes_query_data WHERE HID = " + hid.ToString() + " AND YID = " + yid.ToString() + " AND QID = " + sQID + "";
-                            UpdateCommand.CommandText = sSQL;
-                            UpdateCommand.ExecuteNonQuery();
-
                             frm.lblSysMessage.Text = "找到数据，准备插入数据库...";
                             Console.WriteLine("找到数据，准备插入数据库。");
                             string sTemp = "";
@@ -297,22 +303,25 @@ namespace HPES
                     }
                 }
                 if (row.Position <= gridEX1.RecordCount)
-                {
                     frm.uiProgressBar1.Value = row.Position * 100 / gridEX1.RecordCount;
-                }
                 else
                     frm.uiProgressBar1.Value = frm.uiProgressBar1.Maximum;
+
                 frm.uiProgressBar1.Refresh();
             }
 
             oleconnfis.Close();
+            oleconnfis.Dispose();
             oleconnhis.Close();
             oleconnhis.Dispose();
-            oleconnfis.Dispose();
 
+            this.hpes_query_dataTableAdapter.Fill(this.dsQuery.hpes_query_data, hid, yid);
             gridEX1.Refresh();
+
             this.UpdateGridTooltip();
+
             frm.lblSysMessage.Text = "系统已就绪，请继续使用。";
+            frm.StatusBar1.Refresh();
         }
 
         private void frmSubjectEval_Activated(object sender, EventArgs e)
@@ -529,9 +538,15 @@ namespace HPES
 
                 sQID = row.Cells[1].Text;
                 sName = row.Cells[3].Value.ToString();
+                frm.lblSysMessage.Text = "正在执行查询: " + sName;
+                frm.StatusBar1.Refresh();
+
+                frm.lblSysMessage.Text = "清除旧的查询数据...";
+                frm.StatusBar1.Refresh();
                 sSQL = @"DELETE FROM hpes_query_data WHERE HID = " + hid.ToString() + " AND YID = " + yid.ToString() + " AND QID = " + sQID + "";
                 UpdateCommand.CommandText = sSQL;
                 UpdateCommand.ExecuteNonQuery();
+
 
                 sSQL = row.Cells[4].Value.ToString();
                 sBEGINDATE = row.Cells[6].Value.ToString().Replace("-", "");
@@ -617,6 +632,11 @@ namespace HPES
                 gridEX1.Refresh();
                 frm.lblSysMessage.Text = "系统已就绪，请继续使用。";
             }
+        }
+
+        private void edtHISServerIP_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
 

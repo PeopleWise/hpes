@@ -58,6 +58,7 @@
             this.gridEX1.Font = new System.Drawing.Font("宋体", 9F);
             this.gridEX1.GroupExpandBoxStyle = Janus.Windows.GridEX.ExpandBoxStyle.Classic;
             this.gridEX1.GroupIndent = 12;
+            this.gridEX1.GroupRowFormatStyle.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.gridEX1.GroupRowVisualStyle = Janus.Windows.GridEX.GroupRowVisualStyle.UseRowStyle;
             this.gridEX1.GroupTotals = Janus.Windows.GridEX.GroupTotals.ExpandedGroup;
             this.gridEX1.HasEditorsControlStyle = true;
