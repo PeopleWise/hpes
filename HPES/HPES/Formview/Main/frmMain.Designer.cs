@@ -278,7 +278,7 @@
             this.StatusBar1.LeftPanelCommands.AddRange(new Janus.Windows.Ribbon.CommandBase[] {
             this.lblSysMessage,
             this.containerControlCommand1});
-            this.StatusBar1.Location = new System.Drawing.Point(0, 785);
+            this.StatusBar1.Location = new System.Drawing.Point(0, 789);
             this.StatusBar1.Name = "StatusBar1";
             this.StatusBar1.OfficeCustomColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.StatusBar1.Size = new System.Drawing.Size(1272, 23);
@@ -335,6 +335,7 @@
             this.ribbon1.ImageList = this.imageList1;
             this.ribbon1.ItemRows = 2;
             this.ribbon1.LargeImageList = this.imageList1;
+            this.ribbon1.LargeImageSize = new System.Drawing.Size(30, 30);
             this.ribbon1.Location = new System.Drawing.Point(0, 0);
             this.ribbon1.MaximumSize = new System.Drawing.Size(0, 150);
             this.ribbon1.Name = "ribbon1";
@@ -361,7 +362,7 @@
             this.ribbonTab4});
             this.ribbon1.TabStripHeight = 24;
             this.ribbon1.Text = "";
-            this.ribbon1.TitleBarFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ribbon1.TitleBarFont = new System.Drawing.Font("宋体", 9F);
             this.ribbon1.VisualStyle = Janus.Windows.Ribbon.VisualStyle.Office2010;
             // 
             // backstageTab1
@@ -380,7 +381,7 @@
             this.backstageTabControl1.Controls.Add(this.label1);
             this.backstageTabControl1.Location = new System.Drawing.Point(0, 0);
             this.backstageTabControl1.Name = "backstageTabControl1";
-            this.backstageTabControl1.Size = new System.Drawing.Size(1145, 705);
+            this.backstageTabControl1.Size = new System.Drawing.Size(1145, 755);
             this.backstageTabControl1.TabIndex = 0;
             // 
             // label12
@@ -620,6 +621,7 @@
             this.lblPickHospital,
             this.cboHospital});
             this.ribbonGroup1.DialogButtonSuperTipSettings.ImageListProvider = this.ribbonGroup1;
+            this.ribbonGroup1.ImageKey = "";
             this.ribbonGroup1.Key = "RibbonGroup1";
             this.ribbonGroup1.Name = "ribbonGroup1";
             // 
@@ -638,11 +640,10 @@
             this.cboHospital.ComboBox.ComboStyle = Janus.Windows.EditControls.ComboStyle.DropDownList;
             this.cboHospital.ComboBox.Location = new System.Drawing.Point(5, 80);
             this.cboHospital.ComboBox.Name = "";
-            this.cboHospital.ComboBox.Size = new System.Drawing.Size(180, 21);
+            this.cboHospital.ComboBox.Size = new System.Drawing.Size(100, 21);
             this.cboHospital.ComboBox.TabIndex = 0;
             this.cboHospital.ComboBox.VisualStyle = Janus.Windows.UI.VisualStyle.Office2010;
             this.cboHospital.ComboBox.SelectedValueChanged += new System.EventHandler(this.cboHospital_ComboBox_SelectedValueChanged);
-            this.cboHospital.ControlWidth = 180;
             this.cboHospital.Key = "cboHospital";
             this.cboHospital.Name = "cboHospital";
             // 
@@ -652,6 +653,7 @@
             this.labelCommand2,
             this.cboYear});
             this.ribbonGroup2.DialogButtonSuperTipSettings.ImageListProvider = this.ribbonGroup2;
+            this.ribbonGroup2.ImageKey = "";
             this.ribbonGroup2.Key = "RibbonGroup2";
             this.ribbonGroup2.Name = "ribbonGroup2";
             // 
@@ -668,13 +670,12 @@
             // 
             this.cboYear.ComboBox.ComboStyle = Janus.Windows.EditControls.ComboStyle.DropDownList;
             this.cboYear.ComboBox.ControlAppearance.ButtonAppearance = Janus.Windows.EditControls.ButtonAppearance.Flat;
-            this.cboYear.ComboBox.Location = new System.Drawing.Point(192, 80);
+            this.cboYear.ComboBox.Location = new System.Drawing.Point(112, 80);
             this.cboYear.ComboBox.Name = "";
-            this.cboYear.ComboBox.Size = new System.Drawing.Size(80, 21);
+            this.cboYear.ComboBox.Size = new System.Drawing.Size(100, 21);
             this.cboYear.ComboBox.TabIndex = 2;
             this.cboYear.ComboBox.VisualStyle = Janus.Windows.UI.VisualStyle.Office2010;
             this.cboYear.ComboBox.SelectedValueChanged += new System.EventHandler(this.cboYear_ComboBox_SelectedValueChanged);
-            this.cboYear.ControlWidth = 80;
             this.cboYear.Key = "cboYear";
             this.cboYear.Name = "cboYear";
             // 
@@ -686,6 +687,8 @@
             this.separatorCommand1,
             this.btnEvalSummary});
             this.ribbonGroup3.DialogButtonSuperTipSettings.ImageListProvider = this.ribbonGroup3;
+            this.ribbonGroup3.ImageKey = "";
+            this.ribbonGroup3.ItemsSpace = 6;
             this.ribbonGroup3.Key = "ribbonGroup3";
             this.ribbonGroup3.Name = "ribbonGroup3";
             // 
@@ -694,7 +697,7 @@
             this.btnObjectEval.Key = "buttonCommand1";
             this.btnObjectEval.LargeImageIndex = 9;
             this.btnObjectEval.Name = "btnObjectEval";
-            this.btnObjectEval.Text = "客观评分";
+            this.btnObjectEval.Text = "数据提取";
             this.btnObjectEval.Click += new Janus.Windows.Ribbon.CommandEventHandler(this.btnObjectEval_Click);
             // 
             // btnSubjectEval
@@ -735,6 +738,8 @@
             this.ribbonGroup4.Commands.AddRange(new Janus.Windows.Ribbon.CommandBase[] {
             this.buttonCommand2});
             this.ribbonGroup4.DialogButtonSuperTipSettings.ImageListProvider = this.ribbonGroup4;
+            this.ribbonGroup4.ImageKey = "";
+            this.ribbonGroup4.ItemsSpace = 6;
             this.ribbonGroup4.Key = "ribbonGroup4";
             this.ribbonGroup4.Name = "ribbonGroup4";
             // 
@@ -753,6 +758,8 @@
             this.buttonCommand5,
             this.buttonCommand8});
             this.ribbonGroup5.DialogButtonSuperTipSettings.ImageListProvider = this.ribbonGroup5;
+            this.ribbonGroup5.ImageKey = "";
+            this.ribbonGroup5.ItemsSpace = 6;
             this.ribbonGroup5.Key = "ribbonGroup5";
             this.ribbonGroup5.Name = "ribbonGroup5";
             // 
@@ -787,6 +794,8 @@
             this.buttonCommand10,
             this.buttonCommand11});
             this.ribbonGroup14.DialogButtonSuperTipSettings.ImageListProvider = this.ribbonGroup14;
+            this.ribbonGroup14.ImageKey = "";
+            this.ribbonGroup14.ItemsSpace = 6;
             this.ribbonGroup14.Key = "ribbonGroup14";
             this.ribbonGroup14.Name = "ribbonGroup14";
             // 
@@ -822,6 +831,8 @@
             this.btn2Level,
             this.btn3Level});
             this.ribbonGroup10.DialogButtonSuperTipSettings.ImageListProvider = this.ribbonGroup10;
+            this.ribbonGroup10.ImageKey = "";
+            this.ribbonGroup10.ItemsSpace = 6;
             this.ribbonGroup10.Key = "ribbonGroup10";
             this.ribbonGroup10.Name = "ribbonGroup10";
             // 
@@ -866,6 +877,8 @@
             this.btnHospital,
             this.btnYear});
             this.ribbonGroup7.DialogButtonSuperTipSettings.ImageListProvider = this.ribbonGroup7;
+            this.ribbonGroup7.ImageKey = "";
+            this.ribbonGroup7.ItemsSpace = 6;
             this.ribbonGroup7.Key = "ribbonGroup7";
             this.ribbonGroup7.Name = "ribbonGroup7";
             // 
@@ -891,6 +904,7 @@
             this.btnDataTemplate,
             this.btnQuery});
             this.ribbonGroup13.DialogButtonSuperTipSettings.ImageListProvider = this.ribbonGroup13;
+            this.ribbonGroup13.ImageKey = "";
             this.ribbonGroup13.Key = "ribbonGroup13";
             this.ribbonGroup13.Name = "ribbonGroup13";
             // 
@@ -915,6 +929,7 @@
             this.ribbonGroup9.Commands.AddRange(new Janus.Windows.Ribbon.CommandBase[] {
             this.btnUserManage});
             this.ribbonGroup9.DialogButtonSuperTipSettings.ImageListProvider = this.ribbonGroup9;
+            this.ribbonGroup9.ImageKey = "";
             this.ribbonGroup9.Key = "ribbonGroup9";
             this.ribbonGroup9.Name = "ribbonGroup9";
             // 
@@ -943,6 +958,8 @@
             this.ribbonGroup6.Commands.AddRange(new Janus.Windows.Ribbon.CommandBase[] {
             this.btnPrintData});
             this.ribbonGroup6.DialogButtonSuperTipSettings.ImageListProvider = this.ribbonGroup6;
+            this.ribbonGroup6.ImageKey = "";
+            this.ribbonGroup6.ItemsSpace = 6;
             this.ribbonGroup6.Key = "ribbonGroup6";
             this.ribbonGroup6.Name = "ribbonGroup6";
             // 
@@ -959,6 +976,7 @@
             this.ribbonGroup8.Commands.AddRange(new Janus.Windows.Ribbon.CommandBase[] {
             this.btnOption});
             this.ribbonGroup8.DialogButtonSuperTipSettings.ImageListProvider = this.ribbonGroup8;
+            this.ribbonGroup8.ImageKey = "";
             this.ribbonGroup8.Key = "ribbonGroup8";
             this.ribbonGroup8.Name = "ribbonGroup8";
             // 
@@ -977,6 +995,7 @@
             this.btnDeleteRow,
             this.btnSave});
             this.ribbonGroup11.DialogButtonSuperTipSettings.ImageListProvider = this.ribbonGroup11;
+            this.ribbonGroup11.ImageKey = "";
             this.ribbonGroup11.Key = "ribbonGroup11";
             this.ribbonGroup11.Name = "ribbonGroup11";
             // 
@@ -1007,6 +1026,7 @@
             this.ribbonGroup12.Commands.AddRange(new Janus.Windows.Ribbon.CommandBase[] {
             this.btnExit});
             this.ribbonGroup12.DialogButtonSuperTipSettings.ImageListProvider = this.ribbonGroup12;
+            this.ribbonGroup12.ImageKey = "";
             this.ribbonGroup12.Key = "ribbonGroup12";
             this.ribbonGroup12.Name = "ribbonGroup12";
             // 
@@ -1065,7 +1085,7 @@
             // Design Time Panel Info:
             // 
             this.uiPanelManager1.BeginPanelInfo();
-            this.uiPanelManager1.AddDockPanelInfo(new System.Guid("567c3f27-489f-4aa8-ae60-e57a1faa7459"), Janus.Windows.UI.Dock.PanelGroupStyle.HorizontalTiles, Janus.Windows.UI.Dock.PanelDockStyle.Right, true, new System.Drawing.Size(333, 658), true);
+            this.uiPanelManager1.AddDockPanelInfo(new System.Guid("567c3f27-489f-4aa8-ae60-e57a1faa7459"), Janus.Windows.UI.Dock.PanelGroupStyle.HorizontalTiles, Janus.Windows.UI.Dock.PanelDockStyle.Right, true, new System.Drawing.Size(333, 662), true);
             this.uiPanelManager1.AddDockPanelInfo(new System.Guid("42d13bcf-aa5b-476c-96e5-9ce9ffd37596"), new System.Guid("567c3f27-489f-4aa8-ae60-e57a1faa7459"), 608, true);
             this.uiPanelManager1.AddFloatingPanelInfo(new System.Guid("567c3f27-489f-4aa8-ae60-e57a1faa7459"), Janus.Windows.UI.Dock.PanelGroupStyle.HorizontalTiles, true, new System.Drawing.Point(-1, -1), new System.Drawing.Size(-1, -1), false);
             this.uiPanelManager1.AddFloatingPanelInfo(new System.Guid("42d13bcf-aa5b-476c-96e5-9ce9ffd37596"), new System.Drawing.Point(-1, -1), new System.Drawing.Size(-1, -1), false);
@@ -1078,7 +1098,7 @@
             this.uiPanel0.CloseButtonVisible = Janus.Windows.UI.InheritableBoolean.False;
             this.uiPanel0.Location = new System.Drawing.Point(936, 124);
             this.uiPanel0.Name = "uiPanel0";
-            this.uiPanel0.Size = new System.Drawing.Size(333, 658);
+            this.uiPanel0.Size = new System.Drawing.Size(333, 662);
             this.uiPanel0.TabIndex = 4;
             this.uiPanel0.Text = "医院提报数据";
             // 
@@ -1089,7 +1109,7 @@
             this.uiPanel1.InnerContainer = this.uiPanel1Container;
             this.uiPanel1.Location = new System.Drawing.Point(3, 22);
             this.uiPanel1.Name = "uiPanel1";
-            this.uiPanel1.Size = new System.Drawing.Size(330, 636);
+            this.uiPanel1.Size = new System.Drawing.Size(330, 640);
             this.uiPanel1.TabIndex = 4;
             // 
             // uiPanel1Container
@@ -1097,7 +1117,7 @@
             this.uiPanel1Container.Controls.Add(this.uiTab1);
             this.uiPanel1Container.Location = new System.Drawing.Point(1, 1);
             this.uiPanel1Container.Name = "uiPanel1Container";
-            this.uiPanel1Container.Size = new System.Drawing.Size(328, 634);
+            this.uiPanel1Container.Size = new System.Drawing.Size(328, 638);
             this.uiPanel1Container.TabIndex = 0;
             // 
             // uiTab1
@@ -1109,7 +1129,7 @@
             this.uiTab1.Margin = new System.Windows.Forms.Padding(2);
             this.uiTab1.Name = "uiTab1";
             this.uiTab1.OfficeColorScheme = Janus.Windows.UI.OfficeColorScheme.Blue;
-            this.uiTab1.Size = new System.Drawing.Size(328, 634);
+            this.uiTab1.Size = new System.Drawing.Size(328, 638);
             this.uiTab1.TabIndex = 0;
             this.uiTab1.TabPages.AddRange(new Janus.Windows.UI.Tab.UITabPage[] {
             this.uiTabPage1,
@@ -1124,7 +1144,7 @@
             this.uiTabPage1.Controls.Add(this.gridEX1);
             this.uiTabPage1.Location = new System.Drawing.Point(1, 20);
             this.uiTabPage1.Name = "uiTabPage1";
-            this.uiTabPage1.Size = new System.Drawing.Size(326, 613);
+            this.uiTabPage1.Size = new System.Drawing.Size(326, 617);
             this.uiTabPage1.TabStop = true;
             this.uiTabPage1.Text = "基础数据(&B)";
             this.uiTabPage1.ToolTipText = "由医院提报的基础数据";
@@ -1143,7 +1163,7 @@
             this.gridEX1.Location = new System.Drawing.Point(0, 0);
             this.gridEX1.Name = "gridEX1";
             this.gridEX1.OfficeColorScheme = Janus.Windows.GridEX.OfficeColorScheme.Blue;
-            this.gridEX1.Size = new System.Drawing.Size(326, 613);
+            this.gridEX1.Size = new System.Drawing.Size(326, 617);
             this.gridEX1.TabIndex = 0;
             this.gridEX1.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2010;
             this.gridEX1.VisualStyleManager = this.visualStyleManager1;
@@ -1296,7 +1316,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1272, 808);
+            this.ClientSize = new System.Drawing.Size(1272, 812);
             this.Controls.Add(this.uiPanel0);
             this.Controls.Add(this.StatusBar1);
             this.Controls.Add(this.ribbon1);
