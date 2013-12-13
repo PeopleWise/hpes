@@ -16,9 +16,18 @@
       HPES_standard_one.Score AS 一级分值, HPES_standard_two.Name AS 二级指标, 
       HPES_standard_two.Score AS 二级分值, 
       HPES_standard_point.Name AS [考评要点（计算方法）], 
-      HPES_standard_point.Standard_Text AS 标准, HPES_standard_point.Score AS 分值, 
+      HPES_standard_point.Standard_Text AS 标准, 
+      HPES_standard_point.Score AS 分值, 
+      HPES_standard_point.Standard_BASE as 基本,
+      HPES_standard_point.Standard_BASE_Score as 基本分,
+      HPES_standard_point.Standard_UP as 每提高,
+      HPES_standard_point.Standard_UP_Score as 分值每提高,
+      HPES_standard_point.Standard_DOWN as 每降低,
+      HPES_standard_point.Standard_DOWN_Score as 分值每降低,
+      HPES_standard_point.Standard_SQL as sql语句,
       HPES_standard_point.Method AS 考评方法, 
-      HPES_standard_point.Reference AS 参考依据
+      HPES_standard_point.Reference AS 参考依据,
+      HPES_standard_point.auto as 是否自动
 FROM HPES_standard_one INNER JOIN
       HPES_standard_two ON 
       HPES_standard_one.ID = HPES_standard_two.OID INNER JOIN
@@ -39,6 +48,14 @@ FROM HPES_standard_one INNER JOIN
               <Mapping SourceColumn="一级分值" DataSetColumn="一级分值" />
               <Mapping SourceColumn="二级分值" DataSetColumn="二级分值" />
               <Mapping SourceColumn="分值" DataSetColumn="分值" />
+              <Mapping SourceColumn="是否自动" DataSetColumn="是否自动" />
+              <Mapping SourceColumn="基本" DataSetColumn="基本" />
+              <Mapping SourceColumn="基本分" DataSetColumn="基本分" />
+              <Mapping SourceColumn="每提高" DataSetColumn="每提高" />
+              <Mapping SourceColumn="分值每提高" DataSetColumn="分值每提高" />
+              <Mapping SourceColumn="每降低" DataSetColumn="每降低" />
+              <Mapping SourceColumn="分值每降低" DataSetColumn="分值每降低" />
+              <Mapping SourceColumn="sql语句" DataSetColumn="sql语句" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -53,46 +70,66 @@ FROM HPES_standard_one INNER JOIN
         <xs:element name="dsStandard" msprop:Generator_UserTableName="dsStandard" msprop:Generator_RowDeletedName="dsStandardRowDeleted" msprop:Generator_RowChangedName="dsStandardRowChanged" msprop:Generator_RowClassName="dsStandardRow" msprop:Generator_RowChangingName="dsStandardRowChanging" msprop:Generator_RowEvArgName="dsStandardRowChangeEvent" msprop:Generator_RowEvHandlerName="dsStandardRowChangeEventHandler" msprop:Generator_TableClassName="dsStandardDataTable" msprop:Generator_TableVarName="tabledsStandard" msprop:Generator_RowDeletingName="dsStandardRowDeleting" msprop:Generator_TablePropName="_dsStandard">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="序号" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="序号" msprop:Generator_ColumnVarNameInTable="column序号" msprop:Generator_ColumnPropNameInRow="序号" msprop:Generator_ColumnPropNameInTable="序号Column" type="xs:int" />
-              <xs:element name="一级指标" msprop:Generator_UserColumnName="一级指标" msprop:Generator_ColumnVarNameInTable="column一级指标" msprop:Generator_ColumnPropNameInRow="一级指标" msprop:Generator_ColumnPropNameInTable="一级指标Column" minOccurs="0">
+              <xs:element name="序号" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="序号" msprop:Generator_ColumnPropNameInRow="序号" msprop:Generator_ColumnVarNameInTable="column序号" msprop:Generator_ColumnPropNameInTable="序号Column" type="xs:int" />
+              <xs:element name="一级指标" msprop:Generator_UserColumnName="一级指标" msprop:Generator_ColumnPropNameInRow="一级指标" msprop:Generator_ColumnVarNameInTable="column一级指标" msprop:Generator_ColumnPropNameInTable="一级指标Column" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="500" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="一级分值" msprop:Generator_UserColumnName="一级分值" msprop:Generator_ColumnVarNameInTable="column一级分值" msprop:Generator_ColumnPropNameInRow="一级分值" msprop:Generator_ColumnPropNameInTable="一级分值Column" type="xs:int" minOccurs="0" />
-              <xs:element name="二级指标" msprop:Generator_UserColumnName="二级指标" msprop:Generator_ColumnVarNameInTable="column二级指标" msprop:Generator_ColumnPropNameInRow="二级指标" msprop:Generator_ColumnPropNameInTable="二级指标Column" minOccurs="0">
+              <xs:element name="一级分值" msprop:Generator_UserColumnName="一级分值" msprop:Generator_ColumnPropNameInRow="一级分值" msprop:Generator_ColumnVarNameInTable="column一级分值" msprop:Generator_ColumnPropNameInTable="一级分值Column" type="xs:int" minOccurs="0" />
+              <xs:element name="二级指标" msprop:Generator_UserColumnName="二级指标" msprop:Generator_ColumnPropNameInRow="二级指标" msprop:Generator_ColumnVarNameInTable="column二级指标" msprop:Generator_ColumnPropNameInTable="二级指标Column" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="500" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="二级分值" msprop:Generator_UserColumnName="二级分值" msprop:Generator_ColumnVarNameInTable="column二级分值" msprop:Generator_ColumnPropNameInRow="二级分值" msprop:Generator_ColumnPropNameInTable="二级分值Column" type="xs:int" minOccurs="0" />
-              <xs:element name="考评要点_xFF08_计算方法_xFF09_" msprop:Generator_UserColumnName="考评要点（计算方法）" msprop:Generator_ColumnVarNameInTable="_column考评要点_计算方法_" msprop:Generator_ColumnPropNameInRow="_考评要点_计算方法_" msprop:Generator_ColumnPropNameInTable="_考评要点_计算方法_Column" minOccurs="0">
+              <xs:element name="二级分值" msprop:Generator_UserColumnName="二级分值" msprop:Generator_ColumnPropNameInRow="二级分值" msprop:Generator_ColumnVarNameInTable="column二级分值" msprop:Generator_ColumnPropNameInTable="二级分值Column" type="xs:int" minOccurs="0" />
+              <xs:element name="考评要点_xFF08_计算方法_xFF09_" msprop:Generator_UserColumnName="考评要点（计算方法）" msprop:Generator_ColumnPropNameInRow="_考评要点_计算方法_" msprop:Generator_ColumnVarNameInTable="_column考评要点_计算方法_" msprop:Generator_ColumnPropNameInTable="_考评要点_计算方法_Column" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2000" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="标准" msprop:Generator_UserColumnName="标准" msprop:Generator_ColumnVarNameInTable="column标准" msprop:Generator_ColumnPropNameInRow="标准" msprop:Generator_ColumnPropNameInTable="标准Column" minOccurs="0">
+              <xs:element name="标准" msprop:Generator_UserColumnName="标准" msprop:Generator_ColumnPropNameInRow="标准" msprop:Generator_ColumnVarNameInTable="column标准" msprop:Generator_ColumnPropNameInTable="标准Column" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="500" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="分值" msprop:Generator_UserColumnName="分值" msprop:Generator_ColumnVarNameInTable="column分值" msprop:Generator_ColumnPropNameInRow="分值" msprop:Generator_ColumnPropNameInTable="分值Column" type="xs:int" minOccurs="0" />
-              <xs:element name="考评方法" msprop:Generator_UserColumnName="考评方法" msprop:Generator_ColumnVarNameInTable="column考评方法" msprop:Generator_ColumnPropNameInRow="考评方法" msprop:Generator_ColumnPropNameInTable="考评方法Column" minOccurs="0">
+              <xs:element name="分值" msprop:Generator_UserColumnName="分值" msprop:Generator_ColumnPropNameInRow="分值" msprop:Generator_ColumnVarNameInTable="column分值" msprop:Generator_ColumnPropNameInTable="分值Column" type="xs:int" minOccurs="0" />
+              <xs:element name="考评方法" msprop:Generator_UserColumnName="考评方法" msprop:Generator_ColumnPropNameInRow="考评方法" msprop:Generator_ColumnVarNameInTable="column考评方法" msprop:Generator_ColumnPropNameInTable="考评方法Column" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2000" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="参考依据" msprop:Generator_UserColumnName="参考依据" msprop:Generator_ColumnVarNameInTable="column参考依据" msprop:Generator_ColumnPropNameInRow="参考依据" msprop:Generator_ColumnPropNameInTable="参考依据Column" minOccurs="0">
+              <xs:element name="参考依据" msprop:Generator_UserColumnName="参考依据" msprop:Generator_ColumnPropNameInRow="参考依据" msprop:Generator_ColumnVarNameInTable="column参考依据" msprop:Generator_ColumnPropNameInTable="参考依据Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="是否自动" msprop:Generator_UserColumnName="是否自动" msprop:Generator_ColumnPropNameInRow="是否自动" msprop:Generator_ColumnVarNameInTable="column是否自动" msprop:Generator_ColumnPropNameInTable="是否自动Column" type="xs:boolean" minOccurs="0" />
+              <xs:element name="基本" msprop:Generator_UserColumnName="基本" msprop:Generator_ColumnPropNameInRow="基本" msprop:Generator_ColumnVarNameInTable="column基本" msprop:Generator_ColumnPropNameInTable="基本Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="基本分" msprop:Generator_UserColumnName="基本分" msprop:Generator_ColumnPropNameInRow="基本分" msprop:Generator_ColumnVarNameInTable="column基本分" msprop:Generator_ColumnPropNameInTable="基本分Column" type="xs:int" minOccurs="0" />
+              <xs:element name="每提高" msprop:Generator_UserColumnName="每提高" msprop:Generator_ColumnPropNameInRow="每提高" msprop:Generator_ColumnVarNameInTable="column每提高" msprop:Generator_ColumnPropNameInTable="每提高Column" type="xs:decimal" minOccurs="0" />
+              <xs:element name="分值每提高" msprop:Generator_UserColumnName="分值每提高" msprop:Generator_ColumnPropNameInRow="分值每提高" msprop:Generator_ColumnVarNameInTable="column分值每提高" msprop:Generator_ColumnPropNameInTable="分值每提高Column" type="xs:double" minOccurs="0" />
+              <xs:element name="每降低" msprop:Generator_UserColumnName="每降低" msprop:Generator_ColumnPropNameInRow="每降低" msprop:Generator_ColumnVarNameInTable="column每降低" msprop:Generator_ColumnPropNameInTable="每降低Column" type="xs:decimal" minOccurs="0" />
+              <xs:element name="分值每降低" msprop:Generator_UserColumnName="分值每降低" msprop:Generator_ColumnPropNameInRow="分值每降低" msprop:Generator_ColumnVarNameInTable="column分值每降低" msprop:Generator_ColumnPropNameInTable="分值每降低Column" type="xs:double" minOccurs="0" />
+              <xs:element name="sql语句" msprop:Generator_UserColumnName="sql语句" msprop:Generator_ColumnPropNameInRow="sql语句" msprop:Generator_ColumnVarNameInTable="columnsql语句" msprop:Generator_ColumnPropNameInTable="sql语句Column" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2000" />
