@@ -197,6 +197,10 @@
             // 
             // gridEX1
             // 
+            this.gridEX1.AllowAddNew = Janus.Windows.GridEX.InheritableBoolean.True;
+            this.gridEX1.AllowDelete = Janus.Windows.GridEX.InheritableBoolean.True;
+            this.gridEX1.AlternatingColors = true;
+            this.gridEX1.ColumnAutoResize = true;
             this.gridEX1.DataSource = this.hpes_drugBindingSource;
             gridEX1_DesignTimeLayout.LayoutString = resources.GetString("gridEX1_DesignTimeLayout.LayoutString");
             this.gridEX1.DesignTimeLayout = gridEX1_DesignTimeLayout;
@@ -206,6 +210,7 @@
             this.gridEX1.Name = "gridEX1";
             this.gridEX1.Size = new System.Drawing.Size(912, 399);
             this.gridEX1.TabIndex = 1;
+            this.gridEX1.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2010;
             this.gridEX1.RegionChanged += new System.EventHandler(this.gridEX1_RegionChanged);
             // 
             // hpes_drugTableAdapter
