@@ -29,9 +29,9 @@ namespace HPES.Formview.Bookview
         {
             frmMain frm = (frmMain)this.ParentForm;
             // TODO: 这行代码将数据加载到表“dsSubmitData.hpes_submit_data”中。您可以根据需要移动或移除它。
-            this.hpes_submit_dataTableAdapter.Fill(this.dsSubmitData.hpes_submit_data, (int)frm.cboHospital.ComboBox.SelectedValue, (int)frm.cboYear.ComboBox.SelectedValue);
-            // TODO: 这行代码将数据加载到表“dsSubmitData.hpes_submit_data”中。您可以根据需要移动或移除它。
-            this.hpes_submit_dataTableAdapter.Fill(this.dsSubmitData.hpes_submit_data, (int)frm.cboHospital.ComboBox.SelectedValue, (int)frm.cboYear.ComboBox.SelectedValue);
+            Console.Write((int)frm.cboHospital.ComboBox.SelectedValue + (int)frm.cboYear.ComboBox.SelectedValue);
+
+            this.hpes_submit_dataTableAdapter.Fill(this.dsSubmitData.hpes_submit_data, frmMain.hid, frmMain.yid);
 
         }
 
@@ -40,6 +40,16 @@ namespace HPES.Formview.Bookview
             this.Validate();
             this.hpes_submit_dataBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.dsSubmitData);
+
+        }
+
+        private void gridEX1_AddingRecord(object sender, CancelEventArgs e)
+        {
+
+            
+                //gridEX1.GetRow("hid").Cells
+
+           
 
         }
 
