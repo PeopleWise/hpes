@@ -22,16 +22,24 @@ namespace HPES.Formview.Bookview
         {
             this.Validate();
             this.hpes_drugBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dsDrug);
+            this.tableAdapterManager.UpdateAll(this.dsDrugInuse);
 
         }
 
         private void frmDrugInuse_Load(object sender, EventArgs e)
         {
-            // TODO: 这行代码将数据加载到表“dsDrug.hpes_drug”中。您可以根据需要移动或移除它。
+            // TODO: 这行代码将数据加载到表“dsDrugInuse.hpes_drug”中。您可以根据需要移动或移除它。
+           
             frmMain frm = (frmMain)this.ParentForm;
-            this.hpes_drugTableAdapter.Fill(this.dsDrug.hpes_drug, (int)frm.cboHospital.ComboBox.SelectedValue, (int)frm.cboYear.ComboBox.SelectedValue);
+
+            this.dsDrugInuse.hpes_drug.HIDColumn.DefaultValue = (int)frm.cboHospital.ComboBox.SelectedValue;
+
+            this.dsDrugInuse.hpes_drug.YIDColumn.DefaultValue = (int)frm.cboYear.ComboBox.SelectedValue;
+
+            this.hpes_drugTableAdapter.Fill(this.dsDrugInuse.hpes_drug, (int)frm.cboHospital.ComboBox.SelectedValue, (int)frm.cboYear.ComboBox.SelectedValue);
 
         }
+
+  
     }
 }
