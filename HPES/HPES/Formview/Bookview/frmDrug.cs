@@ -46,18 +46,8 @@ namespace HPES.Formview.Bookview
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                
-                // ExcelToSql.(ctlPath.Text);
 
                 DataTable dt = ExcelToSql.ExceltoDataSet(openFileDialog1.FileName);
-
-                //ExcelToSql.InsertTable(dt);
-
-               // DA dw = new DA();
-
-               // dw.dataGridView1.DataSource = dt;
-
-               // dw.Show();
 
                 ExcelToSql.InsertTable(dt);
 
