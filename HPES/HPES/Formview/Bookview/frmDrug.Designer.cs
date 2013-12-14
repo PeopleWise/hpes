@@ -211,7 +211,7 @@
             this.gridEX1.Size = new System.Drawing.Size(912, 399);
             this.gridEX1.TabIndex = 1;
             this.gridEX1.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2010;
-            this.gridEX1.RegionChanged += new System.EventHandler(this.gridEX1_RegionChanged);
+            
             // 
             // hpes_drugTableAdapter
             // 
