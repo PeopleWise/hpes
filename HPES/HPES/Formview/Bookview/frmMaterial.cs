@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using HPES.Formview.Main;
 
 namespace HPES.Formview.Bookview
 {
@@ -16,34 +17,37 @@ namespace HPES.Formview.Bookview
             InitializeComponent();
         }
 
-        private void hpes_materialBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+
+
+        private void frmMaterial_Load(object sender, EventArgs e)
         {
-            this.Validate();
-            this.hpes_materialBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dsMaterial);
+            frmMain frm = (frmMain)this.ParentForm;
+
+            this.dsMaterial.hpes_material.HIDColumn.DefaultValue = (int)frm.cboHospital.ComboBox.SelectedValue;
+
+            this.dsMaterial.hpes_material.YIDColumn.DefaultValue = (int)frm.cboYear.ComboBox.SelectedValue;
+
+            this.hpes_materialTableAdapter.Fill(this.dsMaterial.hpes_material, (int)frm.cboHospital.ComboBox.SelectedValue, (int)frm.cboYear.ComboBox.SelectedValue);
+
 
         }
-
-    
 
         private void hpes_materialBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
         {
             this.Validate();
             this.hpes_materialBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.dsMaterial);
-
         }
 
-       
-        private void hpes_materialBindingNavigatorSaveItem_Click_2(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.hpes_materialBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dsMaterial);
 
-        }
 
-    
+
+
+
+ 
+      
+
+
 
        
     }
