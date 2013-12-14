@@ -282,6 +282,8 @@ namespace HPES {
             
             private global::System.Data.DataColumn columnSTATISTICS;
             
+            private global::System.Data.DataColumn columnANTIBACTERIAL;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public hpes_drugDataTable() {
                 this.TableName = "hpes_drug";
@@ -383,6 +385,13 @@ namespace HPES {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn ANTIBACTERIALColumn {
+                get {
+                    return this.columnANTIBACTERIAL;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -411,7 +420,7 @@ namespace HPES {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public hpes_drugRow Addhpes_drugRow(string DCODE, int HID, int YID, string NAME, string SPECIFICATION, string FACTORY, bool BID, string UNIT, bool STATISTICS) {
+            public hpes_drugRow Addhpes_drugRow(string DCODE, int HID, int YID, string NAME, string SPECIFICATION, string FACTORY, bool BID, string UNIT, bool STATISTICS, bool ANTIBACTERIAL) {
                 hpes_drugRow rowhpes_drugRow = ((hpes_drugRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -423,7 +432,8 @@ namespace HPES {
                         FACTORY,
                         BID,
                         UNIT,
-                        STATISTICS};
+                        STATISTICS,
+                        ANTIBACTERIAL};
                 rowhpes_drugRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowhpes_drugRow);
                 return rowhpes_drugRow;
@@ -459,6 +469,7 @@ namespace HPES {
                 this.columnBID = base.Columns["BID"];
                 this.columnUNIT = base.Columns["UNIT"];
                 this.columnSTATISTICS = base.Columns["STATISTICS"];
+                this.columnANTIBACTERIAL = base.Columns["ANTIBACTERIAL"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -483,6 +494,8 @@ namespace HPES {
                 base.Columns.Add(this.columnUNIT);
                 this.columnSTATISTICS = new global::System.Data.DataColumn("STATISTICS", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSTATISTICS);
+                this.columnANTIBACTERIAL = new global::System.Data.DataColumn("ANTIBACTERIAL", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnANTIBACTERIAL);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -773,6 +786,21 @@ namespace HPES {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool ANTIBACTERIAL {
+                get {
+                    try {
+                        return ((bool)(this[this.tablehpes_drug.ANTIBACTERIALColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“hpes_drug”中列“ANTIBACTERIAL”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablehpes_drug.ANTIBACTERIALColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public bool IsDCODENull() {
                 return this.IsNull(this.tablehpes_drug.DCODEColumn);
             }
@@ -860,6 +888,16 @@ namespace HPES {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public void SetSTATISTICSNull() {
                 this[this.tablehpes_drug.STATISTICSColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsANTIBACTERIALNull() {
+                return this.IsNull(this.tablehpes_drug.ANTIBACTERIALColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetANTIBACTERIALNull() {
+                this[this.tablehpes_drug.ANTIBACTERIALColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1023,6 +1061,7 @@ namespace HPES.dsDrugTableAdapters {
             tableMapping.ColumnMappings.Add("BID", "BID");
             tableMapping.ColumnMappings.Add("UNIT", "UNIT");
             tableMapping.ColumnMappings.Add("STATISTICS", "STATISTICS");
+            tableMapping.ColumnMappings.Add("ANTIBACTERIAL", "ANTIBACTERIAL");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -1032,7 +1071,8 @@ namespace HPES.dsDrugTableAdapters {
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [hpes_drug] ([DCODE], [HID], [YID], [NAME], [SPECIFICATION], [UNIT], " +
-                "[FACTORY], [BID], [STATISTICS]) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "[FACTORY], [BID], [STATISTICS], [ANTIBACTERIAL]) VALUES (?, ?, ?, ?, ?, ?, ?, ?," +
+                " ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DCODE", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DCODE", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("HID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HID", global::System.Data.DataRowVersion.Current, false, null));
@@ -1043,11 +1083,12 @@ namespace HPES.dsDrugTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("FACTORY", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FACTORY", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("BID", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("STATISTICS", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "STATISTICS", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ANTIBACTERIAL", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ANTIBACTERIAL", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [hpes_drug] SET [DCODE] = ?, [HID] = ?, [YID] = ?, [NAME] = ?, [SPECIFICAT" +
-                "ION] = ?, [UNIT] = ?, [FACTORY] = ?, [BID] = ?, [STATISTICS] = ? WHERE (([ID] = " +
-                "?))";
+                "ION] = ?, [UNIT] = ?, [FACTORY] = ?, [BID] = ?, [STATISTICS] = ?, [ANTIBACTERIAL" +
+                "] = ? WHERE (([ID] = ?))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DCODE", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DCODE", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("HID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HID", global::System.Data.DataRowVersion.Current, false, null));
@@ -1058,6 +1099,7 @@ namespace HPES.dsDrugTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("FACTORY", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FACTORY", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("BID", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("STATISTICS", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "STATISTICS", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ANTIBACTERIAL", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ANTIBACTERIAL", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Original, false, null));
         }
         
@@ -1073,7 +1115,8 @@ namespace HPES.dsDrugTableAdapters {
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID, DCODE, HID, YID, NAME, SPECIFICATION, UNIT, FACTORY, BID, \r\n       [ST" +
-                "ATISTICS]\r\nFROM hpes_drug\r\nWHERE HID=? AND YID=? AND ANTIBACTERIAL=1";
+                "ATISTICS],ANTIBACTERIAL\r\nFROM hpes_drug\r\nWHERE HID=? AND YID=? AND ANTIBACTERIAL" +
+                "=1";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("HID", global::System.Data.OleDb.OleDbType.Integer, 4, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HID", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[0].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("YID", global::System.Data.OleDb.OleDbType.Integer, 4, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "YID", global::System.Data.DataRowVersion.Current, false, null));
@@ -1174,7 +1217,7 @@ namespace HPES.dsDrugTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string DCODE, global::System.Nullable<int> HID, global::System.Nullable<int> YID, string NAME, string SPECIFICATION, string UNIT, string FACTORY, global::System.Nullable<bool> BID, global::System.Nullable<bool> STATISTICS) {
+        public virtual int Insert(string DCODE, global::System.Nullable<int> HID, global::System.Nullable<int> YID, string NAME, string SPECIFICATION, string UNIT, string FACTORY, global::System.Nullable<bool> BID, global::System.Nullable<bool> STATISTICS, global::System.Nullable<bool> ANTIBACTERIAL) {
             if ((DCODE == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1229,6 +1272,12 @@ namespace HPES.dsDrugTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
+            if ((ANTIBACTERIAL.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((bool)(ANTIBACTERIAL.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1248,7 +1297,7 @@ namespace HPES.dsDrugTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string DCODE, global::System.Nullable<int> HID, global::System.Nullable<int> YID, string NAME, string SPECIFICATION, string UNIT, string FACTORY, global::System.Nullable<bool> BID, global::System.Nullable<bool> STATISTICS, int Original_ID) {
+        public virtual int Update(string DCODE, global::System.Nullable<int> HID, global::System.Nullable<int> YID, string NAME, string SPECIFICATION, string UNIT, string FACTORY, global::System.Nullable<bool> BID, global::System.Nullable<bool> STATISTICS, global::System.Nullable<bool> ANTIBACTERIAL, int Original_ID) {
             if ((DCODE == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1303,7 +1352,13 @@ namespace HPES.dsDrugTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_ID));
+            if ((ANTIBACTERIAL.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((bool)(ANTIBACTERIAL.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
