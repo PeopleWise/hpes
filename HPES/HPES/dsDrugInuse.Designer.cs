@@ -262,27 +262,27 @@ namespace HPES {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class hpes_drugDataTable : global::System.Data.TypedTableBase<hpes_drugRow> {
             
-            private global::System.Data.DataColumn columnDCODE;
-            
-            private global::System.Data.DataColumn columnNAME;
-            
-            private global::System.Data.DataColumn columnSPECIFICATION;
-            
-            private global::System.Data.DataColumn columnUNIT;
-            
-            private global::System.Data.DataColumn columnFACTORY;
-            
-            private global::System.Data.DataColumn columnANTIBACTERIAL;
-            
-            private global::System.Data.DataColumn columnSTATISTICS;
-            
             private global::System.Data.DataColumn columnHID;
             
             private global::System.Data.DataColumn columnYID;
             
-            private global::System.Data.DataColumn columnBID;
-            
             private global::System.Data.DataColumn columnID;
+            
+            private global::System.Data.DataColumn column药品编码;
+            
+            private global::System.Data.DataColumn column药品名称;
+            
+            private global::System.Data.DataColumn column药品规格;
+            
+            private global::System.Data.DataColumn column药品单位;
+            
+            private global::System.Data.DataColumn column生产厂家;
+            
+            private global::System.Data.DataColumn column抗菌药;
+            
+            private global::System.Data.DataColumn column是否统计;
+            
+            private global::System.Data.DataColumn column是否中标;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public hpes_drugDataTable() {
@@ -315,55 +315,6 @@ namespace HPES {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn DCODEColumn {
-                get {
-                    return this.columnDCODE;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn NAMEColumn {
-                get {
-                    return this.columnNAME;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn SPECIFICATIONColumn {
-                get {
-                    return this.columnSPECIFICATION;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn UNITColumn {
-                get {
-                    return this.columnUNIT;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn FACTORYColumn {
-                get {
-                    return this.columnFACTORY;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn ANTIBACTERIALColumn {
-                get {
-                    return this.columnANTIBACTERIAL;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn STATISTICSColumn {
-                get {
-                    return this.columnSTATISTICS;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public global::System.Data.DataColumn HIDColumn {
                 get {
                     return this.columnHID;
@@ -378,16 +329,65 @@ namespace HPES {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn BIDColumn {
+            public global::System.Data.DataColumn IDColumn {
                 get {
-                    return this.columnBID;
+                    return this.columnID;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn IDColumn {
+            public global::System.Data.DataColumn 药品编码Column {
                 get {
-                    return this.columnID;
+                    return this.column药品编码;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn 药品名称Column {
+                get {
+                    return this.column药品名称;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn 药品规格Column {
+                get {
+                    return this.column药品规格;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn 药品单位Column {
+                get {
+                    return this.column药品单位;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn 生产厂家Column {
+                get {
+                    return this.column生产厂家;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn 抗菌药Column {
+                get {
+                    return this.column抗菌药;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn 是否统计Column {
+                get {
+                    return this.column是否统计;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn 是否中标Column {
+                get {
+                    return this.column是否中标;
                 }
             }
             
@@ -420,20 +420,20 @@ namespace HPES {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public hpes_drugRow Addhpes_drugRow(string DCODE, string NAME, string SPECIFICATION, string UNIT, string FACTORY, bool ANTIBACTERIAL, bool STATISTICS, int HID, int YID, bool BID) {
+            public hpes_drugRow Addhpes_drugRow(int HID, int YID, string 药品编码, string 药品名称, string 药品规格, string 药品单位, string 生产厂家, bool 抗菌药, bool 是否统计, bool 是否中标) {
                 hpes_drugRow rowhpes_drugRow = ((hpes_drugRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        DCODE,
-                        NAME,
-                        SPECIFICATION,
-                        UNIT,
-                        FACTORY,
-                        ANTIBACTERIAL,
-                        STATISTICS,
                         HID,
                         YID,
-                        BID,
-                        null};
+                        null,
+                        药品编码,
+                        药品名称,
+                        药品规格,
+                        药品单位,
+                        生产厂家,
+                        抗菌药,
+                        是否统计,
+                        是否中标};
                 rowhpes_drugRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowhpes_drugRow);
                 return rowhpes_drugRow;
@@ -459,56 +459,56 @@ namespace HPES {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             internal void InitVars() {
-                this.columnDCODE = base.Columns["DCODE"];
-                this.columnNAME = base.Columns["NAME"];
-                this.columnSPECIFICATION = base.Columns["SPECIFICATION"];
-                this.columnUNIT = base.Columns["UNIT"];
-                this.columnFACTORY = base.Columns["FACTORY"];
-                this.columnANTIBACTERIAL = base.Columns["ANTIBACTERIAL"];
-                this.columnSTATISTICS = base.Columns["STATISTICS"];
                 this.columnHID = base.Columns["HID"];
                 this.columnYID = base.Columns["YID"];
-                this.columnBID = base.Columns["BID"];
                 this.columnID = base.Columns["ID"];
+                this.column药品编码 = base.Columns["药品编码"];
+                this.column药品名称 = base.Columns["药品名称"];
+                this.column药品规格 = base.Columns["药品规格"];
+                this.column药品单位 = base.Columns["药品单位"];
+                this.column生产厂家 = base.Columns["生产厂家"];
+                this.column抗菌药 = base.Columns["抗菌药"];
+                this.column是否统计 = base.Columns["是否统计"];
+                this.column是否中标 = base.Columns["是否中标"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             private void InitClass() {
-                this.columnDCODE = new global::System.Data.DataColumn("DCODE", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDCODE);
-                this.columnNAME = new global::System.Data.DataColumn("NAME", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNAME);
-                this.columnSPECIFICATION = new global::System.Data.DataColumn("SPECIFICATION", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSPECIFICATION);
-                this.columnUNIT = new global::System.Data.DataColumn("UNIT", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUNIT);
-                this.columnFACTORY = new global::System.Data.DataColumn("FACTORY", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFACTORY);
-                this.columnANTIBACTERIAL = new global::System.Data.DataColumn("ANTIBACTERIAL", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnANTIBACTERIAL);
-                this.columnSTATISTICS = new global::System.Data.DataColumn("STATISTICS", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSTATISTICS);
                 this.columnHID = new global::System.Data.DataColumn("HID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnHID);
                 this.columnYID = new global::System.Data.DataColumn("YID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnYID);
-                this.columnBID = new global::System.Data.DataColumn("BID", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBID);
                 this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID);
+                this.column药品编码 = new global::System.Data.DataColumn("药品编码", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column药品编码);
+                this.column药品名称 = new global::System.Data.DataColumn("药品名称", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column药品名称);
+                this.column药品规格 = new global::System.Data.DataColumn("药品规格", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column药品规格);
+                this.column药品单位 = new global::System.Data.DataColumn("药品单位", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column药品单位);
+                this.column生产厂家 = new global::System.Data.DataColumn("生产厂家", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column生产厂家);
+                this.column抗菌药 = new global::System.Data.DataColumn("抗菌药", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column抗菌药);
+                this.column是否统计 = new global::System.Data.DataColumn("是否统计", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column是否统计);
+                this.column是否中标 = new global::System.Data.DataColumn("是否中标", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column是否中标);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
-                this.columnDCODE.MaxLength = 50;
-                this.columnNAME.MaxLength = 50;
-                this.columnSPECIFICATION.MaxLength = 50;
-                this.columnUNIT.MaxLength = 50;
-                this.columnFACTORY.MaxLength = 50;
                 this.columnID.AutoIncrement = true;
                 this.columnID.AutoIncrementSeed = -1;
                 this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.ReadOnly = true;
                 this.columnID.Unique = true;
+                this.column药品编码.MaxLength = 50;
+                this.column药品名称.MaxLength = 50;
+                this.column药品规格.MaxLength = 50;
+                this.column药品单位.MaxLength = 50;
+                this.column生产厂家.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -641,111 +641,6 @@ namespace HPES {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string DCODE {
-                get {
-                    try {
-                        return ((string)(this[this.tablehpes_drug.DCODEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“hpes_drug”中列“DCODE”的值为 DBNull。", e);
-                    }
-                }
-                set {
-                    this[this.tablehpes_drug.DCODEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string NAME {
-                get {
-                    try {
-                        return ((string)(this[this.tablehpes_drug.NAMEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“hpes_drug”中列“NAME”的值为 DBNull。", e);
-                    }
-                }
-                set {
-                    this[this.tablehpes_drug.NAMEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string SPECIFICATION {
-                get {
-                    try {
-                        return ((string)(this[this.tablehpes_drug.SPECIFICATIONColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“hpes_drug”中列“SPECIFICATION”的值为 DBNull。", e);
-                    }
-                }
-                set {
-                    this[this.tablehpes_drug.SPECIFICATIONColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string UNIT {
-                get {
-                    try {
-                        return ((string)(this[this.tablehpes_drug.UNITColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“hpes_drug”中列“UNIT”的值为 DBNull。", e);
-                    }
-                }
-                set {
-                    this[this.tablehpes_drug.UNITColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string FACTORY {
-                get {
-                    try {
-                        return ((string)(this[this.tablehpes_drug.FACTORYColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“hpes_drug”中列“FACTORY”的值为 DBNull。", e);
-                    }
-                }
-                set {
-                    this[this.tablehpes_drug.FACTORYColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool ANTIBACTERIAL {
-                get {
-                    try {
-                        return ((bool)(this[this.tablehpes_drug.ANTIBACTERIALColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“hpes_drug”中列“ANTIBACTERIAL”的值为 DBNull。", e);
-                    }
-                }
-                set {
-                    this[this.tablehpes_drug.ANTIBACTERIALColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool STATISTICS {
-                get {
-                    try {
-                        return ((bool)(this[this.tablehpes_drug.STATISTICSColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“hpes_drug”中列“STATISTICS”的值为 DBNull。", e);
-                    }
-                }
-                set {
-                    this[this.tablehpes_drug.STATISTICSColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public int HID {
                 get {
                     try {
@@ -776,21 +671,6 @@ namespace HPES {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool BID {
-                get {
-                    try {
-                        return ((bool)(this[this.tablehpes_drug.BIDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“hpes_drug”中列“BID”的值为 DBNull。", e);
-                    }
-                }
-                set {
-                    this[this.tablehpes_drug.BIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public int ID {
                 get {
                     return ((int)(this[this.tablehpes_drug.IDColumn]));
@@ -801,73 +681,123 @@ namespace HPES {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsDCODENull() {
-                return this.IsNull(this.tablehpes_drug.DCODEColumn);
+            public string 药品编码 {
+                get {
+                    try {
+                        return ((string)(this[this.tablehpes_drug.药品编码Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“hpes_drug”中列“药品编码”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablehpes_drug.药品编码Column] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetDCODENull() {
-                this[this.tablehpes_drug.DCODEColumn] = global::System.Convert.DBNull;
+            public string 药品名称 {
+                get {
+                    try {
+                        return ((string)(this[this.tablehpes_drug.药品名称Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“hpes_drug”中列“药品名称”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablehpes_drug.药品名称Column] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsNAMENull() {
-                return this.IsNull(this.tablehpes_drug.NAMEColumn);
+            public string 药品规格 {
+                get {
+                    try {
+                        return ((string)(this[this.tablehpes_drug.药品规格Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“hpes_drug”中列“药品规格”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablehpes_drug.药品规格Column] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetNAMENull() {
-                this[this.tablehpes_drug.NAMEColumn] = global::System.Convert.DBNull;
+            public string 药品单位 {
+                get {
+                    try {
+                        return ((string)(this[this.tablehpes_drug.药品单位Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“hpes_drug”中列“药品单位”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablehpes_drug.药品单位Column] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsSPECIFICATIONNull() {
-                return this.IsNull(this.tablehpes_drug.SPECIFICATIONColumn);
+            public string 生产厂家 {
+                get {
+                    try {
+                        return ((string)(this[this.tablehpes_drug.生产厂家Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“hpes_drug”中列“生产厂家”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablehpes_drug.生产厂家Column] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetSPECIFICATIONNull() {
-                this[this.tablehpes_drug.SPECIFICATIONColumn] = global::System.Convert.DBNull;
+            public bool 抗菌药 {
+                get {
+                    try {
+                        return ((bool)(this[this.tablehpes_drug.抗菌药Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“hpes_drug”中列“抗菌药”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablehpes_drug.抗菌药Column] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsUNITNull() {
-                return this.IsNull(this.tablehpes_drug.UNITColumn);
+            public bool 是否统计 {
+                get {
+                    try {
+                        return ((bool)(this[this.tablehpes_drug.是否统计Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“hpes_drug”中列“是否统计”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablehpes_drug.是否统计Column] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetUNITNull() {
-                this[this.tablehpes_drug.UNITColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsFACTORYNull() {
-                return this.IsNull(this.tablehpes_drug.FACTORYColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetFACTORYNull() {
-                this[this.tablehpes_drug.FACTORYColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsANTIBACTERIALNull() {
-                return this.IsNull(this.tablehpes_drug.ANTIBACTERIALColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetANTIBACTERIALNull() {
-                this[this.tablehpes_drug.ANTIBACTERIALColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsSTATISTICSNull() {
-                return this.IsNull(this.tablehpes_drug.STATISTICSColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetSTATISTICSNull() {
-                this[this.tablehpes_drug.STATISTICSColumn] = global::System.Convert.DBNull;
+            public bool 是否中标 {
+                get {
+                    try {
+                        return ((bool)(this[this.tablehpes_drug.是否中标Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“hpes_drug”中列“是否中标”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablehpes_drug.是否中标Column] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -891,13 +821,83 @@ namespace HPES {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsBIDNull() {
-                return this.IsNull(this.tablehpes_drug.BIDColumn);
+            public bool Is药品编码Null() {
+                return this.IsNull(this.tablehpes_drug.药品编码Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetBIDNull() {
-                this[this.tablehpes_drug.BIDColumn] = global::System.Convert.DBNull;
+            public void Set药品编码Null() {
+                this[this.tablehpes_drug.药品编码Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Is药品名称Null() {
+                return this.IsNull(this.tablehpes_drug.药品名称Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Set药品名称Null() {
+                this[this.tablehpes_drug.药品名称Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Is药品规格Null() {
+                return this.IsNull(this.tablehpes_drug.药品规格Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Set药品规格Null() {
+                this[this.tablehpes_drug.药品规格Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Is药品单位Null() {
+                return this.IsNull(this.tablehpes_drug.药品单位Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Set药品单位Null() {
+                this[this.tablehpes_drug.药品单位Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Is生产厂家Null() {
+                return this.IsNull(this.tablehpes_drug.生产厂家Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Set生产厂家Null() {
+                this[this.tablehpes_drug.生产厂家Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Is抗菌药Null() {
+                return this.IsNull(this.tablehpes_drug.抗菌药Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Set抗菌药Null() {
+                this[this.tablehpes_drug.抗菌药Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Is是否统计Null() {
+                return this.IsNull(this.tablehpes_drug.是否统计Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Set是否统计Null() {
+                this[this.tablehpes_drug.是否统计Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Is是否中标Null() {
+                return this.IsNull(this.tablehpes_drug.是否中标Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Set是否中标Null() {
+                this[this.tablehpes_drug.是否中标Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -1051,94 +1051,94 @@ namespace HPES.dsDrugInuseTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "hpes_drug";
-            tableMapping.ColumnMappings.Add("DCODE", "DCODE");
-            tableMapping.ColumnMappings.Add("NAME", "NAME");
-            tableMapping.ColumnMappings.Add("SPECIFICATION", "SPECIFICATION");
-            tableMapping.ColumnMappings.Add("UNIT", "UNIT");
-            tableMapping.ColumnMappings.Add("FACTORY", "FACTORY");
-            tableMapping.ColumnMappings.Add("ANTIBACTERIAL", "ANTIBACTERIAL");
-            tableMapping.ColumnMappings.Add("STATISTICS", "STATISTICS");
             tableMapping.ColumnMappings.Add("HID", "HID");
             tableMapping.ColumnMappings.Add("YID", "YID");
-            tableMapping.ColumnMappings.Add("BID", "BID");
             tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.ColumnMappings.Add("药品编码", "药品编码");
+            tableMapping.ColumnMappings.Add("药品名称", "药品名称");
+            tableMapping.ColumnMappings.Add("药品规格", "药品规格");
+            tableMapping.ColumnMappings.Add("药品单位", "药品单位");
+            tableMapping.ColumnMappings.Add("生产厂家", "生产厂家");
+            tableMapping.ColumnMappings.Add("抗菌药", "抗菌药");
+            tableMapping.ColumnMappings.Add("是否统计", "是否统计");
+            tableMapping.ColumnMappings.Add("是否中标", "是否中标");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [HPES].[dbo].[hpes_drug] WHERE (((? = 1 AND [DCODE] IS NULL) OR ([DCODE] = ?)) AND ((? = 1 AND [NAME] IS NULL) OR ([NAME] = ?)) AND ((? = 1 AND [SPECIFICATION] IS NULL) OR ([SPECIFICATION] = ?)) AND ((? = 1 AND [UNIT] IS NULL) OR ([UNIT] = ?)) AND ((? = 1 AND [FACTORY] IS NULL) OR ([FACTORY] = ?)) AND ((? = 1 AND [ANTIBACTERIAL] IS NULL) OR ([ANTIBACTERIAL] = ?)) AND ((? = 1 AND [STATISTICS] IS NULL) OR ([STATISTICS] = ?)) AND ((? = 1 AND [HID] IS NULL) OR ([HID] = ?)) AND ((? = 1 AND [YID] IS NULL) OR ([YID] = ?)) AND ((? = 1 AND [BID] IS NULL) OR ([BID] = ?)) AND ([ID] = ?))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [HPES].[dbo].[hpes_drug] WHERE (([ID] = ?) AND ((? = 1 AND [DCODE] IS NULL) OR ([DCODE] = ?)) AND ((? = 1 AND [NAME] IS NULL) OR ([NAME] = ?)) AND ((? = 1 AND [SPECIFICATION] IS NULL) OR ([SPECIFICATION] = ?)) AND ((? = 1 AND [UNIT] IS NULL) OR ([UNIT] = ?)) AND ((? = 1 AND [FACTORY] IS NULL) OR ([FACTORY] = ?)) AND ((? = 1 AND [ANTIBACTERIAL] IS NULL) OR ([ANTIBACTERIAL] = ?)) AND ((? = 1 AND [STATISTICS] IS NULL) OR ([STATISTICS] = ?)) AND ((? = 1 AND [HID] IS NULL) OR ([HID] = ?)) AND ((? = 1 AND [YID] IS NULL) OR ([YID] = ?)) AND ((? = 1 AND [BID] IS NULL) OR ([BID] = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_DCODE", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DCODE", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_DCODE", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DCODE", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_NAME", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NAME", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_NAME", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NAME", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_SPECIFICATION", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SPECIFICATION", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_SPECIFICATION", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SPECIFICATION", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_UNIT", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "UNIT", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_UNIT", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "UNIT", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_FACTORY", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FACTORY", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_FACTORY", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FACTORY", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_ANTIBACTERIAL", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ANTIBACTERIAL", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ANTIBACTERIAL", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ANTIBACTERIAL", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_STATISTICS", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "STATISTICS", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_STATISTICS", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "STATISTICS", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_药品编码", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "药品编码", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_药品编码", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "药品编码", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_药品名称", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "药品名称", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_药品名称", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "药品名称", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_药品规格", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "药品规格", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_药品规格", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "药品规格", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_药品单位", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "药品单位", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_药品单位", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "药品单位", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_生产厂家", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "生产厂家", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_生产厂家", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "生产厂家", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_抗菌药", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "抗菌药", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_抗菌药", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "抗菌药", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_是否统计", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "是否统计", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_是否统计", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "是否统计", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_HID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HID", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_HID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_YID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "YID", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_YID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "YID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_BID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BID", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_BID", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_是否中标", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "是否中标", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_是否中标", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "是否中标", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [HPES].[dbo].[hpes_drug] ([DCODE], [NAME], [SPECIFICATION], [UNIT], [" +
                 "FACTORY], [ANTIBACTERIAL], [STATISTICS], [HID], [YID], [BID]) VALUES (?, ?, ?, ?" +
                 ", ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DCODE", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DCODE", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NAME", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NAME", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("SPECIFICATION", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SPECIFICATION", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("UNIT", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "UNIT", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("FACTORY", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FACTORY", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ANTIBACTERIAL", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ANTIBACTERIAL", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("STATISTICS", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "STATISTICS", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("药品编码", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "药品编码", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("药品名称", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "药品名称", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("药品规格", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "药品规格", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("药品单位", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "药品单位", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("生产厂家", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "生产厂家", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("抗菌药", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "抗菌药", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("是否统计", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "是否统计", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("HID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("YID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "YID", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("BID", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BID", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("是否中标", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "是否中标", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [HPES].[dbo].[hpes_drug] SET [DCODE] = ?, [NAME] = ?, [SPECIFICATION] = ?, [UNIT] = ?, [FACTORY] = ?, [ANTIBACTERIAL] = ?, [STATISTICS] = ?, [HID] = ?, [YID] = ?, [BID] = ? WHERE (((? = 1 AND [DCODE] IS NULL) OR ([DCODE] = ?)) AND ((? = 1 AND [NAME] IS NULL) OR ([NAME] = ?)) AND ((? = 1 AND [SPECIFICATION] IS NULL) OR ([SPECIFICATION] = ?)) AND ((? = 1 AND [UNIT] IS NULL) OR ([UNIT] = ?)) AND ((? = 1 AND [FACTORY] IS NULL) OR ([FACTORY] = ?)) AND ((? = 1 AND [ANTIBACTERIAL] IS NULL) OR ([ANTIBACTERIAL] = ?)) AND ((? = 1 AND [STATISTICS] IS NULL) OR ([STATISTICS] = ?)) AND ((? = 1 AND [HID] IS NULL) OR ([HID] = ?)) AND ((? = 1 AND [YID] IS NULL) OR ([YID] = ?)) AND ((? = 1 AND [BID] IS NULL) OR ([BID] = ?)) AND ([ID] = ?))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [HPES].[dbo].[hpes_drug] SET [DCODE] = ?, [NAME] = ?, [SPECIFICATION] = ?, [UNIT] = ?, [FACTORY] = ?, [ANTIBACTERIAL] = ?, [STATISTICS] = ?, [HID] = ?, [YID] = ?, [BID] = ? WHERE (([ID] = ?) AND ((? = 1 AND [DCODE] IS NULL) OR ([DCODE] = ?)) AND ((? = 1 AND [NAME] IS NULL) OR ([NAME] = ?)) AND ((? = 1 AND [SPECIFICATION] IS NULL) OR ([SPECIFICATION] = ?)) AND ((? = 1 AND [UNIT] IS NULL) OR ([UNIT] = ?)) AND ((? = 1 AND [FACTORY] IS NULL) OR ([FACTORY] = ?)) AND ((? = 1 AND [ANTIBACTERIAL] IS NULL) OR ([ANTIBACTERIAL] = ?)) AND ((? = 1 AND [STATISTICS] IS NULL) OR ([STATISTICS] = ?)) AND ((? = 1 AND [HID] IS NULL) OR ([HID] = ?)) AND ((? = 1 AND [YID] IS NULL) OR ([YID] = ?)) AND ((? = 1 AND [BID] IS NULL) OR ([BID] = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DCODE", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DCODE", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NAME", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NAME", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("SPECIFICATION", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SPECIFICATION", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("UNIT", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "UNIT", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("FACTORY", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FACTORY", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ANTIBACTERIAL", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ANTIBACTERIAL", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("STATISTICS", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "STATISTICS", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("药品编码", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "药品编码", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("药品名称", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "药品名称", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("药品规格", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "药品规格", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("药品单位", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "药品单位", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("生产厂家", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "生产厂家", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("抗菌药", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "抗菌药", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("是否统计", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "是否统计", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("HID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("YID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "YID", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("BID", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BID", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_DCODE", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DCODE", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_DCODE", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DCODE", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_NAME", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NAME", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_NAME", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NAME", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_SPECIFICATION", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SPECIFICATION", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_SPECIFICATION", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SPECIFICATION", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_UNIT", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "UNIT", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_UNIT", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "UNIT", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_FACTORY", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FACTORY", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_FACTORY", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FACTORY", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_ANTIBACTERIAL", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ANTIBACTERIAL", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ANTIBACTERIAL", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ANTIBACTERIAL", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_STATISTICS", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "STATISTICS", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_STATISTICS", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "STATISTICS", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("是否中标", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "是否中标", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_药品编码", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "药品编码", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_药品编码", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "药品编码", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_药品名称", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "药品名称", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_药品名称", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "药品名称", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_药品规格", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "药品规格", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_药品规格", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "药品规格", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_药品单位", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "药品单位", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_药品单位", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "药品单位", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_生产厂家", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "生产厂家", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_生产厂家", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "生产厂家", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_抗菌药", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "抗菌药", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_抗菌药", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "抗菌药", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_是否统计", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "是否统计", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_是否统计", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "是否统计", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_HID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HID", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_HID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_YID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "YID", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_YID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "YID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_BID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BID", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_BID", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_是否中标", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "是否中标", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_是否中标", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "是否中标", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1152,16 +1152,31 @@ namespace HPES.dsDrugInuseTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT DCODE, NAME, SPECIFICATION, UNIT, FACTORY, ANTIBACTERIAL, [STATISTICS], HI" +
-                "D, YID, BID, ID FROM dbo.hpes_drug";
+            this._commandCollection[0].CommandText = "SELECT \r\nID,\r\nDCODE as 药品编码, \r\nNAME as 药品名称, \r\nSPECIFICATION as 药品规格,\r\nUNIT as 药品" +
+                "单位, \r\nFACTORY as 生产厂家,\r\n ANTIBACTERIAL as 抗菌药, \r\n[STATISTICS] as 是否统计, \r\nHID, \r\n" +
+                "YID, \r\nBID as 是否中标\r\nFROM dbo.hpes_drug where hid=? and yid=?";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("HID", global::System.Data.OleDb.OleDbType.Integer, 4, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HID", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("YID", global::System.Data.OleDb.OleDbType.Integer, 4, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "YID", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dsDrugInuse.hpes_drugDataTable dataTable) {
+        public virtual int Fill(dsDrugInuse.hpes_drugDataTable dataTable, global::System.Nullable<int> HID, global::System.Nullable<int> YID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((HID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(HID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((YID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(YID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -1172,8 +1187,20 @@ namespace HPES.dsDrugInuseTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsDrugInuse.hpes_drugDataTable GetData() {
+        public virtual dsDrugInuse.hpes_drugDataTable GetData(global::System.Nullable<int> HID, global::System.Nullable<int> YID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((HID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(HID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((YID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(YID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             dsDrugInuse.hpes_drugDataTable dataTable = new dsDrugInuse.hpes_drugDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -1207,88 +1234,65 @@ namespace HPES.dsDrugInuseTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_DCODE, string Original_NAME, string Original_SPECIFICATION, string Original_UNIT, string Original_FACTORY, global::System.Nullable<bool> Original_ANTIBACTERIAL, global::System.Nullable<bool> Original_STATISTICS, global::System.Nullable<int> Original_HID, global::System.Nullable<int> Original_YID, global::System.Nullable<bool> Original_BID, int Original_ID) {
-            if ((Original_DCODE == null)) {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[1].Value = global::System.DBNull.Value;
+        public virtual int Delete(int Original_ID, string Original_药品编码, string Original_药品名称, string Original_药品规格, string Original_药品单位, string Original_生产厂家, bool Original_抗菌药, bool Original_是否统计, global::System.Nullable<int> Original_HID, global::System.Nullable<int> Original_YID, bool Original_是否中标) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
+            if ((Original_药品编码 == null)) {
+                throw new global::System.ArgumentNullException("Original_药品编码");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_DCODE));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_药品编码));
             }
-            if ((Original_NAME == null)) {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_NAME));
-            }
-            if ((Original_SPECIFICATION == null)) {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
+            if ((Original_药品名称 == null)) {
+                throw new global::System.ArgumentNullException("Original_药品名称");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_SPECIFICATION));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_药品名称));
             }
-            if ((Original_UNIT == null)) {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_UNIT));
-            }
-            if ((Original_FACTORY == null)) {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
+            if ((Original_药品规格 == null)) {
+                throw new global::System.ArgumentNullException("Original_药品规格");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_FACTORY));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_药品规格));
             }
-            if ((Original_ANTIBACTERIAL.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((bool)(Original_ANTIBACTERIAL.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            if ((Original_STATISTICS.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((bool)(Original_STATISTICS.Value));
+            if ((Original_药品单位 == null)) {
+                throw new global::System.ArgumentNullException("Original_药品单位");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_药品单位));
             }
+            if ((Original_生产厂家 == null)) {
+                throw new global::System.ArgumentNullException("Original_生产厂家");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_生产厂家));
+            }
+            this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+            this.Adapter.DeleteCommand.Parameters[12].Value = ((bool)(Original_抗菌药));
+            this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+            this.Adapter.DeleteCommand.Parameters[14].Value = ((bool)(Original_是否统计));
             if ((Original_HID.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((int)(Original_HID.Value));
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((int)(Original_HID.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             if ((Original_YID.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((int)(Original_YID.Value));
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((int)(Original_YID.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
-            if ((Original_BID.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[19].Value = ((bool)(Original_BID.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.DeleteCommand.Parameters[20].Value = ((int)(Original_ID));
+            this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
+            this.Adapter.DeleteCommand.Parameters[20].Value = ((bool)(Original_是否中标));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1308,49 +1312,39 @@ namespace HPES.dsDrugInuseTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string DCODE, string NAME, string SPECIFICATION, string UNIT, string FACTORY, global::System.Nullable<bool> ANTIBACTERIAL, global::System.Nullable<bool> STATISTICS, global::System.Nullable<int> HID, global::System.Nullable<int> YID, global::System.Nullable<bool> BID) {
-            if ((DCODE == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+        public virtual int Insert(string 药品编码, string 药品名称, string 药品规格, string 药品单位, string 生产厂家, bool 抗菌药, bool 是否统计, global::System.Nullable<int> HID, global::System.Nullable<int> YID, bool 是否中标) {
+            if ((药品编码 == null)) {
+                throw new global::System.ArgumentNullException("药品编码");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(DCODE));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(药品编码));
             }
-            if ((NAME == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(NAME));
-            }
-            if ((SPECIFICATION == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            if ((药品名称 == null)) {
+                throw new global::System.ArgumentNullException("药品名称");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(SPECIFICATION));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(药品名称));
             }
-            if ((UNIT == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(UNIT));
-            }
-            if ((FACTORY == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            if ((药品规格 == null)) {
+                throw new global::System.ArgumentNullException("药品规格");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(FACTORY));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(药品规格));
             }
-            if ((ANTIBACTERIAL.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((bool)(ANTIBACTERIAL.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((STATISTICS.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((bool)(STATISTICS.Value));
+            if ((药品单位 == null)) {
+                throw new global::System.ArgumentNullException("药品单位");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(药品单位));
             }
+            if ((生产厂家 == null)) {
+                throw new global::System.ArgumentNullException("生产厂家");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(生产厂家));
+            }
+            this.Adapter.InsertCommand.Parameters[5].Value = ((bool)(抗菌药));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((bool)(是否统计));
             if ((HID.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[7].Value = ((int)(HID.Value));
             }
@@ -1363,12 +1357,7 @@ namespace HPES.dsDrugInuseTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((BID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((bool)(BID.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.InsertCommand.Parameters[9].Value = ((bool)(是否中标));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1389,69 +1378,59 @@ namespace HPES.dsDrugInuseTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    string DCODE, 
-                    string NAME, 
-                    string SPECIFICATION, 
-                    string UNIT, 
-                    string FACTORY, 
-                    global::System.Nullable<bool> ANTIBACTERIAL, 
-                    global::System.Nullable<bool> STATISTICS, 
+                    string 药品编码, 
+                    string 药品名称, 
+                    string 药品规格, 
+                    string 药品单位, 
+                    string 生产厂家, 
+                    bool 抗菌药, 
+                    bool 是否统计, 
                     global::System.Nullable<int> HID, 
                     global::System.Nullable<int> YID, 
-                    global::System.Nullable<bool> BID, 
-                    string Original_DCODE, 
-                    string Original_NAME, 
-                    string Original_SPECIFICATION, 
-                    string Original_UNIT, 
-                    string Original_FACTORY, 
-                    global::System.Nullable<bool> Original_ANTIBACTERIAL, 
-                    global::System.Nullable<bool> Original_STATISTICS, 
+                    bool 是否中标, 
+                    int Original_ID, 
+                    string Original_药品编码, 
+                    string Original_药品名称, 
+                    string Original_药品规格, 
+                    string Original_药品单位, 
+                    string Original_生产厂家, 
+                    bool Original_抗菌药, 
+                    bool Original_是否统计, 
                     global::System.Nullable<int> Original_HID, 
                     global::System.Nullable<int> Original_YID, 
-                    global::System.Nullable<bool> Original_BID, 
-                    int Original_ID) {
-            if ((DCODE == null)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+                    bool Original_是否中标) {
+            if ((药品编码 == null)) {
+                throw new global::System.ArgumentNullException("药品编码");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(DCODE));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(药品编码));
             }
-            if ((NAME == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(NAME));
-            }
-            if ((SPECIFICATION == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            if ((药品名称 == null)) {
+                throw new global::System.ArgumentNullException("药品名称");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(SPECIFICATION));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(药品名称));
             }
-            if ((UNIT == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(UNIT));
-            }
-            if ((FACTORY == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            if ((药品规格 == null)) {
+                throw new global::System.ArgumentNullException("药品规格");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(FACTORY));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(药品规格));
             }
-            if ((ANTIBACTERIAL.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((bool)(ANTIBACTERIAL.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((STATISTICS.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((bool)(STATISTICS.Value));
+            if ((药品单位 == null)) {
+                throw new global::System.ArgumentNullException("药品单位");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(药品单位));
             }
+            if ((生产厂家 == null)) {
+                throw new global::System.ArgumentNullException("生产厂家");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(生产厂家));
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((bool)(抗菌药));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((bool)(是否统计));
             if ((HID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(HID.Value));
             }
@@ -1464,93 +1443,65 @@ namespace HPES.dsDrugInuseTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((BID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((bool)(BID.Value));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((bool)(是否中标));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_ID));
+            if ((Original_药品编码 == null)) {
+                throw new global::System.ArgumentNullException("Original_药品编码");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_药品编码));
             }
-            if ((Original_DCODE == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_DCODE));
-            }
-            if ((Original_NAME == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            if ((Original_药品名称 == null)) {
+                throw new global::System.ArgumentNullException("Original_药品名称");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_NAME));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_药品名称));
             }
-            if ((Original_SPECIFICATION == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_SPECIFICATION));
-            }
-            if ((Original_UNIT == null)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            if ((Original_药品规格 == null)) {
+                throw new global::System.ArgumentNullException("Original_药品规格");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_UNIT));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_药品规格));
             }
-            if ((Original_FACTORY == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_FACTORY));
-            }
-            if ((Original_ANTIBACTERIAL.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((bool)(Original_ANTIBACTERIAL.Value));
+            if ((Original_药品单位 == null)) {
+                throw new global::System.ArgumentNullException("Original_药品单位");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_药品单位));
             }
-            if ((Original_STATISTICS.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((bool)(Original_STATISTICS.Value));
+            if ((Original_生产厂家 == null)) {
+                throw new global::System.ArgumentNullException("Original_生产厂家");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_生产厂家));
             }
+            this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+            this.Adapter.UpdateCommand.Parameters[22].Value = ((bool)(Original_抗菌药));
+            this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+            this.Adapter.UpdateCommand.Parameters[24].Value = ((bool)(Original_是否统计));
             if ((Original_HID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Original_HID.Value));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((int)(Original_HID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             if ((Original_YID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((int)(Original_YID.Value));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(Original_YID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
-            if ((Original_BID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((bool)(Original_BID.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[30].Value = ((int)(Original_ID));
+            this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+            this.Adapter.UpdateCommand.Parameters[30].Value = ((bool)(Original_是否中标));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
