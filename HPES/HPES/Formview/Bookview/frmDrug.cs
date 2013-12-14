@@ -31,6 +31,13 @@ namespace HPES.Formview.Bookview
         {
             // TODO: 这行代码将数据加载到表“dsDrug1.hpes_drug”中。您可以根据需要移动或移除它。
             frmMain frm = (frmMain)this.ParentForm;
+
+            this.dsDrug1.hpes_drug.HIDColumn.DefaultValue = (int)frm.cboHospital.ComboBox.SelectedValue;
+
+            this.dsDrug1.hpes_drug.YIDColumn.DefaultValue = (int)frm.cboYear.ComboBox.SelectedValue;
+
+            this.dsDrug1.hpes_drug.ANTIBACTERIALColumn.DefaultValue = 1;
+
             this.hpes_drugTableAdapter.Fill(this.dsDrug1.hpes_drug, (int)frm.cboHospital.ComboBox.SelectedValue, (int)frm.cboYear.ComboBox.SelectedValue);
 
         }
